@@ -22,7 +22,7 @@ class TripController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Trips/CreatePage');
     }
 
     /**
@@ -30,7 +30,13 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // dd($data);
+        $new_trip = new Trip();
+        $new_trip->fill($data);
+        $new_trip->save();
+
+        return to_route('trips.index');
     }
 
     /**

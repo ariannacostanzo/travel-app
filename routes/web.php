@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TripController;
 use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Rotte dei Trips
-Route::resource('trips', TripController::class);
+Route::resource('trips', TripController::class)->except('store');
+Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
 
 require __DIR__ . '/auth.php';
