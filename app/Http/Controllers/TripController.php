@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Trip;
 use Illuminate\Http\Request;
 
 class TripController extends Controller
@@ -11,7 +12,9 @@ class TripController extends Controller
      */
     public function index()
     {
-        //
+        $trips = Trip::all();
+
+        return inertia('Trips/IndexPage', compact('trips'));
     }
 
     /**
