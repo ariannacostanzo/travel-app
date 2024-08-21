@@ -10,7 +10,7 @@ defineProps({
 
 <template>
 
-    <Head title="Trips" />
+    <Head title="Show Page" />
     <section class="container mx-auto">
         <h1 class="bg-amber-600">{{ trip.title }}</h1>
         <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"

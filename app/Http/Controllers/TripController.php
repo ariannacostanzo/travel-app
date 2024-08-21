@@ -50,17 +50,19 @@ class TripController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Trip $trip)
     {
-        //
+        return inertia('Trips/EditPage', compact('trip'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Trip $trip)
     {
-        //
+        $data = $request->all();
+        $trip->update($data);
+        return to_route('trips.show', $trip);
     }
 
     /**
