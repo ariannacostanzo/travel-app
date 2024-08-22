@@ -33,7 +33,6 @@ class TripController extends Controller
     public function store(StoreTripRequest $request)
     {
         $data = $request->validated();
-        // dd($data);
         $new_trip = new Trip();
         $new_trip->fill($data);
 
@@ -41,6 +40,7 @@ class TripController extends Controller
         $new_trip->user_id = 1; // TODO PROVVISORIO
 
         $new_trip->save();
+        $new_trip->generateDays($new_trip->departure_date, $new_trip->return_date);
 
         return to_route('trips.index');
     }
@@ -68,6 +68,13 @@ class TripController extends Controller
     {
         $data = $request->validated();
         $trip->update($data);
+
+        //TODO
+        /*
+        Controllare la differenza dei giorni tra vecchia data e nuova data.
+        Se il viaggio viene accorciato devono essere cancellati i giorni con relative tappe che non rientrano più nel range
+        Altrimenti aggiungere i giorni mancanti senza duplicare quelli già esistenti
+        */
         return to_route('trips.show', $trip);
     }
 
