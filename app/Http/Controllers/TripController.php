@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTripRequest;
+use App\Http\Requests\UpdateTripRequest;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
@@ -28,12 +30,16 @@ class TripController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTripRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         // dd($data);
         $new_trip = new Trip();
         $new_trip->fill($data);
+
+
+        $new_trip->user_id = 1; // TODO PROVVISORIO
+
         $new_trip->save();
 
         return to_route('trips.index');
@@ -58,9 +64,9 @@ class TripController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Trip $trip)
+    public function update(UpdateTripRequest $request, Trip $trip)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $trip->update($data);
         return to_route('trips.show', $trip);
     }
