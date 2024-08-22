@@ -38,7 +38,8 @@ Route::middleware('auth')->group(function () {
 });
 
 // Rotte dei Trips
-Route::resource('trips', TripController::class)->except('store');
+Route::resource('trips', TripController::class)->except('store', 'update');
 Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
+Route::put('/trips/{trip}', [TripController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('trips.update');
 
 require __DIR__ . '/auth.php';
