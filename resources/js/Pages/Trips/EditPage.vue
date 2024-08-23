@@ -11,8 +11,8 @@ const action = route('trips.update', props.trip.id);
 const defaultValues = {
     user_id: props.trip.user_id,
     title: props.trip.title,
-    departure_date: props.trip.departure_date,
-    return_date: props.trip.return_date,
+    departure_date: props.trip.departure_date.substr(0, 10),
+    return_date: props.trip.return_date.substr(0, 10),
 }
 
 const form = useForm('put', action, defaultValues);
@@ -38,6 +38,7 @@ const submit = () => form.submit({
 
             <!-- DEPARTURE DATE -->
             <label for="departure_date">Departure date</label>
+            <!-- <input type="text" :value="form.departure_date"> -->
             <input id="departure_date" type="date" v-model="form.departure_date"
                 @change="form.validate('departure_date')" />
             <div v-if="form.invalid('departure_date')">

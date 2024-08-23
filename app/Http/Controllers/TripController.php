@@ -67,14 +67,11 @@ class TripController extends Controller
     public function update(UpdateTripRequest $request, Trip $trip)
     {
         $data = $request->validated();
+
+        $trip->generateDays($data['departure_date'], $data['return_date'], true);
+
         $trip->update($data);
 
-        //TODO
-        /*
-        Controllare la differenza dei giorni tra vecchia data e nuova data.
-        Se il viaggio viene accorciato devono essere cancellati i giorni con relative tappe che non rientrano più nel range
-        Altrimenti aggiungere i giorni mancanti senza duplicare quelli già esistenti
-        */
         return to_route('trips.show', $trip);
     }
 
