@@ -12,6 +12,7 @@ class Day extends Model
     use HasFactory;
 
     protected $fillable = [
+        'trip_id',
         'title',
         'date',
     ];
