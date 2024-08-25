@@ -14,8 +14,10 @@ defineProps({
         <Link v-for="trip in trips" :key="trip.id" :href="route('trips.show', trip.id)" class="hover:text-white">
             <h1>{{ trip.title }}</h1>
         </Link>
+        <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.create')">
+            New Trip
+        </Link>
     </section>
-
 </template>
 
 <style></style>
