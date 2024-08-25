@@ -1,7 +1,7 @@
 <script setup>
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { Head, Link } from '@inertiajs/vue3';
-import GeneralLayout from '@/Layouts/GeneralLayuot.vue';
+import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import FormComponent from '@/Components/Form/FormComponent.vue';
 
 const form = useForm('post', '/trips', {

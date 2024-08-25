@@ -1,7 +1,7 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import { useForm } from 'laravel-precognition-vue-inertia';
-import GeneralLayout from '@/Layouts/GeneralLayuot.vue';
+import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import image from '../../../public/storage/jumbotron_img/paesaggio.jpg';
 import FormComponent from '@/Components/Form/FormComponent.vue';
 
