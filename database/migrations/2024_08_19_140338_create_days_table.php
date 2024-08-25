@@ -15,8 +15,8 @@ return new class extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Trip::class)->constrained()->cascadeOnDelete();
-            $table->string('title')->unique();
-            $table->string('slug')->unique();
+            $table->string('title');
+            $table->string('slug');
             $table->date('date');
             $table->timestamps();
         });

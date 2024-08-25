@@ -13,8 +13,9 @@ const action = route('trips.update', props.trip.id);
 const form = useForm('put', action, {
     user_id: props.trip.user_id,
     title: props.trip.title,
-    departure_date: props.trip.departure_date,
-    return_date: props.trip.return_date,
+
+    departure_date: props.trip.departure_date.substr(0, 10),
+    return_date: props.trip.return_date.substr(0, 10),
 });
 
 const submit = () => form.submit({
@@ -68,7 +69,6 @@ const submit = () => form.submit({
         </section>
 
     </GeneralLayout>
-
 
 </template>
 
