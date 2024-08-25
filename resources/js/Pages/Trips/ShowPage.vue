@@ -13,10 +13,18 @@ defineProps({
     <Head title="Show Page" />
     <section class="container mx-auto">
         <h1 class="bg-amber-600">{{ trip.title }}</h1>
-        <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
+        <div class="flex justify-between">
+            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
             :href="route('trips.destroy', trip.id)" method="DELETE">
-        Elimina
-        </Link>
+                Delete
+            </Link>
+            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.edit', trip.id)">
+                Modify
+            </Link>
+            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.index')">
+                Go back
+            </Link>
+        </div>
     </section>
 
 </template>
