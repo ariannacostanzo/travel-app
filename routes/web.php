@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DayController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StopController;
 use App\Http\Controllers\TripController;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests;
@@ -41,5 +43,15 @@ Route::middleware('auth')->group(function () {
 Route::resource('trips', TripController::class)->except('store', 'update');
 Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
 Route::put('/trips/{trip}', [TripController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('trips.update');
+
+//Rotte dei Days
+Route::resource('days', DayController::class);
+
+//Rotte delle Stops
+Route::resource('stops', StopController::class)->except('store');
+Route::post('/stops', [StopController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('stops.store');
+
+
+
 
 require __DIR__ . '/auth.php';

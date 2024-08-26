@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStopRequest;
+use App\Models\Day;
+use App\Models\Stop;
 use Illuminate\Http\Request;
 
 class StopController extends Controller
@@ -25,9 +28,14 @@ class StopController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreStopRequest $request)
     {
-        //
+        $data = $request->validated();
+        $new_stop = new Stop();
+        $new_stop->fill($data);
+
+        $new_stop->save();
+        return back();
     }
 
     /**
