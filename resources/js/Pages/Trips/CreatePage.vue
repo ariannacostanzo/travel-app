@@ -22,7 +22,7 @@ const submit = () => form.submit({
     <Head title="Create Trip" />
 
     <!-- Layout Generico creato da noi -->
-    <GeneralLayout>
+    <GeneralLayout :isLogged="true">
 
         <section class="container mx-auto bg-red-600">
 
@@ -60,8 +60,9 @@ const submit = () => form.submit({
             <!-- Componente del Form -->
             <FormComponent option="Create" :create="form" @submit="submit" />
 
-            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.index')">
-                Go back
+            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
+                :href="route('trips.index')">
+            Go back
             </Link>
         </section>
 

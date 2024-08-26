@@ -29,7 +29,7 @@ const submit = () => form.submit({
     <Head title="Edit Page" />
 
     <!-- Layout Generico creato da noi -->
-    <GeneralLayout>
+    <GeneralLayout :isLogged="true">
 
         <section class="container mx-auto bg-red-600">
 
