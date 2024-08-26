@@ -39,18 +39,18 @@ export default {
                         <li>
                             <h3 class="text-xl font-semibold mb-3">Team</h3>
                         </li>
-                        <li><a href="https://github.com/emilianogastaldo"
+                        <li><a href="https://github.com/emilianogastaldo" target="__blank"
                                 class=" hover:text-[#fae9b8] transition ease-in-out duration-300">Emiliano Gastaldo</a>
                         </li>
-                        <li><a href="https://github.com/DaniAm94"
+                        <li><a href="https://github.com/DaniAm94" target="__blank"
                                 class=" hover:text-[#fae9b8] transition ease-in-out duration-300">Danilo Amico</a></li>
                         <li><a href="https://github.com/ariannacostanzo"
                                 class=" hover:text-[#fae9b8] transition ease-in-out duration-300">Arianna Costanzo</a>
                         </li>
-                        <li><a href="https://github.com/SantiGalvan"
+                        <li><a href="https://github.com/SantiGalvan" target="__blank"
                                 class=" hover:text-[#fae9b8] transition ease-in-out duration-300">Santiago Galvan</a>
                         </li>
-                        <li><a href="https://github.com/GioacchinoArgo"
+                        <li><a href="https://github.com/GioacchinoArgo" target="__blank"
                                 class=" hover:text-[#fae9b8] transition ease-in-out duration-300">Gioacchio Argo</a>
                         </li>
                     </ul>
@@ -73,13 +73,13 @@ export default {
                         <ul>
                             <li class="mb-2">
                                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <font-awesome-icon icon="fab fa-youtube"
+                                    <font-awesome-icon icon="fab fa-youtube" target="__blank"
                                         class="fa-2x hover:text-[#fae9b8] transition ease-in-out duration-300" />
                                 </a>
                             </li>
                             <li class="mb-2">
                                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <font-awesome-icon icon="fab fa-twitter"
+                                    <font-awesome-icon icon="fab fa-twitter" target="__blank"
                                         class="fa-2x hover:text-[#fae9b8] transition ease-in-out duration-300" />
                                 </a>
                             </li>
@@ -87,13 +87,13 @@ export default {
                         <ul>
                             <li class="mb-2 text-center">
                                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <font-awesome-icon icon="fab fa-instagram"
+                                    <font-awesome-icon icon="fab fa-instagram" target="__blank"
                                         class="fa-2x hover:text-[#fae9b8] transition ease-in-out duration-300" />
                                 </a>
                             </li>
                             <li class="mb-2">
                                 <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                                    <font-awesome-icon icon="fab fa-facebook"
+                                    <font-awesome-icon icon="fab fa-facebook" target="__blank"
                                         class="fa-2x hover:text-[#fae9b8] transition ease-in-out duration-300" />
                                 </a>
                             </li>
