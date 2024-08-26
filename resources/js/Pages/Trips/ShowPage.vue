@@ -13,20 +13,22 @@ defineProps({
 <template>
 
     <Head title="Show Page" />
-    <GeneralLayout>
+    <GeneralLayout :isLogged="true">
 
         <section class="container mx-auto">
             <h1 class="bg-amber-600">{{ trip.title }}</h1>
             <div class="flex justify-between">
                 <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                :href="route('trips.destroy', trip.id)" method="DELETE">
-                    Delete
+                    :href="route('trips.destroy', trip.id)" method="DELETE">
+                Delete
                 </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.edit', trip.id)">
-                    Modify
+                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
+                    :href="route('trips.edit', trip.id)">
+                Modify
                 </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button" :href="route('trips.index')">
-                    Go back
+                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
+                    :href="route('trips.index')">
+                Go back
                 </Link>
             </div>
         </section>
