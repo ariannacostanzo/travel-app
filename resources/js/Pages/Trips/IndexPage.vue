@@ -12,7 +12,7 @@ defineProps({
 <template>
 
     <Head title="Trips" />
-    <GeneralLayout>
+    <GeneralLayout :isLogged="true">
 
         <section class="container mx-auto bg-red-600">
             <Link v-for="trip in trips" :key="trip.id" :href="route('trips.show', trip.id)" class="hover:text-white">

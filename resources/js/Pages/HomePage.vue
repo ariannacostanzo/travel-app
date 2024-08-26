@@ -12,14 +12,6 @@ defineProps({
     canRegister: {
         type: Boolean,
     },
-    laravelVersion: {
-        type: String,
-        required: true,
-    },
-    phpVersion: {
-        type: String,
-        required: true,
-    },
 });
 
 // Dati del form di registrazione
@@ -72,7 +64,7 @@ export default {
     <Head title="Home" />
 
     <!-- Layout Generico creato da noi -->
-    <GeneralLayout>
+    <GeneralLayout :isLogged="false">
 
         <!-- Sezione Home -->
         <section id="home" class="h-full relative">
