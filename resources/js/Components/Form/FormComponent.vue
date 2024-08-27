@@ -112,7 +112,7 @@ export default {
 
             <!-- TITLE -->
             <div>
-                <InputLabel class="text-xl" for="title" value="Title" />
+                <InputLabel class="text-xl text-white" for="title" value="Title" />
 
                 <TextInput id="title" type="text" class="mt-1 text-lg block h-8 rounded-2xl w-full"
                     v-model="create.title" required />
@@ -122,7 +122,7 @@ export default {
 
             <!-- DEPARTURE DATE -->
             <div>
-                <InputLabel class="text-xl" for="departure_date" value="Departure date" />
+                <InputLabel class="text-xl text-white" for="departure_date" value="Departure date" />
 
                 <TextInput id="departure_date" type="date" class="mt-1 text-lg block h-8 rounded-2xl w-full"
                     v-model="create.departure_date" required />
@@ -132,7 +132,7 @@ export default {
 
             <!-- RETURN DATE -->
             <div>
-                <InputLabel class="text-xl" for="return_date" value="Return date" />
+                <InputLabel class="text-xl text-white" for="return_date" value="Return date" />
 
                 <TextInput id="return_date" type="date" class="mt-1 text-lg block h-8 rounded-2xl w-full"
                     v-model="create.return_date" required />
@@ -147,7 +147,7 @@ export default {
 
             <!-- TITLE -->
             <div>
-                <InputLabel class="text-xl" for="title" value="Title" />
+                <InputLabel class="text-xl text-white" for="title" value="Title" />
 
                 <TextInput id="title" type="text" class="mt-1 text-lg block h-8 rounded-2xl w-full" v-model="edit.title"
                     required />
@@ -157,7 +157,7 @@ export default {
 
             <!-- DEPARTURE DATE -->
             <div>
-                <InputLabel class="text-xl" for="departure_date" value="Departure date" />
+                <InputLabel class="text-xl text-white" for="departure_date" value="Departure date" />
 
                 <TextInput id="departure_date" type="date" class="mt-1 text-lg block h-8 rounded-2xl w-full"
                     v-model="edit.departure_date" required />
@@ -167,7 +167,7 @@ export default {
 
             <!-- RETURN DATE -->
             <div>
-                <InputLabel class="text-xl" for="return_date" value="Return date" />
+                <InputLabel class="text-xl text-white" for="return_date" value="Return date" />
 
                 <TextInput id="return_date" type="date" class="mt-1 text-lg block h-8 rounded-2xl w-full"
                     v-model="edit.return_date" required />
@@ -194,13 +194,13 @@ export default {
 
             <!-- Bottone per la creazione -->
             <button v-else-if="option === 'Create'"
-                class="inline-flex items-center mt-8 px-4 py-2 bg-green-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                class="inline-flex items-center mt-8 px-4 py-2  bg-[#D4C5B6] border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150">
                 Create
             </button>
 
             <!-- Bottone per l'edit -->
             <button v-else-if="option === 'Edit'"
-                class="inline-flex items-center mt-8 px-4 py-2 bg-green-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                class="inline-flex items-center mt-8 px-4 py-2  bg-[#D4C5B6] border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150">
                 Update
             </button>
 
