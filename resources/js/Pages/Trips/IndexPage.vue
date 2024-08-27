@@ -59,7 +59,7 @@ const formattedDate = (dateToFormatted) => {
             <div class="container mx-auto">
 
 
-                <div class="my-8 grid grid-cols-3 gap-6">
+                <div v-if="trips.length !== 0" class="my-8 grid grid-cols-3 gap-6">
 
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
                         class="p-4 bg-blue-400 text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100">
@@ -69,6 +69,11 @@ const formattedDate = (dateToFormatted) => {
                     <p>{{ days[i] }}</p>
                     </Link>
 
+
+                </div>
+
+                <div v-if="trips.length === 0" class="text-center my-24">
+                    <h3 class="text-4xl font-bold">There are not trips available</h3>
                 </div>
 
             </div>
