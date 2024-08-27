@@ -6,7 +6,7 @@ import mapImage from '../../../../public/storage/show_images/map.jpg'
 
 defineProps({
     trip: Object,
-    days: Array,
+    days: Array
 });
 
 </script>

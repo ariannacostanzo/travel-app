@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTripRequest;
 use App\Http\Requests\UpdateTripRequest;
+use App\Models\Day;
 use App\Models\Trip;
+use Illuminate\Database\Eloquent\Collection;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +70,8 @@ class TripController extends Controller
     public function show(Trip $trip)
     {
 
-        $days = $trip->days;
+        $days = Day::whereTripId($trip->id)->orderBy('date')->get();
+
         return inertia('Trips/ShowPage', compact('trip', 'days'));
     }
 

@@ -71,36 +71,48 @@ class Trip extends Model
             }
         } else {
 
-            // Controllo la nuova data di partenza
+            if ($departure_date > $this->departure_date && $return_date > $this->return_date) {
 
-            // Se è antecedente a quella vecchia
-            if ($departure_date < $this->departure_date) {
-                //Genera dei nuovi giorni che vanno dalla nuova data di partenza alla vecchia
-                $this->generateDays($departure_date, $this->departure_date->subDays(1));
-                // Se è conseguente
-            } else if ($departure_date > $this->departure_date) {
-                // Prende tutti i giorni fuori dal range(prima della nuova data di partenza) e li elimina
-                $before_range_days = Day::whereTripId($this->id)->where('date', '<', $departure_date)->delete();
-            }
-
-            // Cotrollo la nuova data di ritorno
-
-            // Se è antecedente alla vecchia data di ritorno
-            if ($return_date < $this->return_date) {
-                // Prende tutti i giorni fuori dal range(dopo la nuova data di ritorno) e li elimina
-                $after_range_days = Day::whereTripId($this->id)->where('date', '>', $return_date)->delete();
-
-                // Se è conseguente alla vecchia data di ritorno
-            } else if ($return_date > $this->return_date) {
                 // Genera dei nuovi giorni che vanno dalla vecchia data di ritorno alla nuova data di ritorno
                 $this->generateDays($this->return_date->addDays(1), $return_date);
+
+                // Prende tutti i giorni fuori dal range(prima della nuova data di partenza) e li elimina
+                $before_range_days = Day::whereTripId($this->id)->where('date', '<', $departure_date)->delete();
+            } else {
+
+                // Controllo la nuova data di partenza
+
+                // Se è antecedente a quella vecchia
+                if ($departure_date < $this->departure_date) {
+                    //Genera dei nuovi giorni che vanno dalla nuova data di partenza alla vecchia
+                    $this->generateDays($departure_date, $this->departure_date->subDays(1));
+                    // Se è conseguente
+                } else if ($departure_date > $this->departure_date) {
+                    // Prende tutti i giorni fuori dal range(prima della nuova data di partenza) e li elimina
+                    $before_range_days = Day::whereTripId($this->id)->where('date', '<', $departure_date)->delete();
+                }
+
+                // Cotrollo la nuova data di ritorno
+
+                // Se è antecedente alla vecchia data di ritorno
+                if ($return_date < $this->return_date) {
+                    // Prende tutti i giorni fuori dal range(dopo la nuova data di ritorno) e li elimina
+                    $after_range_days = Day::whereTripId($this->id)->where('date', '>', $return_date)->delete();
+
+                    // Se è conseguente alla vecchia data di ritorno
+                } else if ($return_date > $this->return_date) {
+                    // Genera dei nuovi giorni che vanno dalla vecchia data di ritorno alla nuova data di ritorno
+                    $this->generateDays($this->return_date->addDays(1), $return_date);
+                }
             }
+
 
 
             // Devo riassegnare tutti i titoli dei giorni
 
             // Prendo tutti i giorni del viaggio
             $all_days = Day::whereTripId($this->id)->orderBy('date', 'asc')->get();
+            dd($all_days);
             foreach ($all_days as $i => $day) {
                 $day->update(['number' => '' . ($i + 1)]);
             }

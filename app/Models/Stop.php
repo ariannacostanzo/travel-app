@@ -12,11 +12,12 @@ class Stop extends Model
     use HasFactory;
 
     protected $fillable = [
+        'day_id',
         'title',
         'image',
         'foods',
         'is_completed',
-        'adress',
+        'address',
         'latitude',
         'longitude',
         'rating'

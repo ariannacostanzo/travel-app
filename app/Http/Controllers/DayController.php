@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Day;
 use Illuminate\Http\Request;
 
 class DayController extends Controller
@@ -33,9 +34,10 @@ class DayController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Day $day)
     {
-        //
+        $stops = $day->stops;
+        return inertia('Days/ShowPage', compact('day', 'stops'));
     }
 
     /**
