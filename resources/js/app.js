@@ -10,10 +10,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Importa le icone che vuoi usare
+
 import { faHome, faUser, faXmark, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 // Aggiungi le icone alla libreria
-library.add(faHome, faUser, faXmark, faPlus);
+library.add(faHome, faUser, faXmark, faPlus)
+library.add(faTwitter, faFacebook, faInstagram, faYoutube)
+
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
