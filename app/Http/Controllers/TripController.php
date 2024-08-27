@@ -7,7 +7,9 @@ use App\Http\Requests\UpdateTripRequest;
 use App\Models\Day;
 use App\Models\Trip;
 use Illuminate\Database\Eloquent\Collection;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TripController extends Controller
 {
@@ -16,9 +18,24 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::all();
+        // Recupero l'utente loggato
+        $user = Auth::user();
 
-        return inertia('Trips/IndexPage', compact('trips'));
+        // Recupero i Trips dell'utente loggato
+        $trips = Trip::whereUserId($user->id)->get();
+
+        // Creo un array per i numeri di giorni dei trips
+        $days = [];
+
+        for ($i = 0; $i < count($trips); $i++) {
+
+            $departure_date = Carbon::parse($trips[$i]->departure_date);
+            $return_date = Carbon::parse($trips[$i]->return_date);
+
+            $days[] = $trips[$i]->departure_date->diffInDays($trips[$i]->return_date) + 1;
+        }
+
+        return inertia('Trips/IndexPage', compact('trips', 'days', 'user'));
     }
 
     /**
