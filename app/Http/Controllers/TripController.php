@@ -25,16 +25,12 @@ class TripController extends Controller
         // Creo un array per i numeri di giorni dei trips
         $days = [];
 
-        // Se ci sono trips riempo la variabile days con il calcolo dei giorni
-        if (empty($trips)) {
+        for ($i = 0; $i < count($trips); $i++) {
 
-            for ($i = 0; $i < count($trips); $i++) {
+            $departure_date = Carbon::parse($trips[$i]->departure_date);
+            $return_date = Carbon::parse($trips[$i]->return_date);
 
-                $departure_date = Carbon::parse($trips[$i]->departure_date);
-                $return_date = Carbon::parse($trips[$i]->return_date);
-
-                $days[] = $trips[$i]->departure_date->diffInDays($trips[$i]->return_date) + 1;
-            }
+            $days[] = $trips[$i]->departure_date->diffInDays($trips[$i]->return_date) + 1;
         }
 
         return inertia('Trips/IndexPage', compact('trips', 'days', 'user'));
