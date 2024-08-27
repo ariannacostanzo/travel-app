@@ -6,7 +6,7 @@
 main {
     height: calc(100vh - 100px);
     overflow: auto;
-    background-color: #E8EDDF;
+    background-color: #F1F1F1;
     scroll-behavior: smooth;
 }
 
