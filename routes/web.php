@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TripController;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -19,12 +20,15 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+
     return Inertia::render('HomePage', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+
+    if (Auth::user()) return to_route('trips.index');
 });
 
 Route::get('/dashboard', function () {
@@ -35,11 +39,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Rotte dei Trips
+    Route::resource('trips', TripController::class)->except('store', 'update');
+    Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
+    Route::put('/trips/{trip}', [TripController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('trips.update');
 });
 
-// Rotte dei Trips
-Route::resource('trips', TripController::class)->except('store', 'update');
-Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
-Route::put('/trips/{trip}', [TripController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('trips.update');
 
 require __DIR__ . '/auth.php';
