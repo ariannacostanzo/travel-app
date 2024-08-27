@@ -71,7 +71,9 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        return inertia('Trips/ShowPage', compact('trip'));
+
+        $days = $trip->days;
+        return inertia('Trips/ShowPage', compact('trip', 'days'));
     }
 
     /**

@@ -65,7 +65,7 @@ class Trip extends Model
                 // Crea un'istanza di Day per ogni data
                 Day::create([
                     'trip_id' => $this->id,
-                    'title' => 'Giorno ' . ($i + 1),
+                    'number' =>  '' . ($i + 1),
                     'date' => $date,
                 ]);
             }
@@ -102,7 +102,7 @@ class Trip extends Model
             // Prendo tutti i giorni del viaggio
             $all_days = Day::whereTripId($this->id)->orderBy('date', 'asc')->get();
             foreach ($all_days as $i => $day) {
-                $day->update(['title' => 'Giorno ' . ($i + 1)]);
+                $day->update(['number' => '' . ($i + 1)]);
             }
         }
     }
