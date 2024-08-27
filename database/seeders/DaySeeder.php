@@ -16,14 +16,32 @@ class DaySeeder extends Seeder
     {
         $trip = Trip::first();
 
-        $day = [
-            'title' => 'Giorno di prova',
-            'date' => '2024-10-12'
+        $days = [
+            [
+                'number' => '1',
+                'title' => 'Departure from Italy',
+                'description' => 'Ready for this new and exciting adventure? Let\'s go!',
+                'date' => '2024-10-12',
+            ],
+            [
+                'number' => '2',
+                'title' => 'Arrival in Bangkok',
+                'description' => 'Free evening and dinner',
+                'date' => '2024-10-13',
+            ],
+            [
+                'number' => '3',
+                'title' => 'Day of temples and markets',
+                'description' => 'Between giant Buddhas and emerald Buddha',
+                'date' => '2024-10-14',
+            ],
         ];
 
-        $new_day = new Day();
-        $new_day->trip_id = $trip['id'];
-        $new_day->fill($day);
-        $new_day->save();
+        foreach ($days as $day) {
+            $new_day = new Day();
+            $new_day->trip_id = $trip->id;
+            $new_day->fill($day);
+            $new_day->save();
+        }
     }
 }
