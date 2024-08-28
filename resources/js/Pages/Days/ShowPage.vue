@@ -69,17 +69,35 @@ const initializeMap = () => {
         // Crea bounds per includere tutti i marker
         const bounds = new google.maps.LatLngBounds();
 
-        // Aggiungi un marker per ogni fermata e estendi i bounds
         props.stops.forEach(stop => {
             if (stop.latitude && stop.longitude) {
                 const position = { lat: parseFloat(stop.latitude), lng: parseFloat(stop.longitude) };
 
-                // Crea un marker
-                new google.maps.Marker({
-                    position,
-                    map: map.value,
-                    title: stop.title,
-                });
+                // Crea un div per contenere l'etichetta personalizzata
+                const markerLabel = document.createElement('div');
+                markerLabel.className = 'custom-marker';
+                markerLabel.innerHTML = stop.title;
+
+                // Crea un OverlayView personalizzato
+                const customMarker = new google.maps.OverlayView();
+                customMarker.onAdd = function () {
+                    const panes = this.getPanes();
+                    panes.overlayImage.appendChild(markerLabel);
+                };
+                customMarker.draw = function () {
+                    const overlayProjection = this.getProjection();
+                    const positionPixel = overlayProjection.fromLatLngToDivPixel(position);
+                    markerLabel.style.left = positionPixel.x + 'px';
+                    markerLabel.style.top = positionPixel.y + 'px';
+                };
+                customMarker.onRemove = function () {
+                    markerLabel.parentNode.removeChild(markerLabel);
+                };
+                customMarker.setPosition = function (latlng) {
+                    position = latlng;
+                    this.draw();
+                };
+                customMarker.setMap(map.value);
 
                 // Estendi i bounds per includere questa posizione
                 bounds.extend(position);
@@ -90,6 +108,7 @@ const initializeMap = () => {
         map.value.fitBounds(bounds);
     }
 };
+
 
 
 onMounted(() => {
@@ -203,4 +222,17 @@ const closeModal = () => {
     </GeneralLayout>
 </template>
 
-<style></style>
+<style>
+.custom-marker {
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+    transform: translate(-50%, -100%);
+    position: absolute;
+}
+</style>

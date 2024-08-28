@@ -71,8 +71,9 @@ class TripController extends Controller
     {
 
         $days = Day::whereTripId($trip->id)->orderBy('date')->get();
+        $stops = $trip->stops;
 
-        return inertia('Trips/ShowPage', compact('trip', 'days'));
+        return inertia('Trips/ShowPage', compact('trip', 'days', 'stops'));
     }
 
     /**
