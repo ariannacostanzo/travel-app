@@ -36,6 +36,12 @@ class Trip extends Model
         return $this->hasMany(Day::class);
     }
 
+    //Per ottenere tutti le stops collegate al trip
+    public function stops()
+    {
+        return $this->hasManyThrough(Stop::class, Day::class);
+    }
+
     // Mutator per la generazione dello slug quando viene scritto un nuovo title
     protected function title(): Attribute
     {
