@@ -1,6 +1,9 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
+
+import mapImage from '../../../../public/storage/show_images/map.jpg';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 import { ref, onMounted } from 'vue';
 
 const loadGoogleMapsScript = () => {
@@ -105,16 +108,20 @@ onMounted(() => {
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
         <section class="container mx-auto">
-            <h1 class="font-bold text-5xl py-5">{{ trip.title }}</h1>
+
+            <h1 class="font-bold text-5xl py-5 text-center my-6">{{ trip.title }}</h1>
+
 
             <h2 class="text-4xl font-bold py-5 text-center">Travel itinerary</h2>
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
 
-            <!-- Giorni -->
-            <div v-for="day in days" :key="day.id"
-                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2">
+
+            <Link v-for="day in days" :key="day.id" :href="route('days.show', day.id)">
+            <div
+                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 hover:scale-105 transition-all ease-in-out duration-100">
+            
                 <div class="border-r px-4 border-gray-500">
                     <p class="text-2xl">Day</p>
                     <p class="text-3xl font-bold text-center">{{ day.number }}</p>
@@ -130,21 +137,26 @@ onMounted(() => {
                     </span>
                 </div>
             </div>
+            </Link>
 
-            <!-- Pulsanti di modifica -->
-            <div class="flex justify-between">
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
+
+
+
+            <!-- pulsanti di modifica  -->
+            <div class="flex justify-between my-5">
+                <Link :href="route('trips.index')">
+                <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
+
+                </Link>
+
+                <Link :href="route('trips.edit', trip.id)">
+                <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
+                </Link>
+                <Link 
                     :href="route('trips.destroy', trip.id)" method="DELETE">
-                Delete
+                <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
                 </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.edit', trip.id)">
-                Modify
-                </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.index')">
-                Go back
-                </Link>
+
             </div>
         </section>
     </GeneralLayout>

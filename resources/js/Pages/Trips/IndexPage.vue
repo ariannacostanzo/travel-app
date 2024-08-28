@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import image from '../../../../public/storage/jumbotron_img/logged_user_jumbo.avif';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 
 
 defineProps({
@@ -44,10 +45,8 @@ const formattedDate = (dateToFormatted) => {
 
                     <h1 class="text-5xl text-white">Welcome {{ user.name }} {{ user.last_name }}</h1>
 
-                    <Link
-                        class="inline-flex mx-4 items-center cursor-pointer mt-8 px-4 py-2 bg-blue-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
-                        type="button" as="button" :href="route('trips.create')">
-                    New Trip
+                    <Link :href="route('trips.create')">
+                    <PersonalizedButton label="New trip" colorMode="Primary"></PersonalizedButton>
                     </Link>
 
                 </div>
@@ -62,18 +61,18 @@ const formattedDate = (dateToFormatted) => {
                 <div v-if="trips.length !== 0" class="my-8 grid grid-cols-3 gap-6">
 
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
-                        class="p-4 bg-blue-400 text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100">
+                        class="p-4 bg-[#d6c9b6] text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100">
                     <h3>{{ trip.title }}</h3>
                     <p>{{ formattedDate(trip.departure_date) }}</p>
                     <p>{{ formattedDate(trip.return_date) }}</p>
-                    <p>{{ days[i] }}</p>
+                    <p>{{ days[i] }} days</p>
                     </Link>
 
 
                 </div>
 
                 <div v-if="trips.length === 0" class="text-center my-24">
-                    <h3 class="text-4xl font-bold">There are not trips available</h3>
+                    <h3 class="text-4xl font-bold">There are no trips available</h3>
                 </div>
 
             </div>

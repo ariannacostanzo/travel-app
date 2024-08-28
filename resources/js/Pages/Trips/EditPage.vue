@@ -3,6 +3,7 @@ import { useForm } from 'laravel-precognition-vue-inertia';
 import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import FormComponent from '@/Components/Form/FormComponent.vue';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 
 const props = defineProps({
     trip: Object,
@@ -35,48 +36,23 @@ const submit = () => form.submit({
 
             <h1 class="text-5xl font-extrabold text-center text-[#684E52] my-8">Modify your trip</h1>
 
-            <div class="p-8 m-6 rounded-xl bg-[#684e52] text-white">
+            <div class="p-8 m-6 rounded-xl ">
 
 
-                <form @submit.prevent="submit">
 
-                    <!-- TITLE -->
-                    <label for="title">Title</label>
-                    <input id="title" v-model="form.title" @change="form.validate('title')" />
-                    <div v-if="form.invalid('title')">
-                        {{ form.errors.title }}
-                    </div>
-
-                    <!-- DEPARTURE DATE -->
-                    <label for="departure_date">Departure date</label>
-                    <input id="departure_date" type="date" v-model="form.departure_date"
-                        @change="form.validate('departure_date')" />
-                    <div v-if="form.invalid('departure_date')">
-                        {{ form.errors.departure_date }}
-                    </div>
-
-                    <!-- RETURN DATE -->
-                    <label for="return_date">Return date</label>
-                    <input id="return_date" type="date" v-model="form.return_date"
-                        @change="form.validate('return_date')" />
-                    <div v-if="form.invalid('return_date')">
-                        {{ form.errors.return_date }}
-                    </div>
-
-                    <button :disabled="form.processing">
-                        Update
-                    </button>
-                </form>
 
                 <!-- Componente del Form -->
                 <FormComponent option="Edit" :edit="form" @submit="submit" />
 
             </div>
 
-            <Link class="px-4 py-2 shadow-xl bg-[#a3a3a3] text-white rounded-md ml-6 mb-4" type="button" as="button"
-                :href="route('trips.show', trip.id)">
-            Go back
-            </Link>
+            <div class="my-6">
+
+                <Link 
+                    :href="route('trips.show', trip.id)">
+                    <PersonalizedButton label="go back" colorMode="default"></PersonalizedButton>
+                </Link>
+            </div>
         </section>
 
     </GeneralLayout>

@@ -2,8 +2,9 @@
 import { Head } from '@inertiajs/vue3';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
-import image from '../../../public/storage/jumbotron_img/paesaggio.jpg';
+import image from '../../../public/storage/jumbotron_img/paesaggio-2.jpeg';
 import FormComponent from '@/Components/Form/FormComponent.vue';
+import PersonalizedButton from '../Components/PersonalizedButton.vue';
 
 defineProps({
     canLogin: {
@@ -82,19 +83,15 @@ export default {
 
                     <h1 class="text-5xl text-white">gioacchino shit</h1>
 
-                    <!-- Bottone per registrarsi -->
-                    <button
-                        class="inline-flex mx-4 items-center cursor-pointer mt-8 px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
-                        @click="isHidden = !isHidden; option = 'Register'">
-                        Register
-                    </button>
 
-                    <!-- Bottone per fare il login (apre l'offcanvas della Login) -->
-                    <button
-                        class="inline-flex mx-4 items-center cursor-pointer mt-8 px-4 py-2 bg-blue-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
-                        @click="isHidden = !isHidden; option = 'Login'">
-                        Login
-                    </button>
+                    <div class="flex justify-center gap-5">
+                        <PersonalizedButton colorMode="primary" label="Register"
+                            @click="isHidden = !isHidden; option = 'Register'"></PersonalizedButton>
+
+                        <PersonalizedButton colorMode="secondary" label="Login"
+                            @click="isHidden = !isHidden; option = 'Login'"></PersonalizedButton>
+                    </div>
+
 
                 </div>
 
@@ -107,7 +104,7 @@ export default {
 
                 <!-- Offcanvas -->
                 <div :class="{ 'translate-x-full': isHidden }"
-                    class="absolute top-0 right-0 bottom-0 bg-slate-200 w-1/2 p-20 transition-all duration-200">
+                    class="absolute top-0 right-0 bottom-0 bg-[#d6c9b6] w-1/2 p-20 transition-all duration-200">
 
                     <!-- Titolo dell'offcanvas -->
                     <h2 class="text-3xl text-center mb-8">{{ option }}</h2>
