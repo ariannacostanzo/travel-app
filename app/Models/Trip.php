@@ -112,7 +112,6 @@ class Trip extends Model
 
             // Prendo tutti i giorni del viaggio
             $all_days = Day::whereTripId($this->id)->orderBy('date', 'asc')->get();
-            dd($all_days);
             foreach ($all_days as $i => $day) {
                 $day->update(['number' => '' . ($i + 1)]);
             }

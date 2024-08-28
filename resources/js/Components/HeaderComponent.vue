@@ -1,9 +1,12 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+// import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import image from '../../../public/storage/logo_img/travel-app-logo.png';
+import { ref } from 'vue';
+
+const showingNavigationDropdown = ref(false);
 defineProps({
     isLogged: {
         type: Boolean
@@ -20,7 +23,8 @@ defineProps({
             <figure class="w-[80px]">
                 <img :src="image" alt="logo">
             </figure>
-            <Link v-if="isLogged" :href="route('trips.index')" class="text-xl hover:text-slate-500">Trips</Link>
+            <Link v-if="isLogged" :href="route('trips.index')" class="text-2xl font-bold hover:text-[#684e52]">Trips
+            </Link>
         </div>
 
         <!-- Dropdown  -->

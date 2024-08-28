@@ -4,6 +4,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import Modal from '@/Components/Modal.vue';
 import { ref, onMounted, watch, nextTick } from 'vue';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 
 const loadGoogleMapsScript = () => {
     return new Promise((resolve, reject) => {
@@ -136,7 +137,7 @@ const closeModal = () => {
 <template>
 
     <Head title="Show Page" />
-    <GeneralLayout>
+    <GeneralLayout :isLogged="true">
         <section class="container mx-auto">
             <div class="flex justify-between">
                 <h1 class="bg-amber-600">{{ day.title }}</h1>
@@ -153,20 +154,20 @@ const closeModal = () => {
             <ul>
                 <li v-for="stop in stops" :key="stop.id">{{ stop.title }}</li>
             </ul>
-            <div class="flex justify-between">
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('days.destroy', day.id)" method="DELETE">
-                Delete
+
+            <div class="flex justify-between my-6">
+                <Link :href="route('trips.show', day.trip_id)">
+                <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
                 </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('days.edit', day.id)">
-                Modify
+
+                <Link :href="route('days.edit', day.id)">
+                <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
                 </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.show', day.trip_id)">
-                Go back
+                <Link :href="route('days.destroy', day.id)" method="DELETE">
+                <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
                 </Link>
             </div>
+
         </section>
         <Modal :show="confirmingUserDeletion" @close="closeModal">
             <form @submit.prevent="submit" class="flex flex-col gap-4 p-4">
