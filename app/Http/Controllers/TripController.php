@@ -56,7 +56,7 @@ class TripController extends Controller
         $new_trip->fill($data);
 
 
-        $new_trip->user_id = 1; // TODO PROVVISORIO
+        $new_trip->user_id = Auth::id();
 
         $new_trip->save();
         $new_trip->generateDays($new_trip->departure_date, $new_trip->return_date);
@@ -90,7 +90,6 @@ class TripController extends Controller
     public function update(UpdateTripRequest $request, Trip $trip)
     {
         $data = $request->validated();
-
         $trip->generateDays($data['departure_date'], $data['return_date'], true);
 
         $trip->update($data);

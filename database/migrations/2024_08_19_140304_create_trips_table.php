@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->string('title')->unique();
             $table->string('slug')->unique();
+            $table->string('image_url')->nullable();
             $table->date('departure_date');
             $table->date('return_date');
             $table->timestamps();

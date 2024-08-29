@@ -186,6 +186,7 @@ class TripSeeder extends Seeder
                 ],
                 'image_url' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg'
             ]
+
         ];
 
         foreach ($trips as $trip) {

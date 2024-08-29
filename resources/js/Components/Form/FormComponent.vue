@@ -16,11 +16,8 @@ export default {
         editForm: Object
     },
     components: { InputError, InputLabel, TextInput, PersonalizedButton },
-    data: () => ({
-        title: '',
-        departure_date: '',
-        return_date: ''
-    })
+    
+    
 }
 </script>
 
@@ -144,6 +141,16 @@ export default {
                 </div>
             </div>
 
+            <!-- IMAGE URL -->
+            <div class="my-4">
+                <InputLabel class="text-2xl text-[#684e52] font-bold" for="image_url" value="Image link" />
+
+                <TextInput id="image_url" type="text" class="mt-1 text-lg block h-12 rounded-2xl w-full"
+                    v-model="create.image_url"  />
+
+                <InputError class="mt-2" :message="create.errors.image_url" />
+            </div>
+
         </div>
 
         <!-- Edit -->
@@ -180,6 +187,18 @@ export default {
 
                     <InputError class="mt-2" :message="edit.errors.return_date" />
                 </div>
+
+
+            </div>
+
+            <!-- IMAGE URL -->
+            <div class="my-4">
+                <InputLabel class="text-2xl text-[#684e52] font-bold" for="image_url" value="Image link" />
+
+                <TextInput id="image_url" type="text" class="mt-1 text-lg block h-12 rounded-2xl w-full"
+                    v-model="edit.image_url"  />
+
+                <InputError class="mt-2" :message="edit.errors.image_url" />
             </div>
 
         </div>
@@ -204,7 +223,7 @@ export default {
                 </PersonalizedButton>
             </div>
 
-            
+
 
         </div>
 

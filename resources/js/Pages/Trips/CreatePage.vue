@@ -10,6 +10,7 @@ const form = useForm('post', '/trips', {
     title: '',
     departure_date: '',
     return_date: '',
+    image_url: '',
 });
 
 const submit = () => form.submit({
@@ -47,4 +48,3 @@ const submit = () => form.submit({
 
 </template>
 
-<style></style>

@@ -28,6 +28,7 @@ class UpdateTripRequest extends FormRequest
             'title' => ['required', 'string', Rule::unique('trips')->ignore($id)],
             'departure_date' => ['required', 'date', 'after_or_equal:today', Rule::unique('trips')->ignore($id)],
             'return_date' => ['required', 'date', 'after_or_equal:departure_date', Rule::unique('trips')->ignore($id)],
+            'image_url' => 'nullable|string'
         ];
     }
 }
