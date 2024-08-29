@@ -35,8 +35,7 @@ const map = ref(null);
 const showMap = ref(false);
 const showId = ref(null);
 
-const singleMapRef = ref(null);
-
+const activeMarkerId = ref(null);
 
 
 const initializeAutocomplete = () => {
@@ -64,6 +63,8 @@ const initializeAutocomplete = () => {
 };
 
 
+const markers = ref({});
+
 const initializeMap = () => {
     if (mapRef.value) {
         // Crea una nuova mappa con un centro e uno zoom predefiniti
@@ -80,8 +81,12 @@ const initializeMap = () => {
                 const position = { lat: parseFloat(stop.latitude), lng: parseFloat(stop.longitude) };
 
                 // Crea un div per contenere l'etichetta personalizzata
-                const markerLabel = document.createElement('div');
+                const markerLabel = document.createElement('a');
                 markerLabel.className = 'custom-marker';
+                markerLabel.href = "#" + stop.slug;
+                markerLabel.addEventListener('click', () => {
+                    openMap(stop.id);
+                });
                 markerLabel.innerHTML = stop.title;
 
                 // Crea un OverlayView personalizzato
@@ -95,6 +100,13 @@ const initializeMap = () => {
                     const positionPixel = overlayProjection.fromLatLngToDivPixel(position);
                     markerLabel.style.left = positionPixel.x + 'px';
                     markerLabel.style.top = positionPixel.y + 'px';
+
+                    // Assegna la classe active se questo marker è attivo
+                    if (activeMarkerId.value === stop.id) {
+                        markerLabel.classList.add('active');
+                    } else {
+                        markerLabel.classList.remove('active');
+                    }
                 };
                 customMarker.onRemove = function () {
                     markerLabel.parentNode.removeChild(markerLabel);
@@ -105,6 +117,9 @@ const initializeMap = () => {
                 };
                 customMarker.setMap(map.value);
 
+                // Memorizza il marker
+                markers.value[stop.id] = customMarker;
+
                 // Estendi i bounds per includere questa posizione
                 bounds.extend(position);
             }
@@ -114,6 +129,7 @@ const initializeMap = () => {
         map.value.fitBounds(bounds);
     }
 };
+
 
 
 
@@ -165,7 +181,15 @@ const openMap = (id) => {
         showMap.value = true;
         showId.value = id;
     }
+
+    // Aggiorna il marker attivo
+    activeMarkerId.value = id;
+    if (map.value) {
+        // Ridisegna la mappa per aggiornare i marker
+        initializeMap();
+    }
 }
+
 </script>
 
 
@@ -213,7 +237,7 @@ const openMap = (id) => {
                 <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
 
                     <!-- Card -->
-                    <div :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
+                    <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
                         class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
 
                         <!-- Titolo -->
@@ -303,5 +327,10 @@ const openMap = (id) => {
     white-space: nowrap;
     transform: translate(-50%, -100%);
     position: absolute;
+}
+
+.custom-marker.active {
+    border: 2px solid red;
+
 }
 </style>
