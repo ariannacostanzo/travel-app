@@ -23,7 +23,7 @@ class TripSeeder extends Seeder
                 'title' => 'Viaggio a Parigi',
                 'departure_date' => '2024/09/15',
                 'return_date' => '2024/09/22',
-                'image_url' => 'https://example.com/images/parigi.jpg',
+                'image_url' => 'https://www.caldana.it/files/blog/image/curiosita_su_parigi_tour.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Parigi', 'description' => 'Giornata di arrivo e sistemazione in hotel.', 'date' => '2024/09/15'],
                     ['number' => 2, 'title' => 'Tour della città', 'description' => 'Visita alla Torre Eiffel e al Museo del Louvre.', 'date' => '2024/09/16'],
@@ -39,7 +39,6 @@ class TripSeeder extends Seeder
                 'title' => 'Safari in Kenya',
                 'departure_date' => '2024/10/05',
                 'return_date' => '2024/10/15',
-                'image_url' => 'https://example.com/images/kenya.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Nairobi', 'description' => 'Arrivo e sistemazione in hotel.', 'date' => '2024/10/05'],
                     ['number' => 2, 'title' => 'Safari al Maasai Mara', 'description' => 'Giornata di safari nel Maasai Mara.', 'date' => '2024/10/06'],
@@ -51,13 +50,13 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Visita al villaggio Maasai', 'description' => 'Interazione con la comunità Maasai.', 'date' => '2024/10/12'],
                     ['number' => 9, 'title' => 'Giornata di relax', 'description' => 'Giornata libera per rilassarsi.', 'date' => '2024/10/13'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Ritorno a Nairobi e partenza.', 'date' => '2024/10/15']
-                ]
+                ],
+                'image_url' => 'https://www.kanaloa.it/wp-content/uploads/2019/05/kanaloa-viaggi-liberta-kenya-safari-10.jpg'
             ],
             [
                 'title' => 'Tour del Giappone',
                 'departure_date' => '2025/03/20',
                 'return_date' => '2025/04/05',
-                'image_url' => 'https://example.com/images/giappone.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Tokyo', 'description' => 'Benvenuto in Giappone e sistemazione in hotel.', 'date' => '2025/03/20'],
                     ['number' => 2, 'title' => 'Visita di Tokyo', 'description' => 'Esplorazione dei quartieri di Shibuya e Shinjuku.', 'date' => '2025/03/21'],
@@ -69,13 +68,13 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Visita al villaggio di Shirakawa-go', 'description' => 'Esplorazione del villaggio tradizionale di Shirakawa-go.', 'date' => '2025/03/27'],
                     ['number' => 9, 'title' => 'Visita al Castello di Himeji', 'description' => 'Gita al famoso Castello di Himeji.', 'date' => '2025/03/28'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Giornata di ritorno a Tokyo e partenza.', 'date' => '2025/04/05']
-                ]
+                ],
+                'image_url' => 'https://www.aretinatours.com/media/k2/items/cache/giappa_L.jpg'
             ],
             [
                 'title' => 'Crociera ai Caraibi',
                 'departure_date' => '2024/12/01',
                 'return_date' => '2024/12/10',
-                'image_url' => 'https://example.com/images/caraibi.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Imbarco a Miami', 'description' => 'Imbarco sulla nave da crociera.', 'date' => '2024/12/01'],
                     ['number' => 2, 'title' => 'Navigazione verso Nassau', 'description' => 'Giornata in mare verso Nassau.', 'date' => '2024/12/02'],
@@ -87,13 +86,13 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Navigazione verso Miami', 'description' => 'Giornata in mare di ritorno verso Miami.', 'date' => '2024/12/08'],
                     ['number' => 9, 'title' => 'Relax sulla nave', 'description' => 'Giornata di relax e attività sulla nave.', 'date' => '2024/12/09'],
                     ['number' => 10, 'title' => 'Sbarco a Miami', 'description' => 'Sbarco e ritorno a casa.', 'date' => '2024/12/10']
-                ]
+                ],
+                'image_url' => 'https://st.ilfattoquotidiano.it/wp-content/uploads/2023/09/22/shutterstock_1938868960.jpg'
             ],
             [
                 'title' => 'Esplorazione in Islanda',
                 'departure_date' => '2025/01/10',
                 'return_date' => '2025/01/20',
-                'image_url' => 'https://example.com/images/islanda.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Reykjavik', 'description' => 'Benvenuto in Islanda e sistemazione in hotel.', 'date' => '2025/01/10'],
                     ['number' => 2, 'title' => 'Visita alla Laguna Blu', 'description' => 'Relax nelle acque termali della Laguna Blu.', 'date' => '2025/01/11'],
@@ -105,13 +104,13 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Esplorazione del nord', 'description' => 'Visita a Akureyri e al Lago Mývatn.', 'date' => '2025/01/17'],
                     ['number' => 9, 'title' => 'Giornata di relax', 'description' => 'Giornata libera per esplorare Reykjavik.', 'date' => '2025/01/18'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Ritorno a casa.', 'date' => '2025/01/20']
-                ]
+                ],
+                'image_url' => 'https://media-assets.vanityfair.it/photos/643ffdd6070ddb7f7d409be2/16:9/w_2560%2Cc_limit/DJI_0449_medium1600x1066.jpg'
             ],
             [
                 'title' => 'Giro della Toscana',
                 'departure_date' => '2024/11/01',
                 'return_date' => '2024/11/08',
-                'image_url' => 'https://example.com/images/toscana.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Firenze', 'description' => 'Benvenuto in Toscana e sistemazione in hotel.', 'date' => '2024/11/01'],
                     ['number' => 2, 'title' => 'Visita di Firenze', 'description' => 'Visita al Duomo di Firenze e alla Galleria degli Uffizi.', 'date' => '2024/11/02'],
@@ -121,25 +120,25 @@ class TripSeeder extends Seeder
                     ['number' => 6, 'title' => 'Visita a Lucca', 'description' => 'Passeggiata sulle mura di Lucca e visita al centro storico.', 'date' => '2024/11/06'],
                     ['number' => 7, 'title' => 'Gita a San Gimignano', 'description' => 'Esplorazione del borgo medievale di San Gimignano.', 'date' => '2024/11/07'],
                     ['number' => 8, 'title' => 'Ritorno', 'description' => 'Ritorno a Firenze e partenza.', 'date' => '2024/11/08']
-                ]
+                ],
+                'image_url' => 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2021/08/15_Castiglione_della_Pescaia_iStock-1-1080x721.jpg?v=1628095722'
             ],
             [
                 'title' => 'Weekend a Londra',
                 'departure_date' => '2024/09/25',
                 'return_date' => '2024/09/28',
-                'image_url' => 'https://example.com/images/londra.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Londra', 'description' => 'Benvenuto a Londra e sistemazione in hotel.', 'date' => '2024/09/25'],
                     ['number' => 2, 'title' => 'Visita di Londra', 'description' => 'Tour di Buckingham Palace, Big Ben e Westminster Abbey.', 'date' => '2024/09/26'],
                     ['number' => 3, 'title' => 'Visita ai musei', 'description' => 'Esplorazione del British Museum e della National Gallery.', 'date' => '2024/09/27'],
                     ['number' => 4, 'title' => 'Ritorno', 'description' => 'Ritorno a casa.', 'date' => '2024/09/28']
-                ]
+                ],
+                'image_url' => 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2017/03/unnamed1.jpg?v=1490116447'
             ],
             [
                 'title' => 'Visita a New York',
                 'departure_date' => '2024/10/10',
                 'return_date' => '2024/10/17',
-                'image_url' => 'https://example.com/images/new_york.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a New York', 'description' => 'Benvenuto a New York e sistemazione in hotel.', 'date' => '2024/10/10'],
                     ['number' => 2, 'title' => 'Visita della città', 'description' => 'Esplorazione di Times Square e Central Park.', 'date' => '2024/10/11'],
@@ -149,13 +148,13 @@ class TripSeeder extends Seeder
                     ['number' => 6, 'title' => 'Visita a Harlem', 'description' => 'Esplorazione di Harlem e tour gospel.', 'date' => '2024/10/15'],
                     ['number' => 7, 'title' => 'Shopping sulla Fifth Avenue', 'description' => 'Giornata di shopping sulla Fifth Avenue.', 'date' => '2024/10/16'],
                     ['number' => 8, 'title' => 'Ritorno', 'description' => 'Ritorno a casa.', 'date' => '2024/10/17']
-                ]
+                ],,
+                'image_url' => 'https://as1.ftcdn.net/v2/jpg/01/90/16/22/1000_F_190162235_kht4YkbpXqlBa2bnUB2qlWbvcZfH6t0g.jpg'
             ],
             [
                 'title' => 'Avventura in Australia',
                 'departure_date' => '2025/02/01',
                 'return_date' => '2025/02/14',
-                'image_url' => 'https://example.com/images/australia.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Sydney', 'description' => 'Benvenuto in Australia e sistemazione in hotel.', 'date' => '2025/02/01'],
                     ['number' => 2, 'title' => 'Visita di Sydney', 'description' => 'Esplorazione dell\'Opera House e del Sydney Harbour Bridge.', 'date' => '2025/02/02'],
@@ -173,7 +172,6 @@ class TripSeeder extends Seeder
                 'title' => 'Tour dell\'India del Nord',
                 'departure_date' => '2024/12/15',
                 'return_date' => '2024/12/28',
-                'image_url' => 'https://example.com/images/india.jpg',
                 'days' => [
                     ['number' => 1, 'title' => 'Arrivo a Delhi', 'description' => 'Benvenuto in India e sistemazione in hotel.', 'date' => '2024/12/15'],
                     ['number' => 2, 'title' => 'Visita a Delhi', 'description' => 'Esplorazione del Qutub Minar e dell\'India Gate.', 'date' => '2024/12/16'],
@@ -185,7 +183,8 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Esplorazione di Varanasi', 'description' => 'Visita ai ghat del Gange e alla Sarnath.', 'date' => '2024/12/22'],
                     ['number' => 9, 'title' => 'Esplorazione di Khajuraho', 'description' => 'Visita ai templi di Khajuraho.', 'date' => '2024/12/23'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Ritorno a Delhi e partenza.', 'date' => '2024/12/28']
-                ]
+                ],
+                'image_url' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg'
             ]
         ];
 
