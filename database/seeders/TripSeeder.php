@@ -166,7 +166,8 @@ class TripSeeder extends Seeder
                     ['number' => 8, 'title' => 'Esplorazione della Tasmania', 'description' => 'Visita ai parchi nazionali della Tasmania.', 'date' => '2025/02/08'],
                     ['number' => 9, 'title' => 'Visita a Perth', 'description' => 'Esplorazione di Perth e delle sue spiagge.', 'date' => '2025/02/09'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Ritorno a Sydney e partenza.', 'date' => '2025/02/14']
-                ]
+                ],
+                'image_url' => 'https://images-ext-1.discordapp.net/external/ryRKqe_C72HW4xWsu5RA9I8m53-nsv7tWoM179nj5uY/https/a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg?format=webp&width=832&height=468'
             ],
             [
                 'title' => 'Tour dell\'India del Nord',
@@ -195,13 +196,16 @@ class TripSeeder extends Seeder
             $new_trip = new Trip();
 
             $new_trip->user_id = $users[array_rand($users)];
-            $new_trip->fill($trip);
+            $new_trip->title = $trip['title'];
+            $new_trip->departure_date = $trip['departure_date'];
+            $new_trip->return_date = $trip['return_date'];
+            $new_trip->image_url = $trip['image_url'];
             $new_trip->save();
 
-            foreach ($trips['days'] as $key => $day) {
+            foreach ($trip['days'] as $day) {
                 $new_day = new Day();
 
-                $new_day->trip_id = $key + 1;
+                $new_day->trip_id = $new_trip->id;
                 $new_day->fill($day);
                 $new_day->save();
             }
