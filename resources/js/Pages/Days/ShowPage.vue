@@ -274,6 +274,7 @@ const openMap = (id) => {
                 </div>
 
 
+
             </div>
 
         </section>

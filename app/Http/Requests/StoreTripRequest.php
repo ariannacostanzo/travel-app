@@ -25,6 +25,7 @@ class StoreTripRequest extends FormRequest
             'title' => 'required|string|unique:trips',
             'departure_date' => 'required|date|after_or_equal:today|unique:trips',
             'return_date' => 'required|date|after_or_equal:departure_date|unique:trips',
+            'image_url' => 'nullable|string'
         ];
     }
 

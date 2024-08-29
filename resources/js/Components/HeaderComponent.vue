@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/vue3';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import image from '../../../public/storage/logo_img/travel-app-logo.png';
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const showingNavigationDropdown = ref(false);
 defineProps({
@@ -12,18 +12,37 @@ defineProps({
         type: Boolean
     }
 })
+
+const scrollPosition = ref(0);
+
+const handleScroll = () => {
+    scrollPosition.value = window.scrollY;
+    console.log(scrollPosition.value)
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 
 
 
 <template>
-    <header class="h-[100px] shadow-lg py-3 px-10 bg-[#F0DEC4] flex justify-between items-center">
+    <header
+        class="h-[100px] py-3 px-10  fixed left-0 top-0 right-0 z-50 flex justify-between items-center transition ease-in-out duration-300"
+        :class="[scrollPosition > 500 ? 'bg-[#f0dec4] shadow-lg' : 'bg-transparent']">
         <div class="flex gap-10 items-center">
             <figure class="w-[80px]">
                 <img :src="image" alt="logo">
             </figure>
-            <Link v-if="isLogged" :href="route('trips.index')" class="text-2xl font-bold hover:text-[#684e52]">Trips
+            <Link v-if="isLogged" :href="route('trips.index')"
+                class="text-3xl font-bold  transition ease-in-out duration-300"
+                :class="[scrollPosition > 500 ? 'hover:text-[#684e52]' : 'text-white shadowed-text ']">Trips
             </Link>
         </div>
 
@@ -77,3 +96,9 @@ defineProps({
     </header>
 </template>
 
+<style scoped>
+.shadowed-text {
+
+    text-shadow: 1px 1px 8px black;
+}
+</style>

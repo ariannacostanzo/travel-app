@@ -60,12 +60,23 @@ const formattedDate = (dateToFormatted) => {
 
                 <div v-if="trips.length !== 0" class="my-8 grid grid-cols-3 gap-6">
 
+
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
-                        class="p-4 bg-[#d6c9b6] text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100">
-                    <h3>{{ trip.title }}</h3>
-                    <p>{{ formattedDate(trip.departure_date) }}</p>
-                    <p>{{ formattedDate(trip.return_date) }}</p>
-                    <p>{{ days[i] }} days</p>
+                        class="relative h-[300px]  text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100"
+                        :class="trip.image_url === null ? 'border-2 border-slate-400': ''">
+                    <img :src="trip.image_url ? trip.image_url : 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg'"
+                        alt="trip_img" class="rounded-lg w-full h-full object-cover object-center ">
+                    <div class="absolute shadowed-text top-0 left-0 right-0 bottom-0 text-white text-lg font-bold">
+                        <div>
+                            <h3 class="absolute top-2 left-2 text-3xl">{{ trip.title }}</h3>
+                            <div class="absolute bottom-2 left-2 text-md">
+                                <p> {{ formattedDate(trip.departure_date) }} - {{ formattedDate(trip.return_date) }}</p>
+                            </div>
+                        </div>
+                        <p class="absolute bottom-2 right-2">
+                            <font-awesome-icon icon="far fa-calendar" class="mr-2" />{{ days[i] }} days
+                        </p>
+                    </div>
                     </Link>
 
 
@@ -82,4 +93,9 @@ const formattedDate = (dateToFormatted) => {
     </GeneralLayout>
 </template>
 
-<style></style>
+<style scoped>
+
+.shadowed-text h3, .shadowed-text p {
+    text-shadow: 1px 1px 8px black;
+}
+</style>

@@ -107,10 +107,18 @@ onMounted(() => {
 
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
+        <figure v-if="trip.image_url" class="relative overflow-hidden mx-auto h-[700px] jumbotron">
+            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6">{{ trip.title }}</h1>
+            <img :src=" trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
+        </figure>
         <section class="container mx-auto">
 
-            <h1 class="font-bold text-5xl py-5 text-center my-6">{{ trip.title }}</h1>
 
+
+
+
+            <h1 v-if="!trip.image_url" class="font-bold text-6xl py-5 text-center mt-20">{{ trip.title }}</h1>
+            <h2 class="text-4xl font-bold py-5 my-5 text-center">Travel itinerary</h2>
 
             <!-- Button Modify -->
             <Link :href="route('trips.edit', trip.id)" type="button" as="button"
@@ -148,7 +156,7 @@ onMounted(() => {
 
             </Link>
 
-            <h2 class="text-4xl font-bold py-5 text-center">Travel itinerary</h2>
+           
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
@@ -178,13 +186,7 @@ onMounted(() => {
 
 
 
-            <!-- pulsanti di modifica  -->
-            <div class="flex justify-between my-5">
-                <Link :href="route('trips.index')">
-                <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
-                </Link>
-
-            </div>
+            
         </section>
     </GeneralLayout>
 </template>
@@ -204,5 +206,17 @@ onMounted(() => {
     white-space: nowrap;
     transform: translate(-50%, -100%);
     position: absolute;
+}
+
+.shadowed-text {
+    text-shadow: 1px 1px 8px black;
+}
+
+.jumbotron h1 {
+ position: absolute;
+ z-index: 30;
+ top: 30%;
+ left: 50%;
+ transform: translate(-50%, -50%);
 }
 </style>
