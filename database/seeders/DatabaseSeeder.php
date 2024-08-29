@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
             'name' => 'Mario',
@@ -21,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        \App\Models\User::factory(10)->create();
 
-        $this->call([TripSeeder::class, DaySeeder::class, StopSeeder::class]);
+        $this->call([TripSeeder::class, StopSeeder::class]);
     }
 }
