@@ -193,6 +193,10 @@ class TripSeeder extends Seeder
 
             $new_trip = new Trip();
 
+            $new_trip->user_id = $users[array_rand($users)];
+            $new_trip->fill($trip);
+            $new_trip->save();
+
             foreach ($trips['days'] as $key => $day) {
                 $new_day = new Day();
 
@@ -200,10 +204,6 @@ class TripSeeder extends Seeder
                 $new_day->fill($day);
                 $new_day->save();
             }
-
-            $new_trip->user_id = $users[array_rand($users)];
-            $new_trip->fill($trip);
-            $new_trip->save();
         }
     }
 }
