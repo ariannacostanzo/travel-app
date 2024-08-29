@@ -112,6 +112,42 @@ onMounted(() => {
             <h1 class="font-bold text-5xl py-5 text-center my-6">{{ trip.title }}</h1>
 
 
+            <!-- Button Modify -->
+            <Link :href="route('trips.edit', trip.id)" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[220px] right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
+                Modify
+            </div>
+
+            <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
+
+            </Link>
+
+            <!-- Button Delete -->
+            <Link :href="route('trips.destroy', trip.id)" method="DELETE" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f44336] rounded-full fixed bottom-[120px] right-5 flex items-center justify-center group">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block">
+                Delete
+            </div>
+
+            <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
+
+            </Link>
+
+            <!-- Button Go back -->
+            <Link :href="route('trips.index')" type="button" as="button"
+                class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block">
+                Go back
+            </div>
+
+            <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+
+            </Link>
+
             <h2 class="text-4xl font-bold py-5 text-center">Travel itinerary</h2>
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
@@ -146,14 +182,6 @@ onMounted(() => {
             <div class="flex justify-between my-5">
                 <Link :href="route('trips.index')">
                 <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
-
-                </Link>
-
-                <Link :href="route('trips.edit', trip.id)">
-                <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
-                </Link>
-                <Link :href="route('trips.destroy', trip.id)" method="DELETE">
-                <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
                 </Link>
 
             </div>
