@@ -1,6 +1,9 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
+
+import mapImage from '../../../../public/storage/show_images/map.jpg';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 import { ref, onMounted } from 'vue';
 
 const loadGoogleMapsScript = () => {
@@ -105,7 +108,9 @@ onMounted(() => {
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
         <section class="container mx-auto">
-            <h1 class="font-bold text-5xl py-5">{{ trip.title }}</h1>
+
+            <h1 class="font-bold text-5xl py-5 text-center my-6">{{ trip.title }}</h1>
+
 
             <!-- Button Modify -->
             <Link :href="route('trips.edit', trip.id)" type="button" as="button"
@@ -136,9 +141,11 @@ onMounted(() => {
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
 
-            <!-- Giorni -->
-            <div v-for="day in days" :key="day.id"
-                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2">
+
+            <Link v-for="day in days" :key="day.id" :href="route('days.show', day.id)">
+            <div
+                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 hover:scale-105 transition-all ease-in-out duration-100">
+
                 <div class="border-r px-4 border-gray-500">
                     <p class="text-2xl">Day</p>
                     <p class="text-3xl font-bold text-center">{{ day.number }}</p>
@@ -154,13 +161,17 @@ onMounted(() => {
                     </span>
                 </div>
             </div>
+            </Link>
 
-            <!-- Pulsanti di modifica -->
-            <div class="flex justify-between">
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.index')">
-                Go back
+
+
+
+            <!-- pulsanti di modifica  -->
+            <div class="flex justify-between my-5">
+                <Link :href="route('trips.index')">
+                <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
                 </Link>
+
             </div>
         </section>
     </GeneralLayout>
@@ -170,10 +181,11 @@ onMounted(() => {
 /* Puoi aggiungere stili personalizzati per la mappa qui */
 .custom-marker {
     text-transform: capitalize;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    border: 1px solid #1E40AF;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;

@@ -4,6 +4,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import Modal from '@/Components/Modal.vue';
 import { ref, onMounted, watch, nextTick } from 'vue';
+import PersonalizedButton from '@/Components/PersonalizedButton.vue';
 
 const loadGoogleMapsScript = () => {
     return new Promise((resolve, reject) => {
@@ -230,44 +231,64 @@ const openMap = (id) => {
             <!-- Mappa -->
             <div id="map" ref="mapRef" style="height: 500px; width: 100%;"></div>
 
-            <!-- Tappe (Row) -->
-            <div class="flex flex-wrap my-8 -mx-4">
+            <<<<<<< HEAD <!-- Tappe (Row) -->
+                <div class="flex flex-wrap my-8 -mx-4">
 
-                <!-- Col -->
-                <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
+                    <!-- Col -->
+                    <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
 
-                    <!-- Card -->
-                    <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
-                        class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
+                        <!-- Card -->
+                        <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
+                            class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
 
-                        <!-- Titolo -->
-                        <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
+                            <!-- Titolo -->
+                            <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
 
-                        <!-- Bottone apertura mappa -->
-                        <div class="flex justify-center my-4">
-                            <button @click="openMap(stop.id)" class="flex items-center gap-1">
-                                Map <font-awesome-icon icon="fa-solid fa-angle-down" />
-                            </button>
-                        </div>
+                            <!-- Bottone apertura mappa -->
+                            <div class="flex justify-center my-4">
+                                <button @click="openMap(stop.id)" class="flex items-center gap-1">
+                                    Map <font-awesome-icon icon="fa-solid fa-angle-down" />
+                                </button>
+                            </div>
 
-                        <!-- Mappa -->
-                        <div v-if="showMap && showId === stop.id" ref="singleMapRef"
-                            :class="{ 'h-60 opacity-100': showMap && showId === stop.id }"
-                            class="bg-red-400 rounded-lg opacity-0 transition-all duration-1000 ease-in-out">
+                            <!-- Mappa -->
+                            <div v-if="showMap && showId === stop.id" ref="singleMapRef"
+                                :class="{ 'h-60 opacity-100': showMap && showId === stop.id }"
+                                class="bg-red-400 rounded-lg opacity-0 transition-all duration-1000 ease-in-out">
+                            </div>
+
                         </div>
 
                     </div>
 
+
                 </div>
 
+                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded mb-6" type="button" as="button"
+                    :href="route('trips.show', day.trip_id)">
+                Go back
+                </Link>
 
-            </div>
+                =======
+                <!-- Lista tappe -->
+                <ul>
+                    <li v-for="stop in stops" :key="stop.id">{{ stop.title }}</li>
+                </ul>
 
-            <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded mb-6" type="button" as="button"
-                :href="route('trips.show', day.trip_id)">
-            Go back
-            </Link>
+                <div class="flex justify-between my-6">
+                    <Link :href="route('trips.show', day.trip_id)">
+                    <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
+                    </Link>
 
+                    <Link :href="route('days.edit', day.id)">
+                    <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
+                    </Link>
+                    <Link :href="route('days.destroy', day.id)" method="DELETE">
+                    <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
+                    </Link>
+                </div>
+
+                >>>>>>> main
         </section>
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
