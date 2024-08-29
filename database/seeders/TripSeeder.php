@@ -148,7 +148,7 @@ class TripSeeder extends Seeder
                     ['number' => 6, 'title' => 'Visita a Harlem', 'description' => 'Esplorazione di Harlem e tour gospel.', 'date' => '2024/10/15'],
                     ['number' => 7, 'title' => 'Shopping sulla Fifth Avenue', 'description' => 'Giornata di shopping sulla Fifth Avenue.', 'date' => '2024/10/16'],
                     ['number' => 8, 'title' => 'Ritorno', 'description' => 'Ritorno a casa.', 'date' => '2024/10/17']
-                ],,
+                ],
                 'image_url' => 'https://as1.ftcdn.net/v2/jpg/01/90/16/22/1000_F_190162235_kht4YkbpXqlBa2bnUB2qlWbvcZfH6t0g.jpg'
             ],
             [
@@ -205,16 +205,5 @@ class TripSeeder extends Seeder
             $new_trip->fill($trip);
             $new_trip->save();
         }
-
-        // $user = User::first();
-        // $trip = [
-        //     'title' => 'Viaggio di prova',
-        //     'departure_date' => '2024/10/10',
-        //     'return_date' => '2024/10/20'
-        // ];
-        // $new_trip = new Trip();
-        // $new_trip->user_id = $user->id;
-        // $new_trip->fill($trip);
-        // $new_trip->save();
     }
 }
