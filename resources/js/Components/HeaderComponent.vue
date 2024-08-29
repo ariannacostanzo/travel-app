@@ -34,7 +34,7 @@ onUnmounted(() => {
 
 <template>
     <header
-        class="h-[100px] py-3 px-10  fixed left-0 top-0 right-0 z-50 flex justify-between items-center transition ease-in-out duration-300"
+        class="h-[100px] py-3 px-10  fixed left-0 top-0 right-0 z-40 flex justify-between items-center transition ease-in-out duration-300"
         :class="[scrollPosition > 500 ? 'bg-[#f0dec4] shadow-lg' : 'bg-transparent']">
         <div class="flex gap-10 items-center">
             <figure class="w-[80px]">

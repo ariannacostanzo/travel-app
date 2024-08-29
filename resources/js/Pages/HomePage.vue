@@ -99,7 +99,7 @@ export default {
 
             <!-- Overlay -->
             <div id="overlay"
-                class="fixed top-0 right-0 bottom-0 left-0 p-8 bg-[#0000007f] transition-opacity duration-200"
+                class="fixed top-0 right-0 bottom-0 left-0 p-8 z-50 bg-[#0000007f] transition-opacity duration-200"
                 :class="{ 'invisible': isHidden, 'opacity-0': isHidden }">
 
                 <!-- Offcanvas -->
@@ -113,7 +113,7 @@ export default {
                     <FormComponent :option="option" :login="loginForm" :register="registerForm" @submit="submit" />
 
                     <!-- bottone per chiusura offcanvas -->
-                    <button class="absolute top-5 right-5" @click="isHidden = !isHidden; option = ''">
+                    <button class="absolute top-5 right-5 z-50" @click="isHidden = !isHidden; option = ''">
                         <font-awesome-icon icon="fas fa-xmark" class="fa-2x" />
                     </button>
 
