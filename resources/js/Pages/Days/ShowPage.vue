@@ -207,7 +207,7 @@ const openMap = (id) => {
 
             <!-- Button Add Stop -->
             <button @click="openModal"
-                class="h-12 z-10 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[120px] right-5 group">
+                class="h-12 z-10 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[220px] right-5 group">
 
                 <div class="absolute bottom-14 right-0 w-20 bg-[#75b76f] rounded-full hidden group-hover:block">Add stop
                 </div>
@@ -218,7 +218,7 @@ const openMap = (id) => {
 
             <!-- Button Modify -->
             <Link @click="openModal" :href="route('days.edit', day.id)" type="button" as="button"
-                class="h-12 z-10 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
+                class="h-12 z-10 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[120px] right-5 group flex items-center justify-center">
 
             <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
                 Modify
@@ -228,67 +228,54 @@ const openMap = (id) => {
 
             </Link>
 
+            <!-- Button Go back -->
+            <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
+                class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block">
+                Go back
+            </div>
+
+            <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+
+            </Link>
+
             <!-- Mappa -->
             <div id="map" ref="mapRef" style="height: 500px; width: 100%;"></div>
 
-            <<<<<<< HEAD <!-- Tappe (Row) -->
-                <div class="flex flex-wrap my-8 -mx-4">
+            <!-- Tappe (Row) -->
+            <div class="flex flex-wrap my-8 -mx-4">
 
-                    <!-- Col -->
-                    <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
+                <!-- Col -->
+                <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
 
-                        <!-- Card -->
-                        <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
-                            class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
+                    <!-- Card -->
+                    <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
+                        class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
 
-                            <!-- Titolo -->
-                            <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
+                        <!-- Titolo -->
+                        <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
 
-                            <!-- Bottone apertura mappa -->
-                            <div class="flex justify-center my-4">
-                                <button @click="openMap(stop.id)" class="flex items-center gap-1">
-                                    Map <font-awesome-icon icon="fa-solid fa-angle-down" />
-                                </button>
-                            </div>
+                        <!-- Bottone apertura mappa -->
+                        <div class="flex justify-center my-4">
+                            <button @click="openMap(stop.id)" class="flex items-center gap-1">
+                                Map <font-awesome-icon icon="fa-solid fa-angle-down" />
+                            </button>
+                        </div>
 
-                            <!-- Mappa -->
-                            <div v-if="showMap && showId === stop.id" ref="singleMapRef"
-                                :class="{ 'h-60 opacity-100': showMap && showId === stop.id }"
-                                class="bg-red-400 rounded-lg opacity-0 transition-all duration-1000 ease-in-out">
-                            </div>
-
+                        <!-- Mappa -->
+                        <div v-if="showMap && showId === stop.id" ref="singleMapRef"
+                            :class="{ 'h-60 opacity-100': showMap && showId === stop.id }"
+                            class="bg-red-400 rounded-lg opacity-0 transition-all duration-1000 ease-in-out">
                         </div>
 
                     </div>
 
-
                 </div>
 
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded mb-6" type="button" as="button"
-                    :href="route('trips.show', day.trip_id)">
-                Go back
-                </Link>
 
-                =======
-                <!-- Lista tappe -->
-                <ul>
-                    <li v-for="stop in stops" :key="stop.id">{{ stop.title }}</li>
-                </ul>
+            </div>
 
-                <div class="flex justify-between my-6">
-                    <Link :href="route('trips.show', day.trip_id)">
-                    <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
-                    </Link>
-
-                    <Link :href="route('days.edit', day.id)">
-                    <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
-                    </Link>
-                    <Link :href="route('days.destroy', day.id)" method="DELETE">
-                    <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
-                    </Link>
-                </div>
-
-                >>>>>>> main
         </section>
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
