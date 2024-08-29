@@ -121,7 +121,7 @@ onMounted(() => {
             <Link v-for="day in days" :key="day.id" :href="route('days.show', day.id)">
             <div
                 class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 hover:scale-105 transition-all ease-in-out duration-100">
-            
+
                 <div class="border-r px-4 border-gray-500">
                     <p class="text-2xl">Day</p>
                     <p class="text-3xl font-bold text-center">{{ day.number }}</p>
@@ -152,8 +152,7 @@ onMounted(() => {
                 <Link :href="route('trips.edit', trip.id)">
                 <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
                 </Link>
-                <Link 
-                    :href="route('trips.destroy', trip.id)" method="DELETE">
+                <Link :href="route('trips.destroy', trip.id)" method="DELETE">
                 <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
                 </Link>
 
@@ -166,10 +165,11 @@ onMounted(() => {
 /* Puoi aggiungere stili personalizzati per la mappa qui */
 .custom-marker {
     text-transform: capitalize;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    border: 1px solid #1E40AF;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
