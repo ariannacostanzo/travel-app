@@ -19,7 +19,6 @@ const form = useForm('put', action, {
     image_url: props.trip.image_url
 });
 
-console.log(props.trip)
 const submit = () => form.submit({
     preserveScroll: true,
     onSuccess: () => form.reset(),
@@ -49,9 +48,8 @@ const submit = () => form.submit({
 
             <div class="my-6">
 
-                <Link 
-                    :href="route('trips.show', trip.id)">
-                    <PersonalizedButton label="go back" colorMode="default"></PersonalizedButton>
+                <Link :href="route('trips.show', trip.id)">
+                <PersonalizedButton label="go back" colorMode="default"></PersonalizedButton>
                 </Link>
             </div>
         </section>
