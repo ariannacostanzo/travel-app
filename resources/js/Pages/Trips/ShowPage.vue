@@ -116,8 +116,47 @@ onMounted(() => {
 
 
 
+
             <h1 v-if="!trip.image_url" class="font-bold text-6xl py-5 text-center mt-20">{{ trip.title }}</h1>
             <h2 class="text-4xl font-bold py-5 my-5 text-center">Travel itinerary</h2>
+
+            <!-- Button Modify -->
+            <Link :href="route('trips.edit', trip.id)" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[220px] right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
+                Modify
+            </div>
+
+            <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
+
+            </Link>
+
+            <!-- Button Delete -->
+            <Link :href="route('trips.destroy', trip.id)" method="DELETE" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f44336] rounded-full fixed bottom-[120px] right-5 flex items-center justify-center group">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block">
+                Delete
+            </div>
+
+            <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
+
+            </Link>
+
+            <!-- Button Go back -->
+            <Link :href="route('trips.index')" type="button" as="button"
+                class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block">
+                Go back
+            </div>
+
+            <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+
+            </Link>
+
+           
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
@@ -147,21 +186,7 @@ onMounted(() => {
 
 
 
-            <!-- pulsanti di modifica  -->
-            <div class="flex justify-between my-5">
-                <Link :href="route('trips.index')">
-                <PersonalizedButton label="Go back" colorMode="default"></PersonalizedButton>
-
-                </Link>
-
-                <Link :href="route('trips.edit', trip.id)">
-                <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
-                </Link>
-                <Link :href="route('trips.destroy', trip.id)" method="DELETE">
-                <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
-                </Link>
-
-            </div>
+            
         </section>
     </GeneralLayout>
 </template>
@@ -170,10 +195,11 @@ onMounted(() => {
 /* Puoi aggiungere stili personalizzati per la mappa qui */
 .custom-marker {
     text-transform: capitalize;
-    background-color: white;
-    border: 2px solid black;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    border: 1px solid #1E40AF;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
