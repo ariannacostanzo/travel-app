@@ -107,6 +107,30 @@ onMounted(() => {
         <section class="container mx-auto">
             <h1 class="font-bold text-5xl py-5">{{ trip.title }}</h1>
 
+            <!-- Button Modify -->
+            <Link :href="route('trips.edit', trip.id)" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[120px] right-5 group flex items-center justify-center">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
+                Modify
+            </div>
+
+            <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
+
+            </Link>
+
+            <!-- Button Delete -->
+            <Link :href="route('trips.destroy', trip.id)" method="DELETE" type="button" as="button"
+                class="h-12 w-12 text-white bg-[#f44336] rounded-full fixed bottom-5 right-5 flex items-center justify-center group">
+
+            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block">
+                Delete
+            </div>
+
+            <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
+
+            </Link>
+
             <h2 class="text-4xl font-bold py-5 text-center">Travel itinerary</h2>
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
@@ -133,14 +157,6 @@ onMounted(() => {
 
             <!-- Pulsanti di modifica -->
             <div class="flex justify-between">
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.destroy', trip.id)" method="DELETE">
-                Delete
-                </Link>
-                <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
-                    :href="route('trips.edit', trip.id)">
-                Modify
-                </Link>
                 <Link class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" type="button" as="button"
                     :href="route('trips.index')">
                 Go back
