@@ -182,9 +182,9 @@ const closeModal = () => {
                 <Link :href="route('days.edit', day.id)">
                 <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
                 </Link>
-                <Link :href="route('days.destroy', day.id)" method="DELETE">
+                <!-- <Link :href="route('days.destroy', day.id)" method="DELETE">
                 <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
-                </Link>
+                </Link> -->
             </div>
 
         </section>

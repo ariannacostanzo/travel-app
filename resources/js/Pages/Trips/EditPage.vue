@@ -14,11 +14,12 @@ const action = route('trips.update', props.trip.id);
 const form = useForm('put', action, {
     user_id: props.trip.user_id,
     title: props.trip.title,
-
     departure_date: props.trip.departure_date.substr(0, 10),
     return_date: props.trip.return_date.substr(0, 10),
+    image_url: props.trip.image_url
 });
 
+console.log(props.trip)
 const submit = () => form.submit({
     preserveScroll: true,
     onSuccess: () => form.reset(),

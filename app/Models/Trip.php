@@ -17,7 +17,8 @@ class Trip extends Model
         'user_id',
         'title',
         'departure_date',
-        'return_date'
+        'return_date',
+        'image_url'
     ];
 
     // Assicurati che departure_date e return_date siano trattati come date

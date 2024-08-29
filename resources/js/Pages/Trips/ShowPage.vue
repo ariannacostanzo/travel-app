@@ -107,12 +107,17 @@ onMounted(() => {
 
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
+        <figure v-if="trip.image_url" class="relative overflow-hidden mx-auto h-[700px] jumbotron">
+            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6">{{ trip.title }}</h1>
+            <img :src=" trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
+        </figure>
         <section class="container mx-auto">
 
-            <h1 class="font-bold text-5xl py-5 text-center my-6">{{ trip.title }}</h1>
 
 
-            <h2 class="text-4xl font-bold py-5 text-center">Travel itinerary</h2>
+
+            <h1 v-if="!trip.image_url" class="font-bold text-6xl py-5 text-center mt-20">{{ trip.title }}</h1>
+            <h2 class="text-4xl font-bold py-5 my-5 text-center">Travel itinerary</h2>
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
@@ -121,7 +126,7 @@ onMounted(() => {
             <Link v-for="day in days" :key="day.id" :href="route('days.show', day.id)">
             <div
                 class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 hover:scale-105 transition-all ease-in-out duration-100">
-            
+
                 <div class="border-r px-4 border-gray-500">
                     <p class="text-2xl">Day</p>
                     <p class="text-3xl font-bold text-center">{{ day.number }}</p>
@@ -152,8 +157,7 @@ onMounted(() => {
                 <Link :href="route('trips.edit', trip.id)">
                 <PersonalizedButton label="modify" colorMode="primary"></PersonalizedButton>
                 </Link>
-                <Link 
-                    :href="route('trips.destroy', trip.id)" method="DELETE">
+                <Link :href="route('trips.destroy', trip.id)" method="DELETE">
                 <PersonalizedButton label="delete" colorMode="secondary"></PersonalizedButton>
                 </Link>
 
@@ -176,5 +180,17 @@ onMounted(() => {
     white-space: nowrap;
     transform: translate(-50%, -100%);
     position: absolute;
+}
+
+.shadowed-text {
+    text-shadow: 1px 1px 8px black;
+}
+
+.jumbotron h1 {
+ position: absolute;
+ z-index: 30;
+ top: 30%;
+ left: 50%;
+ transform: translate(-50%, -50%);
 }
 </style>

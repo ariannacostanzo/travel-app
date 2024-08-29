@@ -90,7 +90,6 @@ class TripController extends Controller
     public function update(UpdateTripRequest $request, Trip $trip)
     {
         $data = $request->validated();
-
         $trip->generateDays($data['departure_date'], $data['return_date'], true);
 
         $trip->update($data);

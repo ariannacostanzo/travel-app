@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 
+
 main {
-    height: calc(100vh - 100px);
+    /* height: calc(100vh - 100px); */
     overflow: auto;
     background-color: #F1F1F1;
     scroll-behavior: smooth;
 }
 
-main::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
 }
 
-main::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #fff;
 }
 
-main::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgba(42, 41, 41, 0.383);
 }
