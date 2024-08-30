@@ -107,17 +107,16 @@ onMounted(() => {
 
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
+
         <figure v-if="trip.image_url" class="relative overflow-hidden mx-auto h-[700px] jumbotron">
             <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6">{{ trip.title }}</h1>
-            <img :src=" trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
+            <img :src="trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
         </figure>
-        <section class="container mx-auto">
 
-
-
-
+        <section class="container mx-auto my-24">
 
             <h1 v-if="!trip.image_url" class="font-bold text-6xl py-5 text-center mt-20">{{ trip.title }}</h1>
+
             <h2 class="text-4xl font-bold py-5 my-5 text-center">Travel itinerary</h2>
 
             <!-- Button Modify -->
@@ -156,7 +155,7 @@ onMounted(() => {
 
             </Link>
 
-           
+
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
@@ -186,7 +185,7 @@ onMounted(() => {
 
 
 
-            
+
         </section>
     </GeneralLayout>
 </template>
@@ -213,10 +212,10 @@ onMounted(() => {
 }
 
 .jumbotron h1 {
- position: absolute;
- z-index: 30;
- top: 30%;
- left: 50%;
- transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 30;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>

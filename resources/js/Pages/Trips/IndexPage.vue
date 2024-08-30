@@ -55,7 +55,7 @@ const formattedDate = (dateToFormatted) => {
             </div>
 
             <!-- Trips -->
-            <div class="container mx-auto">
+            <div class="container mx-auto my-24">
 
 
                 <div v-if="trips.length !== 0" class="my-8 grid grid-cols-3 gap-6">
@@ -63,6 +63,7 @@ const formattedDate = (dateToFormatted) => {
 
                     <!-- Card -->
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
+
                         class="relative h-[300px] group text-center rounded-lg hover:text-slate-800 transition-all ease-in-out duration-100 overflow-hidden"
                         :class="trip.image_url === null ? 'border-2 border-slate-400' : ''">
 

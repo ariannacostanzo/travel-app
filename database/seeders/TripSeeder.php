@@ -185,7 +185,7 @@ class TripSeeder extends Seeder
                     ['number' => 9, 'title' => 'Esplorazione di Khajuraho', 'description' => 'Visita ai templi di Khajuraho.', 'date' => '2024/12/23'],
                     ['number' => 10, 'title' => 'Ritorno', 'description' => 'Ritorno a Delhi e partenza.', 'date' => '2024/12/28']
                 ],
-                'image_url' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg'
+                'image_url' => 'https://images-ext-1.discordapp.net/external/lXlFah636p-myP5ypUfdCZ586D1lZ6d-kinYKympHVk/https/www.viaggidafotografare.it/wp-content/uploads/2020/03/viaggidafotografare-India-Agra-Taj-Mahal_56-1024x641.jpg?format=webp&width=400&height=250'
             ]
 
         ];
@@ -195,7 +195,7 @@ class TripSeeder extends Seeder
 
             $new_trip = new Trip();
 
-            $new_trip->user_id = $users[array_rand($users)];
+            $new_trip->user_id = 1;
             $new_trip->title = $trip['title'];
             $new_trip->departure_date = $trip['departure_date'];
             $new_trip->return_date = $trip['return_date'];
