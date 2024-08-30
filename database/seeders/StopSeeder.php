@@ -19,10 +19,11 @@ class StopSeeder extends Seeder
         $stops = [
 
             //? Viaggio a Parigi 
-            // Day 1: Arrivo a Parigi
+            // Trip to Paris
+            // Day 1: Arrival in Paris
             [
                 'day_id' => 1,
-                'title' => 'Arrivo all\'aeroporto',
+                'title' => 'Arrival at the Airport',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => '95700 Roissy-en-France, France',
@@ -31,7 +32,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 1,
-                'title' => 'Check-in Hotel',
+                'title' => 'Hotel Check-in',
                 'image' => 'https://img.freepik.com/foto-gratuito/uomo-pieno-del-colpo-che-trasporta-i-bagagli_23-2149963942.jpg?t=st=1725014534~exp=1725018134~hmac=fa43cdf228d2903db5a62537cd61663bb359dac3ef4265c409eedf9853469847&w=1380',
                 'foods' => null,
                 'address' => '15 Rue de Rivoli, 75001 Paris, France',
@@ -40,18 +41,18 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 1,
-                'title' => 'Cena al ristorante Le Fumoir',
+                'title' => 'Dinner at Le Fumoir Restaurant',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipO6AtpfOGKyvjsIKLNvGmKEHaVdYw--CbPhlxiB=s680-w680-h510',
-                'foods' => 'Cucina francese',
+                'foods' => 'French cuisine',
                 'address' => '6 Rue de l\'Amiral de Coligny, 75001 Paris, France',
                 'latitude' => 48.8595,
                 'longitude' => 2.3398
             ],
 
-            // Day 2: Tour della città
+            // Day 2: City Tour
             [
                 'day_id' => 2,
-                'title' => 'Torre Eiffel',
+                'title' => 'Eiffel Tower',
                 'image' => 'https://img.freepik.com/foto-gratuito/torre-eiffel-di-parigi-con-ponte_1101-916.jpg?t=st=1725018355~exp=1725021955~hmac=a641beb5f2e4d3b372c8723e95c23bcbb3897455821d67fa7b61043e088cd8b6&w=1380',
                 'foods' => null,
                 'address' => 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France',
@@ -60,7 +61,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 2,
-                'title' => 'Museo del Louvre',
+                'title' => 'Louvre Museum',
                 'image' => 'https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Rue de Rivoli, 75001 Paris, France',
@@ -69,16 +70,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 2,
-                'title' => 'Pranzo al Café Marly',
+                'title' => 'Lunch at Café Marly',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipMbP6s90Y65yRv__6uJb3ZcewdwktFizxhDb4Ol=s680-w680-h510',
-                'foods' => 'Cucina francese',
+                'foods' => 'French cuisine',
                 'address' => '93 Rue de Rivoli, 75001 Paris, France',
                 'latitude' => 48.8606,
                 'longitude' => 2.3381
             ],
             [
                 'day_id' => 2,
-                'title' => 'Passeggiata lungo la Senna',
+                'title' => 'Stroll along the Seine',
                 'image' => 'https://images.pexels.com/photos/19395799/pexels-photo-19395799/free-photo-of-fiume-sein.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Quai de la Tournelle, 75005 Paris, France',
@@ -86,7 +87,7 @@ class StopSeeder extends Seeder
                 'longitude' => 2.3480
             ],
 
-            // Day 3: Esplorazione dei quartieri storici
+            // Day 3: Exploring Historic Districts
             [
                 'day_id' => 3,
                 'title' => 'Montmartre',
@@ -98,9 +99,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 3,
-                'title' => 'Caffè des Deux Moulins',
+                'title' => 'Café des Deux Moulins',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/9/93/Caf%C3%A9_des_2_Moulins_June_2010.jpg',
-                'foods' => 'Cucina francese',
+                'foods' => 'French cuisine',
                 'address' => '15 Rue Lepic, 75018 Paris, France',
                 'latitude' => 48.8892,
                 'longitude' => 2.3361
@@ -116,18 +117,18 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 3,
-                'title' => 'Pranzo al Café de Flore',
+                'title' => 'Lunch at Café de Flore',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipNVt-evgMyJ7R8XLXPe-pIyhdKn4U5diAZ13vUE=s680-w680-h510',
-                'foods' => 'Cucina francese',
+                'foods' => 'French cuisine',
                 'address' => '172 Boulevard Saint-Germain, 75006 Paris, France',
                 'latitude' => 48.8554,
                 'longitude' => 2.3331
             ],
 
-            // Day 4: Visita alla Reggia di Versailles
+            // Day 4: Visit to the Palace of Versailles
             [
                 'day_id' => 4,
-                'title' => 'Reggia di Versailles',
+                'title' => 'Palace of Versailles',
                 'image' => 'https://images.pexels.com/photos/13692199/pexels-photo-13692199.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Place d\'Armes, 78000 Versailles, France',
@@ -136,7 +137,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 4,
-                'title' => 'Giardini di Versailles',
+                'title' => 'Gardens of Versailles',
                 'image' => 'https://images.pexels.com/photos/17220698/pexels-photo-17220698/free-photo-of-francia-punto-di-riferimento-alberi-erba.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Place d\'Armes, 78000 Versailles, France',
@@ -145,18 +146,18 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 4,
-                'title' => 'Pranzo al ristorante La Petite Venise',
+                'title' => 'Lunch at La Petite Venise Restaurant',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipOknc1lFqn9SRg3t9Ls0MCwA7_LeX7YZy6rfHSt=s680-w680-h510',
-                'foods' => 'Cucina francese',
+                'foods' => 'French cuisine',
                 'address' => 'Château de Versailles, 78000 Versailles, France',
                 'latitude' => 48.8049,
                 'longitude' => 2.1204
             ],
 
-            // Day 5: Crociera sulla Senna
+            // Day 5: Seine River Cruise
             [
                 'day_id' => 5,
-                'title' => 'Crociera sulla Senna',
+                'title' => 'Seine River Cruise',
                 'image' => 'https://www.pimpmytrip.it/wp-content/uploads/2022/12/crociera-senna-parigi.jpg',
                 'foods' => null,
                 'address' => 'Port de la Conférence, 75008 Paris, France',
@@ -165,27 +166,18 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 5,
-                'title' => 'Passeggiata nei Jardins des Tuileries',
+                'title' => 'Walk in the Tuileries Gardens',
                 'image' => 'https://www.parigi.it/images/large/418_1-jardin-des-tuileries-carrousel-garden-c12745.jpg?v=ee38',
                 'foods' => null,
                 'address' => 'Place de la Concorde, 75001 Paris, France',
                 'latitude' => 48.8638,
-                'longitude' => 2.3270
-            ],
-            [
-                'day_id' => 5,
-                'title' => 'Cena al Le Relais de l\'Entrecôte',
-                'image' => 'https://lh3.googleusercontent.com/p/AF1QipPl6mw9fcvc4TXrmoETCAvPz6_nNODcJcU-NKtk=s680-w680-h510-rw',
-                'foods' => 'Cucina francese',
-                'address' => '20 Rue Saint-Benoît, 75006 Paris, France',
-                'latitude' => 48.8553,
                 'longitude' => 2.3340
             ],
 
             // Day 6: Museo d'Orsay
             [
                 'day_id' => 6,
-                'title' => 'Museo d\'Orsay',
+                'title' => 'Musée d\'Orsay',
                 'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/0d/0e/1f/c9.jpg',
                 'foods' => null,
                 'address' => '1 Rue de la Légion d\'Honneur, 75007 Paris, France',
@@ -194,7 +186,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 6,
-                'title' => 'Cattedrale di Notre-Dame',
+                'title' => 'Notre-Dame Cathedral',
                 'image' => 'https://images.pexels.com/photos/1460145/pexels-photo-1460145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => '6 Parvis Notre-Dame - Place Jean-Paul II, 75004 Paris, France',
@@ -203,9 +195,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 6,
-                'title' => 'Pranzo al Le Comptoir du Relais',
+                'title' => 'Lunch at Le Comptoir du Relais',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipPWk2E3dVK9nkIU1vcK5-R6cuIJJRnRFhrGjAN0=s680-w680-h510',
-                'foods' => 'Cucina francese',
+                'foods' => 'French Cuisine',
                 'address' => '9 Carrefour de l\'Odeon, 75006 Paris, France',
                 'latitude' => 48.8519,
                 'longitude' => 2.3380
@@ -232,9 +224,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 7,
-                'title' => 'Pranzo al Ladurée',
+                'title' => 'Lunch at Ladurée',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipNl87yAb3IFtkjUNCJSYrsYLnx4nkoaWu704etU=s680-w680-h510-rw',
-                'foods' => 'Pasticceria',
+                'foods' => 'Pastry',
                 'address' => '75 Avenue des Champs-Élysées, 75008 Paris, France',
                 'latitude' => 48.8688,
                 'longitude' => 2.3070
@@ -243,7 +235,7 @@ class StopSeeder extends Seeder
             // Day 8: Ritorno
             [
                 'day_id' => 8,
-                'title' => 'Check-out Hotel',
+                'title' => 'Hotel Check-out',
                 'image' => 'https://img.freepik.com/foto-gratuito/uomo-pieno-del-colpo-che-trasporta-i-bagagli_23-2149963942.jpg?t=st=1725014534~exp=1725018134~hmac=fa43cdf228d2903db5a62537cd61663bb359dac3ef4265c409eedf9853469847&w=1380',
                 'foods' => null,
                 'address' => '15 Rue de Rivoli, 75001 Paris, France',
@@ -252,7 +244,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 8,
-                'title' => 'Trasferimento all\'aeroporto',
+                'title' => 'Transfer to the Airport',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => '95700 Roissy-en-France, France',
@@ -261,10 +253,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 8,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
-                'address' => 'Aeroporto Charles de Gaulle, 95700 Roissy-en-France, France',
+                'address' => 'Charles de Gaulle Airport, 95700 Roissy-en-France, France',
                 'latitude' => 49.0097,
                 'longitude' => 2.5479
             ],
@@ -273,7 +265,7 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Nairobi
             [
                 'day_id' => 9,
-                'title' => 'Arrivo a Nairobi',
+                'title' => 'Arrival in Nairobi',
                 'image' => 'https://media.istockphoto.com/id/637912692/it/foto/nairobi-cityscape-capitale-del-kenya.jpg?s=612x612&w=0&k=20&c=yDJsWeFJ3OHMa3awGjavDF2EAUx1ZueEqPBUszY5nZQ=',
                 'foods' => null,
                 'address' => 'Hilton Nairobi, Mama Ngina St, Nairobi, Kenya',
@@ -282,9 +274,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 9,
-                'title' => 'Cena al ristorante dell\'hotel',
+                'title' => 'Dinner at the Hotel Restaurant',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale e internazionale',
+                'foods' => 'Local and International Cuisine',
                 'address' => 'Hilton Nairobi, Mama Ngina St, Nairobi, Kenya',
                 'latitude' => -1.2864,
                 'longitude' => 36.8172
@@ -293,7 +285,7 @@ class StopSeeder extends Seeder
             // Day 2: Safari al Maasai Mara
             [
                 'day_id' => 10,
-                'title' => 'Partenza per il Maasai Mara',
+                'title' => 'Departure for Maasai Mara',
                 'image' => 'https://images.pexels.com/photos/18000393/pexels-photo-18000393/free-photo-of-paesaggio-natura-cespuglio-animale.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -302,7 +294,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 10,
-                'title' => 'Safari nel Maasai Mara',
+                'title' => 'Maasai Mara Safari',
                 'image' => 'https://rhinotouristcamp.com/wp-content/uploads/2023/06/f671d17b6393a922e4fe959cec5f9a23-1-1-1024x683.jpg',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -311,9 +303,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 10,
-                'title' => 'Pranzo picnic nel Maasai Mara',
+                'title' => 'Picnic Lunch in Maasai Mara',
                 'image' => 'https://www.masaimara.com/assets/img/masai-mara.jpg',
-                'foods' => 'Picnic con cibo locale',
+                'foods' => 'Picnic with Local Food',
                 'address' => 'Maasai Mara National Reserve, Kenya',
                 'latitude' => -1.5250,
                 'longitude' => 35.2164
@@ -322,7 +314,7 @@ class StopSeeder extends Seeder
             // Day 3: Safari al Maasai Mara
             [
                 'day_id' => 11,
-                'title' => 'Safari mattutino nel Maasai Mara',
+                'title' => 'Morning Safari in Maasai Mara',
                 'image' => 'https://www.shoortravel.com/image/masai-mara-kenya.jpg',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -331,16 +323,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 11,
-                'title' => 'Pranzo al campo',
+                'title' => 'Lunch at the Camp',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/06/60/b5/92/campo-tendato-di-lusso.jpg',
-                'foods' => 'Pranzo al sacco',
+                'foods' => 'Packed Lunch',
                 'address' => 'Maasai Mara National Reserve, Kenya',
                 'latitude' => -1.5250,
                 'longitude' => 35.2164
             ],
             [
                 'day_id' => 11,
-                'title' => 'Safari pomeridiano',
+                'title' => 'Afternoon Safari',
                 'image' => 'https://bigmama.travel/wp-content/uploads/2022/10/safari-masai-mara-Kenya.jpg',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -351,7 +343,7 @@ class StopSeeder extends Seeder
             // Day 4: Safari al Maasai Mara
             [
                 'day_id' => 12,
-                'title' => 'Esplorazione della riserva',
+                'title' => 'Exploring the Reserve',
                 'image' => 'https://cdn.getyourguide.com/img/tour/7a8f378fa32f1a08.jpeg/98.jpg',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -360,16 +352,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 12,
-                'title' => 'Pranzo al lodge',
+                'title' => 'Lunch at the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Maasai Mara Lodge, Kenya',
                 'latitude' => -1.5250,
                 'longitude' => 35.2164
             ],
             [
                 'day_id' => 12,
-                'title' => 'Safari serale',
+                'title' => 'Evening Safari',
                 'image' => 'https://etcdn.net/thumbnails/23272/it-kenya-nakupenda-il-meglio-del-kenya-safari-4gg3nn-e-mare-7ed57.jpg',
                 'foods' => null,
                 'address' => 'Maasai Mara National Reserve, Kenya',
@@ -380,7 +372,7 @@ class StopSeeder extends Seeder
             // Day 5: Visita al Lago Nakuru
             [
                 'day_id' => 13,
-                'title' => 'Partenza per il Lago Nakuru',
+                'title' => 'Departure for Lake Nakuru',
                 'image' => 'https://img.freepik.com/foto-gratuito/stormo-di-fenicotteri-rosa-maggiori_155003-14649.jpg?t=st=1725020003~exp=1725023603~hmac=ee7dc135ad047d76c0a826e027dc48bd1740bcdb4f0b70481024c19b9cb484e8&w=1380',
                 'foods' => null,
                 'address' => 'Lake Nakuru National Park, Kenya',
@@ -389,7 +381,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 13,
-                'title' => 'Safari al Lago Nakuru',
+                'title' => 'Safari at Lake Nakuru',
                 'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/6c/11.jpg',
                 'foods' => null,
                 'address' => 'Lake Nakuru National Park, Kenya',
@@ -398,9 +390,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 13,
-                'title' => 'Pranzo al parco',
+                'title' => 'Lunch in the Park',
                 'image' => 'https://safarikenyaprofessionalguide.com/wp-content/uploads/photo-gallery/TheBushCamp/safari-kenya-bush-camp-19.jpg?bwg=1652373519',
-                'foods' => 'Picnic con vista sul lago',
+                'foods' => 'Picnic with Lake View',
                 'address' => 'Lake Nakuru National Park, Kenya',
                 'latitude' => -0.2828,
                 'longitude' => 36.0713
@@ -409,7 +401,7 @@ class StopSeeder extends Seeder
             // Day 6: Safari al Parco Amboseli
             [
                 'day_id' => 14,
-                'title' => 'Arrivo al Parco Amboseli',
+                'title' => 'Arrival at Amboseli National Park',
                 'image' => 'https://www.civitatis.com/f/kenia/nairobi/safari-3-dias-amboseli-589x392.jpg',
                 'foods' => null,
                 'address' => 'Amboseli National Park, Kenya',
@@ -418,7 +410,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 14,
-                'title' => 'Safari nel Parco Amboseli',
+                'title' => 'Safari in Amboseli National Park',
                 'image' => 'https://cdn.getyourguide.com/img/tour/d9031239b2110364b19304e46320044577ed019be14ccadeae0aa08823c77ea6.jpeg/146.jpg',
                 'foods' => null,
                 'address' => 'Amboseli National Park, Kenya',
@@ -427,9 +419,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 14,
-                'title' => 'Pranzo al lodge',
+                'title' => 'Lunch at the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Amboseli Lodge, Kenya',
                 'latitude' => -2.6540,
                 'longitude' => 37.3022
@@ -438,7 +430,7 @@ class StopSeeder extends Seeder
             // Day 7: Safari al Parco Amboseli
             [
                 'day_id' => 15,
-                'title' => 'Safari nel Parco Amboseli',
+                'title' => 'Safari in Amboseli National Park',
                 'image' => 'https://cdn.getyourguide.com/img/tour/ccc6dc462014f439eba0cb4325519ac64a0b358d66532ab82d52bef064b48e45.jpg/98.jpg',
                 'foods' => null,
                 'address' => 'Amboseli National Park, Kenya',
@@ -447,16 +439,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 15,
-                'title' => 'Pranzo al campo',
+                'title' => 'Lunch at the Camp',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/06/60/b5/92/campo-tendato-di-lusso.jpg',
-                'foods' => 'Pranzo al sacco',
+                'foods' => 'Packed Lunch',
                 'address' => 'Amboseli National Park, Kenya',
                 'latitude' => -2.6540,
                 'longitude' => 37.3022
             ],
             [
                 'day_id' => 15,
-                'title' => 'Safari pomeridiano',
+                'title' => 'Afternoon Safari',
                 'image' => 'https://viaggidelgenio.it/wp-content/uploads/2023/04/1-1.jpg',
                 'foods' => null,
                 'address' => 'Amboseli National Park, Kenya',
@@ -467,7 +459,7 @@ class StopSeeder extends Seeder
             // Day 8: Visita al villaggio Maasai
             [
                 'day_id' => 16,
-                'title' => 'Visita al villaggio Maasai',
+                'title' => 'Visit to Maasai Village',
                 'image' => 'https://www.safarikenyaconsamuel.it/wp-content/uploads/elementor/thumbs/Masai-village-1-pxf3msdnoal9tldds0ory2a12gxzdep85ls9khp9r0-optimized.jpg',
                 'foods' => null,
                 'address' => 'Maasai Village, Kenya',
@@ -476,16 +468,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 16,
-                'title' => 'Interazione con i Maasai',
+                'title' => 'Interaction with the Maasai',
                 'image' => 'https://cdn.prod.website-files.com/647f003abb4628bf7e34658d/64e7bdf446eef5b331f8eebb_Maasai-shuka.jpg',
-                'foods' => 'Cibo tradizionale Maasai',
+                'foods' => 'Traditional Maasai food',
                 'address' => 'Maasai Village, Kenya',
                 'latitude' => -1.6000,
                 'longitude' => 36.5000
             ],
             [
                 'day_id' => 16,
-                'title' => 'Ritorno al lodge',
+                'title' => 'Return to the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
                 'foods' => null,
                 'address' => 'Amboseli Lodge, Kenya',
@@ -496,7 +488,7 @@ class StopSeeder extends Seeder
             // Day 9: Giornata di relax
             [
                 'day_id' => 17,
-                'title' => 'Relax al Lodge',
+                'title' => 'Relax at the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
                 'foods' => null,
                 'address' => 'Serena Lodge, Amboseli, Kenya',
@@ -505,7 +497,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 17,
-                'title' => 'Passeggiata nei dintorni',
+                'title' => 'Stroll Around the Area',
                 'image' => 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/250342713.jpg?k=417b11799f9bcf196d4783f089e90e7b4e02f07025f08ccc75519ec349d68e9f&o=&hp=1',
                 'foods' => null,
                 'address' => 'Amboseli National Park, Kenya',
@@ -514,7 +506,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 17,
-                'title' => 'Relax nella piscina del lodge',
+                'title' => 'Relax by the Lodge Pool',
                 'image' => 'https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Serena Lodge, Amboseli, Kenya',
@@ -523,9 +515,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 17,
-                'title' => 'Pranzo al lodge',
+                'title' => 'Lunch at the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International cuisine',
                 'address' => 'Serena Lodge, Amboseli, Kenya',
                 'latitude' => -2.7017,
                 'longitude' => 37.2307
@@ -534,7 +526,7 @@ class StopSeeder extends Seeder
             // Day 10: Ritorno
             [
                 'day_id' => 18,
-                'title' => 'Check-out dal lodge',
+                'title' => 'Check-out from the Lodge',
                 'image' => 'https://backpackeradventure.it/img/blog/1589132313_fr_393984594_2011-10-1620.jpg',
                 'foods' => null,
                 'address' => 'Serena Lodge, Amboseli, Kenya',
@@ -543,7 +535,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 18,
-                'title' => 'Trasferimento a Nairobi',
+                'title' => 'Transfer to Nairobi',
                 'image' => 'https://media.istockphoto.com/id/637912692/it/foto/nairobi-cityscape-capitale-del-kenya.jpg?s=612x612&w=0&k=20&c=yDJsWeFJ3OHMa3awGjavDF2EAUx1ZueEqPBUszY5nZQ=',
                 'foods' => null,
                 'address' => 'Nairobi, Kenya',
@@ -552,7 +544,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 18,
-                'title' => 'Partenza dall\'aeroporto di Nairobi',
+                'title' => 'Departure from Nairobi Airport',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Jomo Kenyatta International Airport, Nairobi, Kenya',
@@ -564,7 +556,7 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Tokyo
             [
                 'day_id' => 19,
-                'title' => 'Arrivo a Tokyo',
+                'title' => 'Arrival in Tokyo',
                 'image' => 'https://www.sognandoilgiappone.com/wp-content/uploads/2024/06/Depositphotos_563013432_S.jpg',
                 'foods' => null,
                 'address' => 'Shinjuku Granbell Hotel, 2-14-5 Shinjuku, Tokyo, Japan',
@@ -573,10 +565,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 19,
-                'title' => 'Cena in un ristorante locale',
+                'title' => 'Dinner at a Local Restaurant',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina giapponese',
-                'address' => 'Ristorante Tokyo, 1-2-3 Roppongi, Tokyo, Japan',
+                'foods' => 'Japanese cuisine',
+                'address' => 'Tokyo Restaurant, 1-2-3 Roppongi, Tokyo, Japan',
                 'latitude' => 35.6605,
                 'longitude' => 139.7292
             ],
@@ -584,7 +576,7 @@ class StopSeeder extends Seeder
             // Day 2: Visita di Tokyo
             [
                 'day_id' => 20,
-                'title' => 'Esplorazione di Shibuya',
+                'title' => 'Exploration of Shibuya',
                 'image' => 'https://www.gotokyo.org/it/destinations/western-tokyo/shibuya/images/main.jpg',
                 'foods' => null,
                 'address' => 'Shibuya Crossing, Shibuya, Tokyo, Japan',
@@ -593,7 +585,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 20,
-                'title' => 'Visita al Tempio Meiji',
+                'title' => 'Visit to Meiji Shrine',
                 'image' => 'https://mywowo.net/media/images/cache/tokyo_santuario_meiji_01_presentazione_jpg_1200_630_cover_85.jpg',
                 'foods' => null,
                 'address' => '1-1 Yoyogikamizonocho, Shibuya City, Tokyo, Japan',
@@ -602,7 +594,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 20,
-                'title' => 'Esplorazione di Shinjuku',
+                'title' => 'Exploration of Shinjuku',
                 'image' => 'https://i0.wp.com/www.touristjapan.com/wp-content/uploads/2017/06/Shutterstock_635797538.jpg?resize=800%2C534&ssl=1',
                 'foods' => null,
                 'address' => 'Shinjuku, Tokyo, Japan',
@@ -613,7 +605,7 @@ class StopSeeder extends Seeder
             // Day 3: Visita a Kyoto
             [
                 'day_id' => 21,
-                'title' => 'Gita al Santuario di Fushimi Inari',
+                'title' => 'Excursion to Fushimi Inari Shrine',
                 'image' => 'https://a1.cdn.japantravel.com/photo/poi-40-213932/800x600!/kyoto-fushimi-inari-taisha-213932.jpg',
                 'foods' => null,
                 'address' => '68 Fukakusa Yabunouchicho, Fushimi Ward, Kyoto, Japan',
@@ -622,10 +614,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 21,
-                'title' => 'Pranzo in ristorante tradizionale',
+                'title' => 'Lunch at a Traditional Restaurant',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipP7UbBvJRqnkh5Rz-womF4Ip0yHUiDldv_j3Fdi=s680-w680-h510',
-                'foods' => 'Cucina tradizionale giapponese',
-                'address' => 'Ristorante Kyoto, 123 Gion, Kyoto, Japan',
+                'foods' => 'Traditional Japanese cuisine',
+                'address' => 'Kyoto Restaurant, 123 Gion, Kyoto, Japan',
                 'latitude' => 35.0034,
                 'longitude' => 135.7778
             ],
@@ -633,7 +625,7 @@ class StopSeeder extends Seeder
             // Day 4: Esplorazione di Nara
             [
                 'day_id' => 22,
-                'title' => 'Visita al Parco dei Cervi',
+                'title' => 'Visit to Nara Deer Park',
                 'image' => 'https://www.giapponepertutti.it/demo/wp-content/uploads/2020/04/Parco-di-Nara-Cervo.jpg',
                 'foods' => null,
                 'address' => 'Nara Park, Nara, Japan',
@@ -642,7 +634,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 22,
-                'title' => 'Visita al Tempio Todai-ji',
+                'title' => 'Visit to Todai-ji Temple',
                 'image' => 'https://www.italiajapan.net/img/s68/i9/todaiji_70137405-850x551.jpg',
                 'foods' => null,
                 'address' => '406-1 Zoshicho, Nara, Japan',
@@ -651,10 +643,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 22,
-                'title' => 'Pranzo in un ristorante locale',
+                'title' => 'Lunch at a Local Restaurant',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
-                'address' => 'Ristorante Nara, 45 Naramachi, Nara, Japan',
+                'foods' => 'Local cuisine',
+                'address' => 'Nara Restaurant, 45 Naramachi, Nara, Japan',
                 'latitude' => 34.6851,
                 'longitude' => 135.8048
             ],
@@ -662,7 +654,7 @@ class StopSeeder extends Seeder
             // Day 5: Visita al Monte Fuji
             [
                 'day_id' => 23,
-                'title' => 'Escursione al Monte Fuji',
+                'title' => 'Excursion to Mount Fuji',
                 'image' => 'https://www.sognandoilgiappone.com/wp-content/uploads/2016/01/escursione-monte-fuji.jpg',
                 'foods' => null,
                 'address' => 'Mount Fuji, Yamanashi, Japan',
@@ -671,7 +663,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 23,
-                'title' => 'Relax negli Onsen',
+                'title' => 'Relaxation in Onsen',
                 'image' => 'https://res.cloudinary.com/jnto/image/upload/w_600,fl_lossy,f_auto,q_auto,c_scale/v1/media/filer_public/3d/23/3d23fd41-f180-42b5-ac90-bfd3f9290df3/ginzan_onsen_yamagata_2_le9ekk',
                 'foods' => null,
                 'address' => 'Hakone Onsen, Hakone, Kanagawa, Japan',
@@ -680,10 +672,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 23,
-                'title' => 'Pranzo al ristorante con vista',
+                'title' => 'Lunch at a Restaurant with a View',
                 'image' => 'https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina giapponese',
-                'address' => 'Ristorante Fuji, 123 Fuji View, Yamanashi, Japan',
+                'foods' => 'Japanese cuisine',
+                'address' => 'Fuji Restaurant, 123 Fuji View, Yamanashi, Japan',
                 'latitude' => 35.3606,
                 'longitude' => 138.7274
             ],
@@ -691,7 +683,7 @@ class StopSeeder extends Seeder
             // Day 6: Visita a Hiroshima
             [
                 'day_id' => 24,
-                'title' => 'Parco della Pace di Hiroshima',
+                'title' => 'Hiroshima Peace Memorial Park',
                 'image' => 'https://www.ticonsigliounviaggio.it/wp-content/uploads/2020/08/hiroshima-parco-della-pace-scaled.jpg',
                 'foods' => null,
                 'address' => '1-2 Nakajimacho, Naka Ward, Hiroshima, Japan',
@@ -700,7 +692,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 24,
-                'title' => 'Museo della Pace di Hiroshima',
+                'title' => 'Hiroshima Peace Memorial Museum',
                 'image' => 'https://res-3.cloudinary.com/jnto/image/upload/w_2064,h_1300,c_fill,f_auto,fl_lossy,q_auto/v1647835741/hiroshima/M_01457_001',
                 'foods' => null,
                 'address' => '1-2 Nakajimacho, Naka Ward, Hiroshima, Japan',
@@ -709,10 +701,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 24,
-                'title' => 'Pranzo a Hiroshima',
+                'title' => 'Lunch in Hiroshima',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => 'Okonomiyaki',
-                'address' => 'Ristorante Hiroshima, 456 Peace Avenue, Hiroshima, Japan',
+                'address' => 'Hiroshima Restaurant, 456 Peace Avenue, Hiroshima, Japan',
                 'latitude' => 34.3963,
                 'longitude' => 132.4594
             ],
@@ -720,7 +712,7 @@ class StopSeeder extends Seeder
             // Day 7: Visita a Osaka
             [
                 'day_id' => 25,
-                'title' => 'Esplorazione del Castello di Osaka',
+                'title' => 'Exploration of Osaka Castle',
                 'image' => 'https://www.lastampa.it/image/contentid/policy:1.35869340:1561542025/NX-VGG-GAL-G355552-shutterstock_39215380-355556.jpg?f=gallery_1280&h=702&w=1280&$p$f$h$w=44e99dd',
                 'foods' => null,
                 'address' => '1-1 Osakajo, Chuo Ward, Osaka, Japan',
@@ -729,7 +721,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 25,
-                'title' => 'Visita ai mercati di Dotonbori',
+                'title' => 'Visit to Dotonbori Markets',
                 'image' => 'https://res-2.cloudinary.com/jnto/image/upload/w_2064,h_1300,c_fill,f_auto,fl_lossy,q_auto/v1648006915/kyoto/H_00480_001',
                 'foods' => null,
                 'address' => 'Dotonbori, Chuo Ward, Osaka, Japan',
@@ -738,10 +730,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 25,
-                'title' => 'Pranzo a Osaka',
+                'title' => 'Lunch in Osaka',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
-                'address' => 'Ristorante Osaka, 789 Dotonbori, Osaka, Japan',
+                'foods' => 'Local cuisine',
+                'address' => 'Osaka Restaurant, 789 Dotonbori, Osaka, Japan',
                 'latitude' => 34.6687,
                 'longitude' => 135.5016
             ],
@@ -749,7 +741,7 @@ class StopSeeder extends Seeder
             // Day 8: Visita al villaggio di Shirakawa-go
             [
                 'day_id' => 26,
-                'title' => 'Esplorazione di Shirakawa-go',
+                'title' => 'Exploration of Shirakawa-go',
                 'image' => 'https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2023-08/shirakawago_1.jpg?itok=lXpf_XUo',
                 'foods' => null,
                 'address' => 'Shirakawa-go, Gifu Prefecture, Japan',
@@ -758,10 +750,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 26,
-                'title' => 'Pranzo in un ristorante locale',
+                'title' => 'Lunch at a Local Restaurant',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina tradizionale',
-                'address' => 'Ristorante Shirakawa, 123 Village Street, Shirakawa-go, Japan',
+                'foods' => 'Traditional cuisine',
+                'address' => 'Shirakawa Restaurant, 123 Village Street, Shirakawa-go, Japan',
                 'latitude' => 36.1341,
                 'longitude' => 136.8986
             ],
@@ -769,7 +761,7 @@ class StopSeeder extends Seeder
             // Day 9: Visita al Castello di Himeji
             [
                 'day_id' => 27,
-                'title' => 'Gita al Castello di Himeji',
+                'title' => 'Excursion to Himeji Castle',
                 'image' => 'https://matteoingiappone.s3.eu-central-1.amazonaws.com/wp-content/uploads/2020/03/Castello-di-Himeji-e1585668400382.jpg',
                 'foods' => null,
                 'address' => '68 Honmachi, Himeji, Hyogo, Japan',
@@ -778,10 +770,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 27,
-                'title' => 'Pranzo a Himeji',
+                'title' => 'Lunch in Himeji',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina giapponese',
-                'address' => 'Ristorante Himeji, 45 Castle Street, Himeji, Japan',
+                'foods' => 'Japanese cuisine',
+                'address' => 'Himeji Restaurant, 45 Castle Street, Himeji, Japan',
                 'latitude' => 34.8394,
                 'longitude' => 134.6939
             ],
@@ -789,7 +781,7 @@ class StopSeeder extends Seeder
             // Day 10: Ritorno
             [
                 'day_id' => 28,
-                'title' => 'Ritorno a Tokyo',
+                'title' => 'Return to Tokyo',
                 'image' => 'https://www.gotokyo.org/it/destinations/eastern-tokyo/images/area024_1000_78.jpg',
                 'foods' => null,
                 'address' => 'Shinjuku Granbell Hotel, 2-14-5 Shinjuku, Tokyo, Japan',
@@ -798,7 +790,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 28,
-                'title' => 'Partenza dall\'aeroporto di Tokyo',
+                'title' => 'Departure from Tokyo Airport',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
                 'address' => 'Narita International Airport, Narita, Chiba, Japan',
@@ -810,19 +802,19 @@ class StopSeeder extends Seeder
             // Day 1: Imbarco a Miami
             [
                 'day_id' => 29,
-                'title' => 'Imbarco a Miami',
+                'title' => 'Embarkation in Miami',
                 'image' => 'https://blog.cruisingjournal.com/wp-content/uploads/2021/01/miami-cruise-terminal.jpg',
                 'foods' => null,
-                'address' => 'Porto di Miami, Miami, FL, USA',
+                'address' => 'Port of Miami, Miami, FL, USA',
                 'latitude' => 25.7743,
                 'longitude' => -80.1937
             ],
             [
                 'day_id' => 29,
-                'title' => 'Cena di benvenuto a bordo',
+                'title' => 'Welcome Dinner Onboard',
                 'image' => 'https://www.costacrociere.it/content/dam/costa/costa-magazine/articles-magazine/costa-smeralda/food-experience/restaurant_m.jpg.image.694.390.low.jpg',
-                'foods' => 'Varietà di piatti internazionali',
-                'address' => 'Nave da crociera, Porto di Miami, Miami, FL, USA',
+                'foods' => 'Variety of international dishes',
+                'address' => 'Cruise Ship, Port of Miami, Miami, FL, USA',
                 'latitude' => 25.7743,
                 'longitude' => -80.1937
             ],
@@ -830,10 +822,10 @@ class StopSeeder extends Seeder
             // Day 2: Navigazione verso Nassau
             [
                 'day_id' => 30,
-                'title' => 'Navigazione verso Nassau',
+                'title' => 'Sailing to Nassau',
                 'image' => 'https://www.msccrociere.it/-/media/global-contents/destinations/ports/bahamas/nassau/cruise-to-nassau-bahamas.jpg?bc=transparent&as=1&dmc=0&iar=0&mh=1395&mw=2460&sc=0&thn=0&udi=0&hash=17811B7B0A2DDA970DA119B9A0538C85',
                 'foods' => null,
-                'address' => 'In mare aperto',
+                'address' => 'At Sea',
                 'latitude' => 25.0343,
                 'longitude' => -77.3963
             ],
@@ -841,7 +833,7 @@ class StopSeeder extends Seeder
             // Day 3: Visita a Nassau
             [
                 'day_id' => 31,
-                'title' => 'Visita a Nassau',
+                'title' => 'Visit to Nassau',
                 'image' => 'https://tempo.cdn.tambourine.com/windsong/media/bmot-islands-nassau-stay-quad-atlantis-65676e2f5d600.jpg',
                 'foods' => null,
                 'address' => 'Nassau, Bahamas',
@@ -850,10 +842,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 31,
-                'title' => 'Pranzo a Nassau',
+                'title' => 'Lunch in Nassau',
                 'image' => 'https://images.pexels.com/photos/1579739/pexels-photo-1579739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina caraibica',
-                'address' => 'Ristorante Nassau, 123 Bay Street, Nassau, Bahamas',
+                'foods' => 'Caribbean cuisine',
+                'address' => 'Nassau Restaurant, 123 Bay Street, Nassau, Bahamas',
                 'latitude' => 25.0343,
                 'longitude' => -77.3963
             ],
@@ -861,10 +853,10 @@ class StopSeeder extends Seeder
             // Day 4: Navigazione verso Cozumel
             [
                 'day_id' => 32,
-                'title' => 'Navigazione verso Cozumel',
+                'title' => 'Sailing to Cozumel',
                 'image' => 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/409280678.jpg?k=d77928add0e666828e05c603d3e682b78fe2f55d3e42a4557c41bdc2ba6a1734&o=&hp=1',
                 'foods' => null,
-                'address' => 'In mare aperto',
+                'address' => 'At Sea',
                 'latitude' => 22.7758,
                 'longitude' => -85.1638
             ],
@@ -872,19 +864,19 @@ class StopSeeder extends Seeder
             // Day 5: Visita a Cozumel
             [
                 'day_id' => 33,
-                'title' => 'Visita a Cozumel',
+                'title' => 'Visit to Cozumel',
                 'image' => 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/183417546.jpg?k=896c4143b4dd728c4ea0d340ba15e23f6ed1572ccb19e6a2b50a60eb3f4a4071&o=&hp=1',
                 'foods' => null,
-                'address' => 'Cozumel, Messico',
+                'address' => 'Cozumel, Mexico',
                 'latitude' => 20.4897,
                 'longitude' => -86.9511
             ],
             [
                 'day_id' => 33,
-                'title' => 'Snorkeling a Cozumel',
+                'title' => 'Snorkeling in Cozumel',
                 'image' => 'https://images.squarespace-cdn.com/content/v1/5707bd62b654f9540cad0a50/1610986066541-X8128QCFWUSS6Z5MYCOO/sea-turtle-columbia-reef-cozumel.jpg',
                 'foods' => null,
-                'address' => 'Sito di snorkeling, Cozumel, Messico',
+                'address' => 'Snorkeling Site, Cozumel, Mexico',
                 'latitude' => 20.4897,
                 'longitude' => -86.9511
             ],
@@ -892,10 +884,10 @@ class StopSeeder extends Seeder
             // Day 6: Navigazione verso Roatán
             [
                 'day_id' => 34,
-                'title' => 'Navigazione verso Roatán',
+                'title' => 'Sailing to Roatán',
                 'image' => 'https://media.tacdn.com/media/attractions-content--1x-1/10/45/06/d1.jpg',
                 'foods' => null,
-                'address' => 'In mare aperto',
+                'address' => 'At Sea',
                 'latitude' => 16.2800,
                 'longitude' => -85.6000
             ],
@@ -903,7 +895,7 @@ class StopSeeder extends Seeder
             // Day 7: Visita a Roatán
             [
                 'day_id' => 35,
-                'title' => 'Visita a Roatán',
+                'title' => 'Visit to Roatán',
                 'image' => 'https://www.grandroatanresortandspa.com/images/1700-960/20230907-kimpton-grand-roatan-0802e-drone-hi-res-4c94a381.jpg',
                 'foods' => null,
                 'address' => 'Roatán, Honduras',
@@ -912,10 +904,10 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 35,
-                'title' => 'Relax in spiaggia a Roatán',
+                'title' => 'Beach Relaxation in Roatán',
                 'image' => 'https://i0.wp.com/passporterapp.com/it/blog/wp-content/uploads/2023/08/spiagge-in-honduras-roatan.jpg?resize=1024%2C682&ssl=1',
                 'foods' => null,
-                'address' => 'Spiaggia di West Bay, Roatán, Honduras',
+                'address' => 'West Bay Beach, Roatán, Honduras',
                 'latitude' => 16.2953,
                 'longitude' => -86.5270
             ],
@@ -923,10 +915,10 @@ class StopSeeder extends Seeder
             // Day 8: Navigazione verso Miami
             [
                 'day_id' => 36,
-                'title' => 'Navigazione verso Miami',
+                'title' => 'Sailing to Miami',
                 'image' => 'https://images5.bovpg.net/r/back/it/sale/5524def409c01o.jpg',
                 'foods' => null,
-                'address' => 'In mare aperto',
+                'address' => 'At Sea',
                 'latitude' => 25.8000,
                 'longitude' => -80.2000
             ],
@@ -934,19 +926,19 @@ class StopSeeder extends Seeder
             // Day 9: Relax sulla nave
             [
                 'day_id' => 37,
-                'title' => 'Relax sulla nave',
+                'title' => 'Relaxing Onboard',
                 'image' => 'https://www.ncl.com/sites/default/files/700x745_HeaderImage_Escape2.jpg',
                 'foods' => null,
-                'address' => 'Nave da crociera, In mare aperto',
+                'address' => 'Cruise Ship, At Sea',
                 'latitude' => 25.8000,
                 'longitude' => -80.2000
             ],
             [
                 'day_id' => 37,
-                'title' => 'Cena di gala',
+                'title' => 'Gala Dinner',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina gourmet',
-                'address' => 'Nave da crociera, In mare aperto',
+                'foods' => 'Gourmet cuisine',
+                'address' => 'Cruise Ship, At Sea',
                 'latitude' => 25.8000,
                 'longitude' => -80.2000
             ],
@@ -954,19 +946,19 @@ class StopSeeder extends Seeder
             // Day 10: Sbarco a Miami
             [
                 'day_id' => 38,
-                'title' => 'Sbarco a Miami',
+                'title' => 'Disembarkation in Miami',
                 'image' => 'https://www.miamiandbeaches.com/getmedia/f35e8173-0df2-4bed-86dc-727805570021/Miami-Aerial-Photos-Golden-Dusk-Photography-1440x900.jpg?width=1000&resizemode=force',
                 'foods' => null,
-                'address' => 'Porto di Miami, Miami, FL, USA',
+                'address' => 'Port of Miami, Miami, FL, USA',
                 'latitude' => 25.7743,
                 'longitude' => -80.1937
             ],
             [
                 'day_id' => 38,
-                'title' => 'Trasferimento all\'aeroporto',
+                'title' => 'Transfer to the Airport',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
-                'address' => 'Aeroporto Internazionale di Miami, Miami, FL, USA',
+                'address' => 'Miami International Airport, Miami, FL, USA',
                 'latitude' => 25.7959,
                 'longitude' => -80.2870
             ],
@@ -975,28 +967,28 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Reykjavik
             [
                 'day_id' => 39,
-                'title' => 'Arrivo a Reykjavik',
+                'title' => 'Arrival in Reykjavik',
                 'image' => 'https://images.prismic.io/visiticeland/fed7e105-3226-4c2f-a764-78f5863ca6ba_reykjavik.png?auto=compress,format',
                 'foods' => null,
-                'address' => 'Reykjavik, Islanda',
+                'address' => 'Reykjavik, Iceland',
                 'latitude' => 64.1355,
                 'longitude' => -21.8954
             ],
             [
                 'day_id' => 39,
-                'title' => 'Cena di benvenuto',
+                'title' => 'Welcome Dinner',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Specialità islandesi',
-                'address' => 'Ristorante Reykjavik, 101 Reykjavik, Islanda',
+                'foods' => 'Icelandic specialties',
+                'address' => 'Reykjavik Restaurant, 101 Reykjavik, Iceland',
                 'latitude' => 64.1355,
                 'longitude' => -21.8954
             ],
             [
                 'day_id' => 39,
-                'title' => 'Passeggiata serale',
+                'title' => 'Evening Stroll',
                 'image' => 'https://thetourguy.com/wp-content/uploads/2023/01/WTS-Reykjavik-feature-1440-675.jpg',
                 'foods' => null,
-                'address' => 'Laugavegur, Reykjavik, Islanda',
+                'address' => 'Laugavegur, Reykjavik, Iceland',
                 'latitude' => 64.1355,
                 'longitude' => -21.8954
             ],
@@ -1004,28 +996,28 @@ class StopSeeder extends Seeder
             // Day 2: Visita alla Laguna Blu
             [
                 'day_id' => 40,
-                'title' => 'Visita alla Laguna Blu',
+                'title' => 'Visit to the Blue Lagoon',
                 'image' => 'https://guidetoiceland.imgix.net/352080/x/0/la-guida-completa-alla-laguna-blu-7?ixlib=php-3.3.0&w=883',
-                'foods' => 'Snack e bevande disponibili',
-                'address' => 'Laguna Blu, 240 Grindavik, Islanda',
+                'foods' => 'Snacks and drinks available',
+                'address' => 'Blue Lagoon, 240 Grindavik, Iceland',
                 'latitude' => 63.8804,
                 'longitude' => -22.4495
             ],
             [
                 'day_id' => 40,
-                'title' => 'Pranzo al ristorante',
+                'title' => 'Lunch at the Restaurant',
                 'image' => 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/188422136.jpg?k=9e146f7c2d46989bfd712b5adf77bcbdac28bdc9c7935ce85e5f0b4c0e8834f2&o=&hp=1',
-                'foods' => 'Cucina islandese e internazionale',
-                'address' => 'Laguna Blu, 240 Grindavik, Islanda',
+                'foods' => 'Icelandic and international cuisine',
+                'address' => 'Blue Lagoon, 240 Grindavik, Iceland',
                 'latitude' => 63.8804,
                 'longitude' => -22.4495
             ],
             [
                 'day_id' => 40,
-                'title' => 'Relax e spa alla Laguna Blu',
+                'title' => 'Relaxation and Spa at the Blue Lagoon',
                 'image' => 'https://i.etsystatic.com/8026687/r/il/dc4060/1265078092/il_570xN.1265078092_5dtr.jpg',
                 'foods' => null,
-                'address' => 'Laguna Blu, 240 Grindavik, Islanda',
+                'address' => 'Blue Lagoon, 240 Grindavik, Iceland',
                 'latitude' => 63.8804,
                 'longitude' => -22.4495
             ],
@@ -1036,16 +1028,16 @@ class StopSeeder extends Seeder
                 'title' => 'Geysir',
                 'image' => 'https://images.lonelyplanetitalia.it/static/places/geysir-2166.jpg?q=90&p=2400%7C1350%7Cmax&s=2d7361a24d1d19de323ed0a879948017',
                 'foods' => null,
-                'address' => 'Haukadalur, Islanda',
+                'address' => 'Haukadalur, Iceland',
                 'latitude' => 64.3136,
                 'longitude' => -20.3024
             ],
             [
                 'day_id' => 41,
-                'title' => 'Cascata Gullfoss',
+                'title' => 'Gullfoss Waterfall',
                 'image' => 'https://www.esperienzaviaggio.it/wp-content/uploads/2023/03/Europa-Islanda-circolo-oro-cascate-Gullfoss-01.webp',
                 'foods' => null,
-                'address' => 'Cascata Gullfoss, 801 Selfoss, Islanda',
+                'address' => 'Gullfoss Waterfall, 801 Selfoss, Iceland',
                 'latitude' => 64.3275,
                 'longitude' => -20.1200
             ],
@@ -1054,16 +1046,16 @@ class StopSeeder extends Seeder
                 'title' => 'Þingvellir National Park',
                 'image' => 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/2c/2a/4f.jpg',
                 'foods' => null,
-                'address' => 'Þingvellir, 801 Selfoss, Islanda',
+                'address' => 'Þingvellir, 801 Selfoss, Iceland',
                 'latitude' => 64.2559,
                 'longitude' => -21.1290
             ],
             [
                 'day_id' => 41,
-                'title' => 'Cena a Þingvellir',
+                'title' => 'Dinner at Þingvellir',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Piatti tipici islandesi',
-                'address' => 'Ristorante Þingvellir, 801 Selfoss, Islanda',
+                'foods' => 'Traditional Icelandic dishes',
+                'address' => 'Þingvellir Restaurant, 801 Selfoss, Iceland',
                 'latitude' => 64.2559,
                 'longitude' => -21.1290
             ],
@@ -1071,37 +1063,37 @@ class StopSeeder extends Seeder
             // Day 4: Esplorazione del sud
             [
                 'day_id' => 42,
-                'title' => 'Cascata Seljalandsfoss',
+                'title' => 'Seljalandsfoss Waterfall',
                 'image' => 'https://www.islanda.it/uploads/media/islanda-cascata-seljalandsfoss-65b8b13cb8df5958442229.jpg',
                 'foods' => null,
-                'address' => 'Cascata Seljalandsfoss, 861 Hvolsvöllur, Islanda',
+                'address' => 'Seljalandsfoss Waterfall, 861 Hvolsvöllur, Iceland',
                 'latitude' => 63.6156,
                 'longitude' => -19.9926
             ],
             [
                 'day_id' => 42,
-                'title' => 'Cascata Skógafoss',
+                'title' => 'Skógafoss Waterfall',
                 'image' => 'https://www.viaggioinislanda.it/wp-content/uploads/waterfall-in-iceland-s-Skogafoss-876x575.jpg',
                 'foods' => null,
-                'address' => 'Cascata Skógafoss, 861 Skógar, Islanda',
+                'address' => 'Skógafoss Waterfall, 861 Skógar, Iceland',
                 'latitude' => 63.5321,
                 'longitude' => -19.5114
             ],
             [
                 'day_id' => 42,
-                'title' => 'Spiaggia nera di Reynisfjara',
+                'title' => 'Reynisfjara Black Sand Beach',
                 'image' => 'https://www.ifrattempidellamiavita.com/wp-content/uploads/2022/03/Reynisfjara.jpg',
                 'foods' => null,
-                'address' => 'Reynisfjara, Vik, Islanda',
+                'address' => 'Reynisfjara, Vik, Iceland',
                 'latitude' => 63.4064,
                 'longitude' => -19.0708
             ],
             [
                 'day_id' => 42,
-                'title' => 'Pranzo a Vik',
+                'title' => 'Lunch in Vik',
                 'image' => 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Specialità locali',
-                'address' => 'Ristorante Vik, Vik í Mýrdal, Islanda',
+                'foods' => 'Local specialties',
+                'address' => 'Vik Restaurant, Vik í Mýrdal, Iceland',
                 'latitude' => 63.4184,
                 'longitude' => -19.0064
             ],
@@ -1109,28 +1101,28 @@ class StopSeeder extends Seeder
             // Day 5: Visita alla laguna glaciale
             [
                 'day_id' => 43,
-                'title' => 'Laguna Glaciale di Jökulsárlón',
+                'title' => 'Jökulsárlón Glacier Lagoon',
                 'image' => 'https://arcticshorex.com/wp-content/uploads/2020/07/Jokulsarlon-Glacial-Lagoon-5-1024x576.jpg',
                 'foods' => null,
-                'address' => 'Jökulsárlón, 781 Höfn, Islanda',
+                'address' => 'Jökulsárlón, 781 Höfn, Iceland',
                 'latitude' => 64.0481,
                 'longitude' => -16.1791
             ],
             [
                 'day_id' => 43,
-                'title' => 'Giro in barca tra gli iceberg',
+                'title' => 'Boat Tour Among the Icebergs',
                 'image' => 'https://www.viaggioinislanda.it/wp-content/uploads/attraversamento-della-laguna.jpg',
                 'foods' => null,
-                'address' => 'Laguna Glaciale di Jökulsárlón, 781 Höfn, Islanda',
+                'address' => 'Jökulsárlón Glacier Lagoon, 781 Höfn, Iceland',
                 'latitude' => 64.0481,
                 'longitude' => -16.1791
             ],
             [
                 'day_id' => 43,
-                'title' => 'Spiaggia di Diamond Beach',
+                'title' => 'Diamond Beach',
                 'image' => 'https://difotoediviaggi.it/images/foto-articoli/islanda-diamond-beac/diamond-spiaggia-islanda.webp',
                 'foods' => null,
-                'address' => 'Diamond Beach, Höfn, Islanda',
+                'address' => 'Diamond Beach, Höfn, Iceland',
                 'latitude' => 64.0444,
                 'longitude' => -16.1824
             ],
@@ -1138,28 +1130,28 @@ class StopSeeder extends Seeder
             // Day 6: Escursione sui ghiacciai
             [
                 'day_id' => 44,
-                'title' => 'Escursione sui Ghiacciai',
+                'title' => 'Glacier Hike',
                 'image' => 'https://www.eleonoraongaro.it/wp-content/uploads/2021/02/Tour-nelle-Ice-Caves-in-Islanda-1030x687.jpg',
                 'foods' => null,
-                'address' => 'Ghiacciaio Vatnajökull, Islanda',
+                'address' => 'Vatnajökull Glacier, Iceland',
                 'latitude' => 64.1342,
                 'longitude' => -16.9830
             ],
             [
                 'day_id' => 44,
-                'title' => 'Visita alla grotta di ghiaccio',
+                'title' => 'Visit to the Ice Cave',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/56/70/39/caption.jpg?w=1200&h=-1&s=1',
                 'foods' => null,
-                'address' => 'Grotta di Ghiaccio, Vatnajökull, Islanda',
+                'address' => 'Ice Cave, Vatnajökull, Iceland',
                 'latitude' => 64.1342,
                 'longitude' => -16.9830
             ],
             [
                 'day_id' => 44,
-                'title' => 'Aurora Boreale',
+                'title' => 'Northern Lights',
                 'image' => 'https://www.ilviaggiatore-magazine.it/wp-content/uploads/2022/11/AdobeStock_539954995-ACQUISTATA-RIDOTTA.jpg',
                 'foods' => null,
-                'address' => 'Ritrovo per l\'Aurora Boreale, Islanda',
+                'address' => 'Northern Lights Viewing Spot, Iceland',
                 'latitude' => 64.1355,
                 'longitude' => -21.8954
             ],
@@ -1167,28 +1159,28 @@ class StopSeeder extends Seeder
             // Day 7: Visita alla Penisola di Snæfellsnes
             [
                 'day_id' => 45,
-                'title' => 'Penisola di Snæfellsnes',
+                'title' => 'Snæfellsnes Peninsula',
                 'image' => 'https://viaggiadipiu.it/wp-content/uploads/2021/10/IMG_8636-e1635530130806.jpg',
                 'foods' => null,
-                'address' => 'Penisola di Snæfellsnes, Islanda',
+                'address' => 'Snæfellsnes Peninsula, Iceland',
                 'latitude' => 64.9193,
                 'longitude' => -23.7746
             ],
             [
                 'day_id' => 45,
-                'title' => 'Cascata Arnarstapi',
+                'title' => 'Arnarstapi Waterfall',
                 'image' => 'https://media.istockphoto.com/id/1466706569/it/foto/cascate-sulla-spiaggia-di-arnarstapi.jpg?s=612x612&w=0&k=20&c=E7srNoVzEIt3wzS7rYxENJS32pxvbPhFZe2UEUk2J2A=',
                 'foods' => null,
-                'address' => 'Arnarstapi, 356 Snæfellsbær, Islanda',
+                'address' => 'Arnarstapi, 356 Snæfellsbær, Iceland',
                 'latitude' => 64.7662,
                 'longitude' => -23.6226
             ],
             [
                 'day_id' => 45,
-                'title' => 'Parco Nazionale di Snæfellsjökull',
+                'title' => 'Snæfellsjökull National Park',
                 'image' => 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6c/33/4e.jpg',
                 'foods' => null,
-                'address' => 'Parco Nazionale di Snæfellsjökull, Islanda',
+                'address' => 'Snæfellsjökull National Park, Iceland',
                 'latitude' => 64.7514,
                 'longitude' => -23.7587
             ],
@@ -1196,57 +1188,57 @@ class StopSeeder extends Seeder
             // Day 8: Esplorazione del nord
             [
                 'day_id' => 46,
-                'title' => 'Visita ad Akureyri',
+                'title' => 'Visit to Akureyri',
                 'image' => 'https://www.akureyriguide.is/wp-content/uploads/2020/02/DJI_0038-1-1024x767.jpg',
                 'foods' => null,
-                'address' => 'Akureyri, Islanda',
+                'address' => 'Akureyri, Iceland',
                 'latitude' => 65.6831,
-                'longitude' => -18.1100
+                'longitude' => -18.1106
             ],
             [
                 'day_id' => 46,
-                'title' => 'Lago Mývatn',
-                'image' => 'https://travelourplanet.com/wp-content/uploads/2022/02/Viti-Crater-or-Krafla-Crater-Lake-in-Late-Spring-Krafla-Caldera-Myvatn-Area-North-Iceland.jpg',
+                'title' => 'Visit to Myvatn',
+                'image' => 'https://www.guidetoiceland.is/img/640/4196/233580.jpg',
                 'foods' => null,
-                'address' => 'Lago Mývatn, Islanda',
-                'latitude' => 65.6002,
-                'longitude' => -17.0000
+                'address' => 'Lake Mývatn, Iceland',
+                'latitude' => 65.6408,
+                'longitude' => -17.0067
             ],
             [
                 'day_id' => 46,
-                'title' => 'Crateri di Hverfjall e Dimmuborgir',
-                'image' => 'https://www.trekkaholic.it/media/images/Trekking-Islanda-Hverfjall-Dimmuborgir.jpg',
+                'title' => 'Visit to Húsavík',
+                'image' => 'https://media.istockphoto.com/id/1179111374/photo/husavik.jpg?s=612x612&w=0&k=20&c=fl8Dw9uA-nwF4_fjeebsytWwx5xVbcMhszDZgGACDQQ=',
                 'foods' => null,
-                'address' => 'Hverfjall e Dimmuborgir, Islanda',
-                'latitude' => 65.6413,
-                'longitude' => -16.9981
+                'address' => 'Húsavík, Iceland',
+                'latitude' => 66.0424,
+                'longitude' => -17.3381
             ],
 
             // Day 9: Giornata di relax
             [
                 'day_id' => 47,
-                'title' => 'Relax a Reykjavik',
-                'image' => 'https://www.viaggipronti.it/wp-content/uploads/2022/09/iceland-g975655617_1920.jpg',
+                'title' => 'Visit to Reykjavík',
+                'image' => 'https://media.istockphoto.com/id/1489366241/photo/sunset-over-reykjavik.jpg?s=612x612&w=0&k=20&c=rb7nWyuHM5yZpNxHnHkIS9GJPfpwBIZFLv0VvFD3dVA=',
                 'foods' => null,
-                'address' => 'Reykjavik, Islanda',
+                'address' => 'Reykjavík, Iceland',
                 'latitude' => 64.1355,
                 'longitude' => -21.8954
             ],
             [
                 'day_id' => 47,
-                'title' => 'Shopping e passeggiata',
-                'image' => 'https://media.tacdn.com/media/attractions-splice-spp-720x480/10/3f/b6/02.jpg',
+                'title' => 'Departure',
+                'image' => 'https://media.istockphoto.com/id/958557178/photo/plane-takeoff.jpg?s=612x612&w=0&k=20&c=uq0XfcS5bJJgC55uRUX7paBdp3g5RvLeGkwZ6gr-j8=',
                 'foods' => null,
-                'address' => 'Laugavegur, Reykjavik, Islanda',
-                'latitude' => 64.1355,
-                'longitude' => -21.8954
+                'address' => 'Keflavík International Airport, Iceland',
+                'latitude' => 64.0136,
+                'longitude' => -22.5671
             ],
             [
                 'day_id' => 47,
-                'title' => 'Museo Nazionale d\'Islanda',
+                'title' => 'National Museum of Iceland',
                 'image' => 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/95/1d/ba.jpg',
                 'foods' => null,
-                'address' => 'Museo Nazionale d\'Islanda, Reykjavik, Islanda',
+                'address' => 'National Museum of Iceland, Reykjavik, Iceland',
                 'latitude' => 64.1428,
                 'longitude' => -21.9223
             ],
@@ -1254,10 +1246,10 @@ class StopSeeder extends Seeder
             // Day 10: Ritorno
             [
                 'day_id' => 48,
-                'title' => 'Ritorno a casa',
+                'title' => 'Return Home',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
-                'address' => 'Aeroporto di Keflavik, Islanda',
+                'address' => 'Keflavik Airport, Iceland',
                 'latitude' => 63.9850,
                 'longitude' => -22.6056
             ],
@@ -1266,28 +1258,28 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Firenze
             [
                 'day_id' => 49,
-                'title' => 'Arrivo a Firenze',
+                'title' => 'Arrival in Florence',
                 'image' => 'https://tourismmedia.italia.it/is/image/mitur/20210401173629-firenze-toscana-gettyimages-1145040590?wid=1600&hei=900&fit=constrain,1&fmt=webp',
                 'foods' => null,
-                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Firenze FI, Italia',
+                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
             [
                 'day_id' => 49,
-                'title' => 'Cena di benvenuto',
+                'title' => 'Welcome Dinner',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina tipica toscana',
-                'address' => 'Ristorante Firenze, Via della Vigna Nuova, 50123 Firenze FI, Italia',
+                'foods' => 'Typical Tuscan Cuisine',
+                'address' => 'Restaurant Firenze, Via della Vigna Nuova, 50123 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
             [
                 'day_id' => 49,
-                'title' => 'Passeggiata serale',
+                'title' => 'Evening Walk',
                 'image' => 'https://d3evrc0h48esvv.cloudfront.net//7448058/iStock-857440936.jpg?w=1440&h=1039&q=60&fm=jpg&t=1694438347542',
                 'foods' => null,
-                'address' => 'Piazza della Signoria, 50122 Firenze FI, Italia',
+                'address' => 'Piazza della Signoria, 50122 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
@@ -1295,37 +1287,37 @@ class StopSeeder extends Seeder
             // Day 2: Visita di Firenze
             [
                 'day_id' => 50,
-                'title' => 'Visita al Duomo di Firenze',
+                'title' => 'Visit to the Florence Cathedral',
                 'image' => 'https://www.shutterstock.com/image-photo/aerial-view-florence-cathedral-duomo-600nw-2373587937.jpg',
                 'foods' => null,
-                'address' => 'Piazza del Duomo, 50122 Firenze FI, Italia',
+                'address' => 'Piazza del Duomo, 50122 Florence FI, Italy',
                 'latitude' => 43.7731,
                 'longitude' => 11.2559
             ],
             [
                 'day_id' => 50,
-                'title' => 'Galleria degli Uffizi',
+                'title' => 'Uffizi Gallery',
                 'image' => 'https://www.toscana.info/wp-content/uploads/sites/123/firenze-uffizi-galleria-hd.jpg',
                 'foods' => null,
-                'address' => 'Piazzale degli Uffizi, 50122 Firenze FI, Italia',
+                'address' => 'Piazzale degli Uffizi, 50122 Florence FI, Italy',
                 'latitude' => 43.7666,
                 'longitude' => 11.2556
             ],
             [
                 'day_id' => 50,
-                'title' => 'Passeggiata lungo l\'Arno',
+                'title' => 'Stroll along the Arno',
                 'image' => 'https://live.staticflickr.com/5217/5411852662_42bdbfa01d_b.jpg',
                 'foods' => null,
-                'address' => 'Ponte Vecchio, 50125 Firenze FI, Italia',
+                'address' => 'Ponte Vecchio, 50125 Florence FI, Italy',
                 'latitude' => 43.7678,
                 'longitude' => 11.2536
             ],
             [
                 'day_id' => 50,
-                'title' => 'Pranzo a Firenze',
+                'title' => 'Lunch in Florence',
                 'image' => 'https://latavernadelconte.com/wp-content/uploads/2022/04/ristorante-tipico-abruzzese-5.jpeg',
-                'foods' => 'Piatti tipici fiorentini',
-                'address' => 'Ristorante Firenze, Via dei Calzaiuoli, 50122 Firenze FI, Italia',
+                'foods' => 'Typical Florentine Dishes',
+                'address' => 'Restaurant Firenze, Via dei Calzaiuoli, 50122 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
@@ -1336,34 +1328,34 @@ class StopSeeder extends Seeder
                 'title' => 'Piazza del Campo',
                 'image' => 'https://www.10cose.it/wp-content/uploads/2016/04/piazza-del-campo-siena-nove-spicchi.jpg',
                 'foods' => null,
-                'address' => 'Piazza del Campo, 53100 Siena SI, Italia',
+                'address' => 'Piazza del Campo, 53100 Siena SI, Italy',
                 'latitude' => 43.3187,
                 'longitude' => 11.3304
             ],
             [
                 'day_id' => 51,
-                'title' => 'Duomo di Siena',
+                'title' => 'Siena Cathedral',
                 'image' => 'https://www.villadisotto.it/wp-content/uploads/2020/06/Duomo_di_Siena-dintorni.jpg',
                 'foods' => null,
-                'address' => 'Piazza del Duomo, 53100 Siena SI, Italia',
+                'address' => 'Piazza del Duomo, 53100 Siena SI, Italy',
                 'latitude' => 43.3187,
                 'longitude' => 11.3305
             ],
             [
                 'day_id' => 51,
-                'title' => 'Pranzo a Siena',
+                'title' => 'Lunch in Siena',
                 'image' => 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Specialità senesi',
-                'address' => 'Ristorante Siena, Piazza del Campo, 53100 Siena SI, Italia',
+                'foods' => 'Sienese Specialties',
+                'address' => 'Restaurant Siena, Piazza del Campo, 53100 Siena SI, Italy',
                 'latitude' => 43.3187,
                 'longitude' => 11.3304
             ],
             [
                 'day_id' => 51,
-                'title' => 'Visita al Museo dell\'Opera',
+                'title' => 'Visit to the Opera Museum',
                 'image' => 'https://toscanasecrets.com/wp-content/uploads/2024/02/duomo-siena-museo-opera-toscana-secrets-26.jpg',
                 'foods' => null,
-                'address' => 'Piazza del Duomo, 53100 Siena SI, Italia',
+                'address' => 'Piazza del Duomo, 53100 Siena SI, Italy',
                 'latitude' => 43.3187,
                 'longitude' => 11.3305
             ],
@@ -1371,28 +1363,28 @@ class StopSeeder extends Seeder
             // Day 4: Tour delle colline del Chianti
             [
                 'day_id' => 52,
-                'title' => 'Degustazione di vini del Chianti',
+                'title' => 'Chianti Wine Tasting',
                 'image' => 'https://www.winedering.com/uploads/travels/4749/thumb/tenutacasenuovedegustazionephstefanocasati03946.jpg.webp',
-                'foods' => 'Vini locali e formaggi',
-                'address' => 'Chianti, Toscana, Italia',
+                'foods' => 'Local Wines and Cheeses',
+                'address' => 'Chianti, Tuscany, Italy',
                 'latitude' => 43.4371,
                 'longitude' => 11.3284
             ],
             [
                 'day_id' => 52,
-                'title' => 'Visita a una cantina locale',
+                'title' => 'Visit to a Local Winery',
                 'image' => 'https://podereigiganti.it/wp-content/uploads/2018/06/catine-in-toscana-cantina-petra-di-suvereto.jpg',
-                'foods' => 'Pranzo con prodotti tipici',
-                'address' => 'Cantina Chianti, Toscana, Italia',
+                'foods' => 'Lunch with Local Products',
+                'address' => 'Chianti Winery, Tuscany, Italy',
                 'latitude' => 43.4371,
                 'longitude' => 11.3284
             ],
             [
                 'day_id' => 52,
-                'title' => 'Passeggiata tra i vigneti',
+                'title' => 'Walk Among the Vineyards',
                 'image' => 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/11/a9/28/2a.jpg',
                 'foods' => null,
-                'address' => 'Chianti, Toscana, Italia',
+                'address' => 'Chianti, Tuscany, Italy',
                 'latitude' => 43.4371,
                 'longitude' => 11.3284
             ],
@@ -1400,10 +1392,10 @@ class StopSeeder extends Seeder
             // Day 5: Visita a Pisa
             [
                 'day_id' => 53,
-                'title' => 'Torre di Pisa',
+                'title' => 'Leaning Tower of Pisa',
                 'image' => 'https://www.tuscanypeople.com/wp-content/uploads/2016/03/torre_di_pisa.jpg',
                 'foods' => null,
-                'address' => 'Piazza dei Miracoli, 56126 Pisa PI, Italia',
+                'address' => 'Piazza dei Miracoli, 56126 Pisa PI, Italy',
                 'latitude' => 43.7228,
                 'longitude' => 10.3966
             ],
@@ -1412,25 +1404,16 @@ class StopSeeder extends Seeder
                 'title' => 'Piazza dei Miracoli',
                 'image' => 'https://tourismmedia.italia.it/is/image/mitur/20210310174409-shutterstock-353262566?wid=800&hei=500&fit=constrain,1&fmt=webp',
                 'foods' => null,
-                'address' => 'Piazza dei Miracoli, 56126 Pisa PI, Italia',
+                'address' => 'Piazza dei Miracoli, 56126 Pisa PI, Italy',
                 'latitude' => 43.7228,
                 'longitude' => 10.3966
             ],
             [
                 'day_id' => 53,
-                'title' => 'Pranzo a Pisa',
+                'title' => 'Lunch in Pisa',
                 'image' => 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Specialità pisane',
-                'address' => 'Ristorante Pisa, Via Santa Maria, 56126 Pisa PI, Italia',
-                'latitude' => 43.7228,
-                'longitude' => 10.3966
-            ],
-            [
-                'day_id' => 53,
-                'title' => 'Museo dell\'Opera del Duomo',
-                'image' => 'https://www.opapisa.it/wp-content/gallery/museoopera/MOD2020_SITO_13.jpg',
-                'foods' => null,
-                'address' => 'Piazza del Duomo, 56126 Pisa PI, Italia',
+                'foods' => 'Tuscan Cuisine',
+                'address' => 'Restaurant Pisa, Via dei Mille, 56125 Pisa PI, Italy',
                 'latitude' => 43.7228,
                 'longitude' => 10.3966
             ],
@@ -1438,28 +1421,28 @@ class StopSeeder extends Seeder
             // Day 6: Visita a Lucca
             [
                 'day_id' => 54,
-                'title' => 'Passeggiata sulle mura di Lucca',
-                'image' => 'https://lucca.guidatoscana.it/obj/image/blog/x/mura-di-lucca.jpeg',
+                'title' => 'Departure from Florence',
+                'image' => 'https://images.pexels.com/photos/3415648/pexels-photo-3415648.jpeg?auto=compress&cs=tinysrgb&w=800',
                 'foods' => null,
-                'address' => 'Mura di Lucca, 55100 Lucca LU, Italia',
-                'latitude' => 43.8438,
-                'longitude' => 10.5075
+                'address' => 'Florence Airport, Italy',
+                'latitude' => 43.8100,
+                'longitude' => 11.2042
             ],
             [
                 'day_id' => 54,
-                'title' => 'Visita al centro storico di Lucca',
+                'title' => 'Visit to Lucca’s Historic Center',
                 'image' => 'https://www.edreams.it/blog/wp-content/uploads/sites/7/2021/01/shutterstock_1257185803.jpg',
                 'foods' => null,
-                'address' => 'Centro Storico Lucca, 55100 Lucca LU, Italia',
+                'address' => 'Centro Storico Lucca, 55100 Lucca LU, Italy',
                 'latitude' => 43.8438,
                 'longitude' => 10.5075
             ],
             [
                 'day_id' => 54,
-                'title' => 'Pranzo a Lucca',
+                'title' => 'Lunch in Lucca',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Specialità lucchese',
-                'address' => 'Ristorante Lucca, Piazza San Michele, 55100 Lucca LU, Italia',
+                'foods' => 'Lucchese Specialties',
+                'address' => 'Restaurant Lucca, Piazza San Michele, 55100 Lucca LU, Italy',
                 'latitude' => 43.8438,
                 'longitude' => 10.5075
             ],
@@ -1467,28 +1450,28 @@ class StopSeeder extends Seeder
             // Day 7: Gita a San Gimignano
             [
                 'day_id' => 55,
-                'title' => 'Borgo medievale di San Gimignano',
+                'title' => 'Medieval Village of San Gimignano',
                 'image' => 'https://media.e-borghi.com/public/borghi/04_12_18-12_22_55-s11d7392a039a5e71f95ebf992e68949.jpg',
                 'foods' => null,
-                'address' => 'San Gimignano, 53037 Siena SI, Italia',
+                'address' => 'San Gimignano, 53037 Siena SI, Italy',
                 'latitude' => 43.4671,
                 'longitude' => 11.3298
             ],
             [
                 'day_id' => 55,
-                'title' => 'Collegiata di San Gimignano',
+                'title' => 'Collegiata of San Gimignano',
                 'image' => 'https://www.lanostra.it/wp-content/uploads/2017/08/duomo-san-gimignano-basilica-santa-maria-assunta.jpg',
                 'foods' => null,
-                'address' => 'Piazza del Duomo, 53037 San Gimignano SI, Italia',
+                'address' => 'Piazza del Duomo, 53037 San Gimignano SI, Italy',
                 'latitude' => 43.4671,
                 'longitude' => 11.3298
             ],
             [
                 'day_id' => 55,
-                'title' => 'Pranzo a San Gimignano',
+                'title' => 'Lunch in San Gimignano',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina toscana',
-                'address' => 'Ristorante San Gimignano, Piazza della Cisterna, 53037 San Gimignano SI, Italia',
+                'foods' => 'Tuscan Cuisine',
+                'address' => 'Restaurant San Gimignano, Piazza della Cisterna, 53037 San Gimignano SI, Italy',
                 'latitude' => 43.4671,
                 'longitude' => 11.3298
             ],
@@ -1496,28 +1479,28 @@ class StopSeeder extends Seeder
             // Day 8: Ritorno
             [
                 'day_id' => 56,
-                'title' => 'Ritorno a Firenze',
+                'title' => 'Return to Florence',
                 'image' => 'https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw979783bf/Destinazioni/Firenze/florence-or-firenze-sunset-aerial-cityscape-tuscan-PWYT8CR.jpg',
                 'foods' => null,
-                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Firenze FI, Italia',
+                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
             [
                 'day_id' => 56,
-                'title' => 'Preparativi per la partenza',
+                'title' => 'Preparation for Departure',
                 'image' => 'https://img.grouponcdn.com/deal/36vM1vDUTwZBGVY82Xsvyo7VrKkS/36-1500x900/v1/t600x362.jpg',
                 'foods' => null,
-                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Firenze FI, Italia',
+                'address' => 'Hotel Firenze, Piazza della Signoria, 50122 Florence FI, Italy',
                 'latitude' => 43.7696,
                 'longitude' => 11.2558
             ],
             [
                 'day_id' => 56,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'foods' => null,
-                'address' => 'Aeroporto di Firenze, Via del Termine, 50127 Firenze FI, Italia',
+                'address' => 'Florence Airport, Via del Termine, 50127 Florence FI, Italy',
                 'latitude' => 43.8104,
                 'longitude' => 11.2053
             ],
@@ -1526,25 +1509,25 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Londra
             [
                 'day_id' => 57,
-                'title' => 'Arrivo a Londra',
+                'title' => 'Arrival in London',
                 'image' => 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2017/03/unnamed1.jpg?v=1490116447',
                 'foods' => null,
-                'address' => 'Hotel Londra, 123 Baker Street, London NW1 6XE, UK',
+                'address' => 'Hotel London, 123 Baker Street, London NW1 6XE, UK',
                 'latitude' => 51.5236,
                 'longitude' => -0.1587
             ],
             [
                 'day_id' => 57,
-                'title' => 'Cena di benvenuto',
+                'title' => 'Welcome Dinner',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina britannica',
+                'foods' => 'British Cuisine',
                 'address' => 'The Ivy, 1-5 West Street, London WC2H 9NQ, UK',
                 'latitude' => 51.5145,
                 'longitude' => -0.1270
             ],
             [
                 'day_id' => 57,
-                'title' => 'Passeggiata serale',
+                'title' => 'Evening Walk',
                 'image' => 'https://statics.cedscdn.it/photos/MED_HIGH/81/85/7798185_05110415_tower_bridge_foto_di_visitbritain_moumita_paul_.jpg',
                 'foods' => null,
                 'address' => 'Trafalgar Square, London WC2N 5DN, UK',
@@ -1582,9 +1565,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 58,
-                'title' => 'Pranzo in centro',
+                'title' => 'Lunch in Central London',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina britannica e internazionale',
+                'foods' => 'British and International Cuisine',
                 'address' => 'Dishoom Covent Garden, 12 Upper St Martin\'s Lane, London WC2H 9FB, UK',
                 'latitude' => 51.5122,
                 'longitude' => -0.1262
@@ -1611,16 +1594,16 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 59,
-                'title' => 'Pranzo nei pressi dei musei',
+                'title' => 'Lunch Near the Museums',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina britannica e continentale',
+                'foods' => 'British and Continental Cuisine',
                 'address' => 'The Great Court Restaurant, British Museum, Great Russell Street, London WC1B 3DG, UK',
                 'latitude' => 51.5194,
                 'longitude' => -0.1270
             ],
             [
                 'day_id' => 59,
-                'title' => 'Passeggiata a Covent Garden',
+                'title' => 'Walk in Covent Garden',
                 'image' => 'https://image-tc.galaxy.tf/wijpeg-5as3kpt2zbbzzygipb2j4dndx/covent-garden_wide.jpg?crop=0%2C51%2C980%2C551',
                 'foods' => null,
                 'address' => 'Covent Garden, London WC2E 8RF, UK',
@@ -1631,25 +1614,25 @@ class StopSeeder extends Seeder
             // Day 4: Ritorno
             [
                 'day_id' => 60,
-                'title' => 'Ultimo giro a Londra',
+                'title' => 'Final Tour in London',
                 'image' => 'https://www.mirygiramondo.com/wp-content/uploads/2021/08/londra-tower-bridge.jpg',
                 'foods' => null,
-                'address' => 'Hotel Londra, 123 Baker Street, London NW1 6XE, UK',
+                'address' => 'Hotel London, 123 Baker Street, London NW1 6XE, UK',
                 'latitude' => 51.5236,
                 'longitude' => -0.1587
             ],
             [
                 'day_id' => 60,
-                'title' => 'Preparativi per la partenza',
+                'title' => 'Preparation for Departure',
                 'image' => 'https://www.terravision.eu/italiano/files/2015/09/gatwick1.jpg',
                 'foods' => null,
-                'address' => 'Hotel Londra, 123 Baker Street, London NW1 6XE, UK',
+                'address' => 'Hotel London, 123 Baker Street, London NW1 6XE, UK',
                 'latitude' => 51.5236,
                 'longitude' => -0.1587
             ],
             [
                 'day_id' => 60,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://www.aeroporto.net/wp-content/uploads/sites/3/london-heatrow-large.jpg',
                 'foods' => null,
                 'address' => 'Heathrow Airport, Longford, London TW6 1QG, UK',
@@ -1661,7 +1644,7 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a New York
             [
                 'day_id' => 61,
-                'title' => 'Arrivo a New York',
+                'title' => 'Arrival in New York',
                 'image' => 'https://as1.ftcdn.net/v2/jpg/01/90/16/22/1000_F_190162235_kht4YkbpXqlBa2bnUB2qlWbvcZfH6t0g.jpg',
                 'foods' => null,
                 'address' => 'Hotel New York, 350 W 42nd St, New York, NY 10036, USA',
@@ -1670,9 +1653,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 61,
-                'title' => 'Cena di benvenuto',
+                'title' => 'Welcome Dinner',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina americana',
+                'foods' => 'American Cuisine',
                 'address' => 'Carmine\'s Italian Restaurant, 200 W 44th St, New York, NY 10036, USA',
                 'latitude' => 40.7589,
                 'longitude' => -73.9860
@@ -1699,9 +1682,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 62,
-                'title' => 'Pranzo a Midtown',
+                'title' => 'Lunch in Midtown',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'The Modern, 9 W 53rd St, New York, NY 10019, USA',
                 'latitude' => 40.7614,
                 'longitude' => -73.9776
@@ -1710,7 +1693,7 @@ class StopSeeder extends Seeder
             // Day 3: Statua della Libertà
             [
                 'day_id' => 63,
-                'title' => 'Statua della Libertà',
+                'title' => 'Statue of Liberty',
                 'image' => 'https://www.example.com/images/statue-of-liberty.jpg',
                 'foods' => null,
                 'address' => 'Liberty Island, New York, NY 10004, USA',
@@ -1728,9 +1711,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 63,
-                'title' => 'Pranzo a Battery Park',
+                'title' => 'Lunch in Battery Park',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina americana',
+                'foods' => 'American Cuisine',
                 'address' => 'Pier A Harbor House, 22 Battery Pl, New York, NY 10004, USA',
                 'latitude' => 40.7074,
                 'longitude' => -74.0167
@@ -1757,9 +1740,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 64,
-                'title' => 'Pranzo a Upper West Side',
+                'title' => 'Lunch in Upper West Side',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'The Smith, 1900 Broadway, New York, NY 10023, USA',
                 'latitude' => 40.7794,
                 'longitude' => -73.9811
@@ -1768,7 +1751,7 @@ class StopSeeder extends Seeder
             // Day 5: Tour di Brooklyn
             [
                 'day_id' => 65,
-                'title' => 'Ponte di Brooklyn',
+                'title' => 'Brooklyn Bridge',
                 'image' => 'https://www.example.com/images/brooklyn-bridge.jpg',
                 'foods' => null,
                 'address' => 'Brooklyn Bridge, New York, NY, USA',
@@ -1786,9 +1769,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 65,
-                'title' => 'Pranzo a Brooklyn',
+                'title' => 'Lunch in Brooklyn',
                 'image' => 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina americana e internazionale',
+                'foods' => 'American and International Cuisine',
                 'address' => 'Juliana\'s Pizza, 19 Old Fulton St, Brooklyn, NY 11201, USA',
                 'latitude' => 40.7039,
                 'longitude' => -73.9944
@@ -1797,7 +1780,7 @@ class StopSeeder extends Seeder
             // Day 6: Visita a Harlem
             [
                 'day_id' => 66,
-                'title' => 'Esplorazione di Harlem',
+                'title' => 'Exploration of Harlem',
                 'image' => 'https://www.example.com/images/harlem.jpg',
                 'foods' => null,
                 'address' => 'Harlem, New York, NY, USA',
@@ -1806,7 +1789,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 66,
-                'title' => 'Tour Gospel',
+                'title' => 'Gospel Tour',
                 'image' => 'https://www.example.com/images/gospel-tour.jpg',
                 'foods' => null,
                 'address' => 'Abyssinian Baptist Church, 132 Odell Clark Pl, New York, NY 10030, USA',
@@ -1815,9 +1798,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 66,
-                'title' => 'Pranzo a Harlem',
+                'title' => 'Lunch in Harlem',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina soul',
+                'foods' => 'Soul Food',
                 'address' => 'Sylvia\'s, 328 Malcolm X Blvd, New York, NY 10027, USA',
                 'latitude' => 40.8115,
                 'longitude' => -73.9497
@@ -1835,7 +1818,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 67,
-                'title' => 'Shopping da Saks Fifth Avenue',
+                'title' => 'Shopping at Saks Fifth Avenue',
                 'image' => 'https://www.example.com/images/saks-fifth-avenue.jpg',
                 'foods' => null,
                 'address' => '611 5th Ave, New York, NY 10022, USA',
@@ -1844,9 +1827,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 67,
-                'title' => 'Pranzo a Midtown',
+                'title' => 'Lunch in Midtown',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'Le Bernardin, 155 W 51st St, New York, NY 10019, USA',
                 'latitude' => 40.7616,
                 'longitude' => -73.9825
@@ -1855,7 +1838,7 @@ class StopSeeder extends Seeder
             // Day 8: Ritorno
             [
                 'day_id' => 68,
-                'title' => 'Ultime ore a New York',
+                'title' => 'Last Hours in New York',
                 'image' => 'https://www.example.com/images/new-york-last-hours.jpg',
                 'foods' => null,
                 'address' => 'Hotel New York, 350 W 42nd St, New York, NY 10036, USA',
@@ -1864,7 +1847,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 68,
-                'title' => 'Preparativi per la partenza',
+                'title' => 'Departure Preparations',
                 'image' => 'https://www.example.com/images/new-york-departure-prep.jpg',
                 'foods' => null,
                 'address' => 'Hotel New York, 350 W 42nd St, New York, NY 10036, USA',
@@ -1873,7 +1856,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 68,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://www.example.com/images/new-york-departure.jpg',
                 'foods' => null,
                 'address' => 'John F. Kennedy International Airport, Queens, NY 11430, USA',
@@ -1885,7 +1868,7 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Sydney
             [
                 'day_id' => 69,
-                'title' => 'Arrivo a Sydney',
+                'title' => 'Arrival in Sydney',
                 'image' => 'https://images-ext-1.discordapp.net/external/ryRKqe_C72HW4xWsu5RA9I8m53-nsv7tWoM179nj5uY/https/a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg?format=webp&width=832&height=468',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
@@ -1914,9 +1897,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 70,
-                'title' => 'Pranzo a Circular Quay',
+                'title' => 'Lunch at Circular Quay',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'Opera Bar, Bennelong Point, Sydney NSW 2000, Australia',
                 'latitude' => -33.8568,
                 'longitude' => 151.2153
@@ -1943,9 +1926,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 71,
-                'title' => 'Pranzo a Katoomba',
+                'title' => 'Lunch in Katoomba',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina australiana',
+                'foods' => 'Australian Cuisine',
                 'address' => 'The Yellow Deli, 226 Katoomba St, Katoomba NSW 2780, Australia',
                 'latitude' => -33.7318,
                 'longitude' => 150.3121
@@ -1954,7 +1937,7 @@ class StopSeeder extends Seeder
             // Day 4: Visita alla Grande Barriera Corallina
             [
                 'day_id' => 72,
-                'title' => 'Grande Barriera Corallina',
+                'title' => 'Great Barrier Reef',
                 'image' => 'https://www.example.com/images/great-barrier-reef.jpg',
                 'foods' => null,
                 'address' => 'Great Barrier Reef, QLD, Australia',
@@ -1963,7 +1946,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 72,
-                'title' => 'Snorkeling al Reef',
+                'title' => 'Snorkeling at the Reef',
                 'image' => 'https://www.example.com/images/snorkeling-reef.jpg',
                 'foods' => null,
                 'address' => 'Great Barrier Reef, QLD, Australia',
@@ -1972,9 +1955,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 72,
-                'title' => 'Pranzo a Cairns',
+                'title' => 'Lunch in Cairns',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Salt House, 6/2 Pier Point Rd, Cairns City QLD 4870, Australia',
                 'latitude' => -16.9204,
                 'longitude' => 145.7700
@@ -1983,7 +1966,7 @@ class StopSeeder extends Seeder
             // Day 5: Esplorazione di Cairns
             [
                 'day_id' => 73,
-                'title' => 'Foresta pluviale di Daintree',
+                'title' => 'Daintree Rainforest',
                 'image' => 'https://www.example.com/images/daintree-rainforest.jpg',
                 'foods' => null,
                 'address' => 'Daintree Rainforest, QLD, Australia',
@@ -2001,9 +1984,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 73,
-                'title' => 'Pranzo a Cairns',
+                'title' => 'Lunch in Cairns',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina australiana',
+                'foods' => 'Australian Cuisine',
                 'address' => 'The Reef Hotel Casino, 35-41 Wharf St, Cairns City QLD 4870, Australia',
                 'latitude' => -16.9200,
                 'longitude' => 145.7737
@@ -2030,9 +2013,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 74,
-                'title' => 'Pranzo al resort',
+                'title' => 'Lunch at the Resort',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina australiana',
+                'foods' => 'Australian Cuisine',
                 'address' => 'Sails in the Desert, Yulara Dr, Yulara NT 0872, Australia',
                 'latitude' => -25.2422,
                 'longitude' => 130.9823
@@ -2041,7 +2024,7 @@ class StopSeeder extends Seeder
             // Day 7: Visita a Melbourne
             [
                 'day_id' => 75,
-                'title' => 'Quartieri artistici di Melbourne',
+                'title' => 'Melbourne Art Districts',
                 'image' => 'https://www.example.com/images/melbourne-arts.jpg',
                 'foods' => null,
                 'address' => 'Fitzroy, Melbourne VIC 3065, Australia',
@@ -2059,9 +2042,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 75,
-                'title' => 'Pranzo a Melbourne',
+                'title' => 'Lunch in Melbourne',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'Chin Chin, 125 Flinders Ln, Melbourne VIC 3000, Australia',
                 'latitude' => -37.8180,
                 'longitude' => 144.9671
@@ -2070,7 +2053,7 @@ class StopSeeder extends Seeder
             // Day 8: Esplorazione della Tasmania
             [
                 'day_id' => 76,
-                'title' => 'Parchi nazionali della Tasmania',
+                'title' => 'Tasmanian National Parks',
                 'image' => 'https://www.example.com/images/tasmania-parks.jpg',
                 'foods' => null,
                 'address' => 'Tasmania, Australia',
@@ -2088,9 +2071,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 76,
-                'title' => 'Pranzo a Hobart',
+                'title' => 'Lunch in Hobart',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Franklin Wharf, Hobart TAS 7000, Australia',
                 'latitude' => -42.8806,
                 'longitude' => 147.3272
@@ -2117,9 +2100,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 77,
-                'title' => 'Pranzo a Perth',
+                'title' => 'Lunch in Perth',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina internazionale',
+                'foods' => 'International Cuisine',
                 'address' => 'Wildflower, 1 Cathedral Ave, Perth WA 6000, Australia',
                 'latitude' => -31.9535,
                 'longitude' => 115.8605
@@ -2128,7 +2111,7 @@ class StopSeeder extends Seeder
             // Day 10: Ritorno
             [
                 'day_id' => 78,
-                'title' => 'Ultime ore a Sydney',
+                'title' => 'Last Hours in Sydney',
                 'image' => 'https://www.example.com/images/sydney-last-hours.jpg',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
@@ -2137,7 +2120,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 78,
-                'title' => 'Preparativi per la partenza',
+                'title' => 'Departure Preparations',
                 'image' => 'https://www.example.com/images/sydney-departure-prep.jpg',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
@@ -2146,7 +2129,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 78,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://www.example.com/images/sydney-departure.jpg',
                 'foods' => null,
                 'address' => 'Sydney Airport, Mascot NSW 2020, Australia',
@@ -2158,7 +2141,7 @@ class StopSeeder extends Seeder
             // Day 1: Arrivo a Delhi
             [
                 'day_id' => 79,
-                'title' => 'Arrivo a Delhi',
+                'title' => 'Arrival in Delhi',
                 'image' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
@@ -2187,9 +2170,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 80,
-                'title' => 'Pranzo a Delhi',
+                'title' => 'Lunch in Delhi',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina indiana',
+                'foods' => 'Indian Cuisine',
                 'address' => 'Bukhara, ITC Maurya, Sardar Patel Road, New Delhi, Delhi 110021, India',
                 'latitude' => 28.5537,
                 'longitude' => 77.1658
@@ -2207,7 +2190,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 81,
-                'title' => 'Forte di Agra',
+                'title' => 'Agra Fort',
                 'image' => 'https://www.example.com/images/agra-fort.jpg',
                 'foods' => null,
                 'address' => 'Agra Fort, Agra, Uttar Pradesh 282003, India',
@@ -2216,9 +2199,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 81,
-                'title' => 'Pranzo ad Agra',
+                'title' => 'Lunch in Agra',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina indiana',
+                'foods' => 'Indian Cuisine',
                 'address' => 'Peshawri, ITC Mughal, Taj East Gate Road, Agra, Uttar Pradesh 282001, India',
                 'latitude' => 27.1770,
                 'longitude' => 78.0211
@@ -2227,7 +2210,7 @@ class StopSeeder extends Seeder
             // Day 4: Visita a Jaipur
             [
                 'day_id' => 82,
-                'title' => 'Palazzo dei Venti',
+                'title' => 'Hawa Mahal',
                 'image' => 'https://www.example.com/images/hawa-mahal.jpg',
                 'foods' => null,
                 'address' => 'Hawa Mahal, Badi Choupad, Jaipur, Rajasthan 302002, India',
@@ -2245,9 +2228,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 82,
-                'title' => 'Pranzo a Jaipur',
+                'title' => 'Lunch in Jaipur',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina rajasthani',
+                'foods' => 'Rajasthani Cuisine',
                 'address' => 'Suvarna Mahal, Rambagh Palace, Jaipur, Rajasthan 302005, India',
                 'latitude' => 26.8802,
                 'longitude' => 75.8054
@@ -2256,7 +2239,7 @@ class StopSeeder extends Seeder
             // Day 5: Safari al Ranthambore
             [
                 'day_id' => 83,
-                'title' => 'Parco Nazionale di Ranthambore',
+                'title' => 'Ranthambore National Park',
                 'image' => 'https://www.example.com/images/ranthambore-national-park.jpg',
                 'foods' => null,
                 'address' => 'Ranthambhore National Park, Sawai Madhopur, Rajasthan 322001, India',
@@ -2265,7 +2248,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 83,
-                'title' => 'Safari nel parco',
+                'title' => 'Safari in the Park',
                 'image' => 'https://www.example.com/images/ranthambore-safari.jpg',
                 'foods' => null,
                 'address' => 'Ranthambhore National Park, Sawai Madhopur, Rajasthan 322001, India',
@@ -2274,9 +2257,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 83,
-                'title' => 'Pranzo a Ranthambore',
+                'title' => 'Lunch in Ranthambore',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'The Oberoi Vanyavilas, Ranthambhore Road, Sawai Madhopur, Rajasthan 322001, India',
                 'latitude' => 26.0177,
                 'longitude' => 76.7025
@@ -2285,7 +2268,7 @@ class StopSeeder extends Seeder
             // Day 6: Esplorazione di Jodhpur
             [
                 'day_id' => 84,
-                'title' => 'Forte Mehrangarh',
+                'title' => 'Mehrangarh Fort',
                 'image' => 'https://www.example.com/images/mehrangarh-fort.jpg',
                 'foods' => null,
                 'address' => 'Mehrangarh Fort, Jodhpur, Rajasthan 342006, India',
@@ -2303,9 +2286,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 84,
-                'title' => 'Pranzo a Jodhpur',
+                'title' => 'Lunch in Jodhpur',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina rajasthani',
+                'foods' => 'Rajasthani Cuisine',
                 'address' => 'Indique, Pal Haveli, Jodhpur, Rajasthan 342001, India',
                 'latitude' => 26.2922,
                 'longitude' => 73.0169
@@ -2314,7 +2297,7 @@ class StopSeeder extends Seeder
             // Day 7: Visita a Udaipur
             [
                 'day_id' => 85,
-                'title' => 'Lago Pichola',
+                'title' => 'Lake Pichola',
                 'image' => 'https://www.example.com/images/lake-pichola.jpg',
                 'foods' => null,
                 'address' => 'Pichola Lake, Udaipur, Rajasthan 313001, India',
@@ -2332,9 +2315,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 85,
-                'title' => 'Pranzo a Udaipur',
+                'title' => 'Lunch in Udaipur',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Ambrai Restaurant, Amet Haveli, Udaipur, Rajasthan 313001, India',
                 'latitude' => 24.5755,
                 'longitude' => 73.6861
@@ -2343,7 +2326,7 @@ class StopSeeder extends Seeder
             // Day 8: Esplorazione di Varanasi
             [
                 'day_id' => 86,
-                'title' => 'Ghat del Gange',
+                'title' => 'Ganges Ghats',
                 'image' => 'https://www.example.com/images/varanasi-ghat.jpg',
                 'foods' => null,
                 'address' => 'Dashashwamedh Ghat, Varanasi, Uttar Pradesh 221001, India',
@@ -2361,9 +2344,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 86,
-                'title' => 'Pranzo a Varanasi',
+                'title' => 'Lunch in Varanasi',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina locale',
+                'foods' => 'Local Cuisine',
                 'address' => 'Kashi Chat Bhandar, Vishwanath Gali, Varanasi, Uttar Pradesh 221001, India',
                 'latitude' => 25.2835,
                 'longitude' => 82.9756
@@ -2372,7 +2355,7 @@ class StopSeeder extends Seeder
             // Day 9: Esplorazione di Khajuraho
             [
                 'day_id' => 87,
-                'title' => 'Templi di Khajuraho',
+                'title' => 'Khajuraho Temples',
                 'image' => 'https://www.example.com/images/khajuraho-temples.jpg',
                 'foods' => null,
                 'address' => 'Khajuraho, Madhya Pradesh 471606, India',
@@ -2381,9 +2364,9 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 87,
-                'title' => 'Pranzo a Khajuraho',
+                'title' => 'Lunch in Khajuraho',
                 'image' => 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                'foods' => 'Cucina indiana',
+                'foods' => 'Indian Cuisine',
                 'address' => 'Raja Café, Khajuraho, Madhya Pradesh 471606, India',
                 'latitude' => 24.8320,
                 'longitude' => 79.9190
@@ -2392,7 +2375,7 @@ class StopSeeder extends Seeder
             // Day 10: Ritorno
             [
                 'day_id' => 88,
-                'title' => 'Ultime ore a Delhi',
+                'title' => 'Last Hours in Delhi',
                 'image' => 'https://www.example.com/images/delhi-last-hours.jpg',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
@@ -2401,7 +2384,7 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 88,
-                'title' => 'Preparativi per la partenza',
+                'title' => 'Departure Preparations',
                 'image' => 'https://www.example.com/images/delhi-departure-prep.jpg',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
@@ -2410,13 +2393,13 @@ class StopSeeder extends Seeder
             ],
             [
                 'day_id' => 88,
-                'title' => 'Partenza',
+                'title' => 'Departure',
                 'image' => 'https://www.example.com/images/delhi-departure.jpg',
                 'foods' => null,
                 'address' => 'Indira Gandhi International Airport, New Delhi, Delhi 110037, India',
                 'latitude' => 28.5562,
                 'longitude' => 77.1000
-            ]
+            ],
         ];
 
 

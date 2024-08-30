@@ -63,8 +63,7 @@ const formattedDate = (dateToFormatted) => {
 
                     <!-- Card -->
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
-
-                        class="relative h-[300px] group text-center rounded-lg hover:text-slate-800 transition-all ease-in-out duration-100 overflow-hidden"
+                        class="relative h-[300px] group text-center shadow-xl rounded-lg hover:text-slate-800 transition-all ease-in-out duration-100 overflow-hidden"
                         :class="trip.image_url === null ? 'border-2 border-slate-400' : ''">
 
                     <!-- Informazioni della card -->
