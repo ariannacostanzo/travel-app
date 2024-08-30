@@ -15,14 +15,14 @@ return new class extends Migration
         Schema::create('stops', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Day::class)->constrained()->cascadeOnDelete();
-            $table->string('title')->unique();
-            $table->string('slug')->unique();
+            $table->string('title');
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->text('foods')->nullable();
             $table->boolean('is_completed')->default(false);
             $table->string('address');
-            $table->decimal('latitude', 10, 8);
-            $table->decimal('longitude', 10, 8);
+            $table->decimal('latitude', 11, 8);
+            $table->decimal('longitude', 11, 8);
             $table->tinyInteger('rating', false, true)->default(0);
             $table->timestamps();
         });
