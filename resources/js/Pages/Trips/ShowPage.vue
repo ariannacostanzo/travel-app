@@ -37,6 +37,12 @@ const props = defineProps({
 const mapRef = ref(null);
 const map = ref(null);
 
+const changeDayTitle = (e) => {
+    e.stopPropagation();
+    console.log('cambio titolo');
+    
+}
+
 const initializeMap = () => {
     if (mapRef.value) {
         // Crea una nuova mappa con un centro e uno zoom predefiniti
@@ -124,7 +130,8 @@ onMounted(() => {
             <Link :href="route('trips.edit', trip.id)" type="button" as="button"
                 class="h-12 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[220px] right-5 group flex items-center justify-center">
 
-            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
                 Modify
             </div>
 
@@ -136,7 +143,8 @@ onMounted(() => {
             <Link :href="route('trips.destroy', trip.id)" method="DELETE" type="button" as="button"
                 class="h-12 w-12 text-white bg-[#f44336] rounded-full fixed bottom-[120px] right-5 flex items-center justify-center group">
 
-            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block">
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block z-50">
                 Delete
             </div>
 
@@ -148,7 +156,8 @@ onMounted(() => {
             <Link :href="route('trips.index')" type="button" as="button"
                 class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
 
-            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block">
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
                 Go back
             </div>
 
@@ -156,37 +165,49 @@ onMounted(() => {
 
             </Link>
 
-           
+
             <!-- Mappa dinamica -->
             <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
                 class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
 
 
-            <Link v-for="day in days" :key="day.id" :href="route('days.show', day.id)">
-            <div
-                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 hover:scale-105 transition-all ease-in-out duration-100">
+            <!-- card del giorno  -->
+            <div v-for="day in days" :key="day.id"
+                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
+                <div class="custom-basis">
+                    <Link :href="route('days.show', day.id)">
+                    <div class="flex items-center gap-96 justify-between">
 
-                <div class="border-r px-4 border-gray-500">
-                    <p class="text-2xl">Day</p>
-                    <p class="text-3xl font-bold text-center">{{ day.number }}</p>
+                        <div class="border-r px-4 border-gray-500 ">
+                            <p class="text-2xl">Day</p>
+                            <p class="text-3xl font-bold text-center">{{ day.number }}</p>
+                        </div>
+                        <div class="basis-3/5">
+                            <div class="flex gap-3 items-center">
+                                <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
+                            </div>
+                            <div>
+                                <p>{{ day.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    </Link>
                 </div>
-                <div class="text-center">
-                    <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
-                    <p>{{ day.description }}</p>
-                </div>
-                <div>
-                    <span
-                        class="flex items-center justify-center rounded-full border border-[#91635C] p-4 cursor-pointer hover:bg-[#91635C] hover:text-white group transition duration-300">
-                        <font-awesome-icon icon="fas fa-plus" class="text-[#91635C] group-hover:text-white" />
-                    </span>
-                </div>
+                <!-- button per modificare il titolo -->
+                <button @click="changeDayTitle($event)"
+                    class="border border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
+                    <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
+                    <div
+                        class="absolute text-center top-0 right-0 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                        Modify
+                    </div>
+                </button>
             </div>
-            </Link>
 
 
 
 
-            
+
         </section>
     </GeneralLayout>
 </template>
@@ -219,4 +240,11 @@ onMounted(() => {
  left: 50%;
  transform: translate(-50%, -50%);
 }
+
+.custom-basis {
+    flex-basis: 98%;
+}
+
+
+
 </style>

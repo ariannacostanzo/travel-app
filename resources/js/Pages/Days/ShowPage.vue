@@ -5,6 +5,9 @@ import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 import Modal from '@/Components/Modal.vue';
 import { ref, onMounted, watch, nextTick } from 'vue';
 import PersonalizedButton from '@/Components/PersonalizedButton.vue';
+import TextInput from '@/Components/TextInput.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import InputError from '@/Components/InputError.vue';
 
 const loadGoogleMapsScript = () => {
     return new Promise((resolve, reject) => {
@@ -163,7 +166,10 @@ const form = useForm('post', '/stops', {
 
 const submit = () => form.submit({
     preserveScroll: true,
-    onSuccess: () => closeModal(),
+    onSuccess: () => {
+        closeModal(); 
+        initializeMap()
+    },
 });
 
 const openModal = () => {
@@ -207,9 +213,10 @@ const openMap = (id) => {
 
             <!-- Button Add Stop -->
             <button @click="openModal"
-                class="h-12 z-10 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[220px] right-5 group">
+                class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[120px] right-5 group">
 
-                <div class="absolute bottom-14 right-0 w-20 bg-[#75b76f] rounded-full hidden group-hover:block">Add stop
+                <div class="absolute bottom-14 right-0 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">Add
+                    stop
                 </div>
 
                 <font-awesome-icon icon="fas fa-plus" class="fa-lg" />
@@ -217,22 +224,24 @@ const openMap = (id) => {
             </button>
 
             <!-- Button Modify -->
-            <Link @click="openModal" :href="route('days.edit', day.id)" type="button" as="button"
-                class="h-12 z-10 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[120px] right-5 group flex items-center justify-center">
+            <!-- <Link @click="openModal" :href="route('days.edit', day.id)" type="button" as="button"
+                class="h-12 z-40 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[120px] right-5 group flex items-center justify-center">
 
-            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block">
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
                 Modify
             </div>
 
             <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
 
-            </Link>
+            </Link> -->
 
             <!-- Button Go back -->
             <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
-                class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
+                class="h-12 z-40 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
 
-            <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block">
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
                 Go back
             </div>
 
@@ -281,40 +290,53 @@ const openMap = (id) => {
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
 
-            <form @submit.prevent="submit" class="flex flex-col gap-4 p-4">
+            <form @submit.prevent="submit" class="p-6">
 
-                <div class="flex flex-col">
-                    <label for="title">Title</label>
-                    <input id="title" v-model="form.title" @change="form.validate('title')" />
+                <!-- title  -->
+                <div class="my-2">
+                    <label for="title" class="text-2xl text-[#684e52] font-bold">Title</label>
+                    <input id="title" v-model="form.title" @change="form.validate('title')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
                     <div v-if="form.invalid('title')">{{ form.errors.title }}</div>
                 </div>
 
-                <div class="flex flex-col">
-                    <label for="image">Image</label>
-                    <input id="image" v-model="form.image" @change="form.validate('image')" />
+                <!-- image  -->
+
+                <div class="my-2">
+                    <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
+                    <input id="image" v-model="form.image" @change="form.validate('image')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
                     <div v-if="form.invalid('image')">{{ form.errors.image }}</div>
                 </div>
 
-                <div class="flex flex-col">
-                    <label for="foods">Foods</label>
-                    <textarea cols="30" rows="10" id="foods" v-model="form.foods"
-                        @change="form.validate('foods')"></textarea>
+                <!-- food  -->
+                <div class="my-2">
+                    <label for="foods" class="text-2xl text-[#684e52] font-bold">Foods</label>
+                    <textarea cols="30" rows="10" id="foods" v-model="form.foods" @change="form.validate('foods')"
+                        class="w-full border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm"></textarea>
                     <div v-if="form.invalid('foods')">{{ form.errors.foods }}</div>
                 </div>
 
-                <div class="flex flex-col">
-                    <label for="address-input">Address</label>
+                <!-- address  -->
+                <div class="my-2">
+                    <label for="address-input" class="text-2xl text-[#684e52] font-bold">Address</label>
                     <input id="address-input" ref="addressInputRef" v-model="form.address"
-                        @change="form.validate('address')" />
+                        @change="form.validate('address')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
                     <div v-if="form.invalid('address')">{{ form.errors.address }}</div>
                 </div>
 
                 <input id="latitude" v-model="form.latitude" type="hidden" />
                 <input id="longitude" v-model="form.longitude" type="hidden" />
 
-                <button class="px-4 py-2 shadow-xl bg-blue-400 rounded my-6" :disabled="form.processing">
-                    Create Stop
-                </button>
+
+                <div class="flex justify-center">
+                    <button
+                        class=" inline-flex items-center mt-8 px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white  uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150 hover:bg-[#443c3d] bg-[#684e52]"
+                        :disabled="form.processing">
+                        Create Stop
+                    </button>
+                </div>
 
             </form>
 
@@ -342,4 +364,6 @@ const openMap = (id) => {
     border: 2px solid red;
 
 }
+
+
 </style>
