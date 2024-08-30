@@ -197,8 +197,7 @@ class TripSeeder extends Seeder
             $users = User::pluck('id')->toArray();
 
             $new_trip = new Trip();
-            $new_trip->user_id = 1;
-            // $new_trip->user_id = $users[array_rand($users)];
+            $new_trip->user_id = $users[array_rand($users)];
             $new_trip->title = $trip['title'];
             $new_trip->departure_date = $trip['departure_date'];
             $new_trip->return_date = $trip['return_date'];
