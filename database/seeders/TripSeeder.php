@@ -170,7 +170,7 @@ class TripSeeder extends Seeder
                     ['number' => 12, 'title' => 'Exploring Adelaide', 'description' => 'Visit to the Adelaide hills and wine regions.', 'date' => '2025/02/12'],
                     ['number' => 13, 'title' => 'Return', 'description' => 'Return day home.', 'date' => '2025/02/14']
                 ],
-                'image_url' => 'https://a.cdn-hotels.com/gdcs/production81/d1465/89e8e0d7-7bb0-419d-84c3-0b3f9717b8a5.jpg'
+                'image_url' => 'https://www.state.gov/wp-content/uploads/2023/07/shutterstock_590390942v2.jpg'
             ],
             [
                 'title' => 'North India Tour',
@@ -197,7 +197,8 @@ class TripSeeder extends Seeder
             $users = User::pluck('id')->toArray();
 
             $new_trip = new Trip();
-            $new_trip->user_id = $users[array_rand($users)];
+            $new_trip->user_id = 1;
+            // $new_trip->user_id = $users[array_rand($users)];
             $new_trip->title = $trip['title'];
             $new_trip->departure_date = $trip['departure_date'];
             $new_trip->return_date = $trip['return_date'];
