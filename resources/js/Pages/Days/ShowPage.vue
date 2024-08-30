@@ -33,7 +33,7 @@ const addressInputRef = ref(null);
 const mapRef = ref(null);
 const map = ref(null);
 
-const showMap = ref(false);
+const showInfo = ref(false);
 const showId = ref(null);
 
 const activeMarkerId = ref(null);
@@ -177,9 +177,9 @@ const closeModal = () => {
 
 const openMap = (id) => {
     if (showId.value === id) {
-        showMap.value = !showMap.value;
+        showInfo.value = !showInfo.value;
     } else {
-        showMap.value = true;
+        showInfo.value = true;
         showId.value = id;
     }
 
@@ -250,8 +250,8 @@ const openMap = (id) => {
                 <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
 
                     <!-- Card -->
-                    <div :id="stop.slug" :class="{ 'h-[650px] scale-105': showMap && showId === stop.id }"
-                        class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-[450px] transition-all duration-1000 ease-in-out">
+                    <div :id="stop.slug" :class="{ 'h-[550px] scale-105': showInfo && showId === stop.id }"
+                        class="p-4 flex flex-col scale-100 min-w-0 overflow-hidden bg-[#FCFCFB] shadow-lg rounded-lg text-center h-[450px] transition-all duration-1000 ease-in-out">
 
                         <!-- Titolo -->
                         <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
@@ -260,17 +260,33 @@ const openMap = (id) => {
                             <img :src="stop.image" :alt="stop.title" class="h-full w-full rounded-lg">
                         </figure>
 
-                        <!-- Bottone apertura mappa -->
-                        <div class="flex justify-center my-4">
+                        <!-- Bottone apertura info -->
+                        <div v-if="stop.foods || stop.rating !== 0" class="flex justify-center my-4">
                             <button @click="openMap(stop.id)" class="flex items-center gap-1">
-                                Info <font-awesome-icon icon="fa-solid fa-angle-down" />
+                                Info
+                                <font-awesome-icon icon="fa-solid fa-angle-down"
+                                    :class="{ 'rotate-180': showInfo === true && showId === stop.id }"
+                                    class="transition-all duration-100 ease-in-out" />
                             </button>
                         </div>
 
-                        <!-- Mappa -->
-                        <div v-if="showMap && showId === stop.id" ref="singleMapRef"
-                            :class="{ 'h-60 opacity-100': showMap && showId === stop.id }"
-                            class="bg-red-400 rounded-lg opacity-0 transition-all duration-1000 ease-in-out">
+                        <!-- Info -->
+                        <div v-if="showInfo && showId === stop.id"
+                            :class="{ 'h-60 opacity-100': showInfo && showId === stop.id }"
+                            class="rounded-lg opacity-0">
+
+                            <!-- Foods -->
+                            <p v-if="stop.foods" class="mt-4">
+                                <strong>Foods: </strong>{{ stop.foods }}
+                            </p>
+
+                            <!-- Rating -->
+                            <p v-if="stop.rating !== 0">
+                                <strong>Rating: </strong>
+                                <font-awesome-icon v-for="(rating, i) in stop.rating" :key="i" icon="fa-solid fa-star"
+                                    class="text-yellow-600 mt-4 mr-1" />
+                            </p>
+
                         </div>
 
                     </div>
