@@ -1665,7 +1665,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 62,
                 'title' => 'Times Square',
-                'image' => 'https://www.example.com/images/times-square.jpg',
+                'image' => 'https://modulo.net/files/chunks/59005e8c0fc46eee718b4567/5a1d5910a0d55665320000af.jpg',
                 'foods' => null,
                 'address' => 'Times Square, New York, NY 10036, USA',
                 'latitude' => 40.7580,
@@ -1674,7 +1674,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 62,
                 'title' => 'Central Park',
-                'image' => 'https://www.example.com/images/central-park.jpg',
+                'image' => 'https://media-assets.vanityfair.it/photos/614c6c0df77dece145864309/1:1/w_858,h_858,c_limit/PPPP3.jpg',
                 'foods' => null,
                 'address' => 'Central Park, New York, NY, USA',
                 'latitude' => 40.7851,
@@ -1694,7 +1694,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 63,
                 'title' => 'Statue of Liberty',
-                'image' => 'https://www.example.com/images/statue-of-liberty.jpg',
+                'image' => 'https://www.veganiinviaggio.it/wp-content/uploads/2019/09/New_York_2018_0919.jpg',
                 'foods' => null,
                 'address' => 'Liberty Island, New York, NY 10004, USA',
                 'latitude' => 40.6892,
@@ -1703,7 +1703,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 63,
                 'title' => 'Ellis Island',
-                'image' => 'https://www.example.com/images/ellis-island.jpg',
+                'image' => 'https://cdn.britannica.com/79/82679-050-CA3D3DAD/Ellis-Island.jpg',
                 'foods' => null,
                 'address' => 'Ellis Island, New York, NY 10004, USA',
                 'latitude' => 40.6992,
@@ -1723,7 +1723,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 64,
                 'title' => 'Museum of Modern Art (MoMA)',
-                'image' => 'https://www.example.com/images/moma.jpg',
+                'image' => 'https://artemagazine.it/wp-content/uploads/2023/09/museum-of-modern-art.jpg',
                 'foods' => null,
                 'address' => '11 W 53rd St, New York, NY 10019, USA',
                 'latitude' => 40.7614,
@@ -1732,7 +1732,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 64,
                 'title' => 'American Museum of Natural History',
-                'image' => 'https://www.example.com/images/natural-history-museum.jpg',
+                'image' => 'https://images.ctfassets.net/1aemqu6a6t65/tdFipJ0KZRG5akApGp1Hc/045886467aed32470eb2777435b0b33d/American-_Museum-of-Natural-History-Manhattan-NYC-Photo-Alvaro-Keding-02.jpg',
                 'foods' => null,
                 'address' => '200 Central Park West, New York, NY 10024, USA',
                 'latitude' => 40.7813,
@@ -1752,7 +1752,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 65,
                 'title' => 'Brooklyn Bridge',
-                'image' => 'https://www.example.com/images/brooklyn-bridge.jpg',
+                'image' => 'https://images.photowall.com/products/61553/brooklyn-bridge-view.jpg?h=699&q=85',
                 'foods' => null,
                 'address' => 'Brooklyn Bridge, New York, NY, USA',
                 'latitude' => 40.7061,
@@ -1761,7 +1761,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 65,
                 'title' => 'Dumbo',
-                'image' => 'https://www.example.com/images/dumbo.jpg',
+                'image' => 'https://torlytravels.com/wp-content/uploads/2016/09/IMG_2162.jpeg',
                 'foods' => null,
                 'address' => 'DUMBO, Brooklyn, NY 11201, USA',
                 'latitude' => 40.7040,
@@ -1781,7 +1781,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 66,
                 'title' => 'Exploration of Harlem',
-                'image' => 'https://www.example.com/images/harlem.jpg',
+                'image' => 'https://esd.ny.gov/sites/default/files/hero/HCDC_Hero2.jpg',
                 'foods' => null,
                 'address' => 'Harlem, New York, NY, USA',
                 'latitude' => 40.8116,
@@ -1790,7 +1790,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 66,
                 'title' => 'Gospel Tour',
-                'image' => 'https://www.example.com/images/gospel-tour.jpg',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/e2/5b/54/chiesa-abc.jpg?w=1200&h=-1&s=1',
                 'foods' => null,
                 'address' => 'Abyssinian Baptist Church, 132 Odell Clark Pl, New York, NY 10030, USA',
                 'latitude' => 40.8136,
@@ -1810,7 +1810,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 67,
                 'title' => 'Fifth Avenue',
-                'image' => 'https://www.example.com/images/fifth-avenue.jpg',
+                'image' => 'https://hips.hearstapps.com/hmg-prod/images/new-york-skyline-with-broadway-fifth-avenue-and-royalty-free-image-1684148492.jpg',
                 'foods' => null,
                 'address' => 'Fifth Avenue, New York, NY, USA',
                 'latitude' => 40.7736,
@@ -1819,7 +1819,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 67,
                 'title' => 'Shopping at Saks Fifth Avenue',
-                'image' => 'https://www.example.com/images/saks-fifth-avenue.jpg',
+                'image' => 'https://www.hollywoodreporter.com/wp-content/uploads/2024/02/Saks-Fifth-Avenue-Beverly-Hills_Main-Floor-Entrance-H-2024.jpg?w=1296&h=730&crop=1',
                 'foods' => null,
                 'address' => '611 5th Ave, New York, NY 10022, USA',
                 'latitude' => 40.7590,
@@ -1839,7 +1839,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 68,
                 'title' => 'Last Hours in New York',
-                'image' => 'https://www.example.com/images/new-york-last-hours.jpg',
+                'image' => 'https://www.civitatis.com/blog/wp-content/uploads/2023/03/miradores-nueva-york.jpg',
                 'foods' => null,
                 'address' => 'Hotel New York, 350 W 42nd St, New York, NY 10036, USA',
                 'latitude' => 40.7580,
@@ -1848,7 +1848,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 68,
                 'title' => 'Departure Preparations',
-                'image' => 'https://www.example.com/images/new-york-departure-prep.jpg',
+                'image' => 'https://www.civitatis.com/blog/wp-content/uploads/2023/03/miradores-nueva-york.jpg',
                 'foods' => null,
                 'address' => 'Hotel New York, 350 W 42nd St, New York, NY 10036, USA',
                 'latitude' => 40.7580,
@@ -1857,7 +1857,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 68,
                 'title' => 'Departure',
-                'image' => 'https://www.example.com/images/new-york-departure.jpg',
+                'image' => 'https://www.civitatis.com/blog/wp-content/uploads/2023/03/miradores-nueva-york.jpg',
                 'foods' => null,
                 'address' => 'John F. Kennedy International Airport, Queens, NY 11430, USA',
                 'latitude' => 40.6413,
@@ -1869,7 +1869,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 69,
                 'title' => 'Arrival in Sydney',
-                'image' => 'https://images-ext-1.discordapp.net/external/ryRKqe_C72HW4xWsu5RA9I8m53-nsv7tWoM179nj5uY/https/a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg?format=webp&width=832&height=468',
+                'image' => 'https://static.independent.co.uk/2024/03/20/17/newFile.jpg',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
                 'latitude' => -33.8688,
@@ -1880,7 +1880,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 70,
                 'title' => 'Sydney Opera House',
-                'image' => 'https://www.example.com/images/sydney-opera-house.jpg',
+                'image' => 'https://cdn.asp.events/CLIENT_Oliver_K_15A4C8AE_5056_B739_54CFDE58102DEF33/sites/sydney-build-2024/media/libraries/sydney-build-blog/Sydney%20Opera%20House%20image.png',
                 'foods' => null,
                 'address' => 'Bennelong Point, Sydney NSW 2000, Australia',
                 'latitude' => -33.8568,
@@ -1889,7 +1889,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 70,
                 'title' => 'Sydney Harbour Bridge',
-                'image' => 'https://www.example.com/images/sydney-harbour-bridge.jpg',
+                'image' => 'https://www.ansto.gov.au/sites/default/files/styles/hero_image_2z/public/hero-images/istock-Sydney-HarbourBridge-406090100.jpg?h=4d485623&itok=fGWHlGTD',
                 'foods' => null,
                 'address' => 'Sydney NSW 2060, Australia',
                 'latitude' => -33.8486,
@@ -1909,7 +1909,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 71,
                 'title' => 'Blue Mountains',
-                'image' => 'https://www.example.com/images/blue-mountains.jpg',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/23/fd/e5/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1080&chk=v1_02ae2c1193d0340624c4',
                 'foods' => null,
                 'address' => 'Blue Mountains, NSW, Australia',
                 'latitude' => -33.7131,
@@ -1918,7 +1918,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 71,
                 'title' => 'Echo Point',
-                'image' => 'https://www.example.com/images/echo-point.jpg',
+                'image' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/532000/532084-echo-point-lookout.jpg',
                 'foods' => null,
                 'address' => 'Echo Point Lookout, Katoomba NSW 2780, Australia',
                 'latitude' => -33.7244,
@@ -1938,7 +1938,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 72,
                 'title' => 'Great Barrier Reef',
-                'image' => 'https://www.example.com/images/great-barrier-reef.jpg',
+                'image' => 'https://greatbarrierreef.org/wp-content/uploads/2022/06/Lady-Musgrave-Island-Great-Barrier-Reef.jpg',
                 'foods' => null,
                 'address' => 'Great Barrier Reef, QLD, Australia',
                 'latitude' => -18.2871,
@@ -1947,7 +1947,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 72,
                 'title' => 'Snorkeling at the Reef',
-                'image' => 'https://www.example.com/images/snorkeling-reef.jpg',
+                'image' => 'https://www.torntackies.com/wp-content/uploads/2022/08/Great-Barrier-Reef-diving.jpg',
                 'foods' => null,
                 'address' => 'Great Barrier Reef, QLD, Australia',
                 'latitude' => -18.2871,
@@ -1967,7 +1967,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 73,
                 'title' => 'Daintree Rainforest',
-                'image' => 'https://www.example.com/images/daintree-rainforest.jpg',
+                'image' => 'https://www.roadaffair.com/wp-content/uploads/2017/12/daintree-national-park-australia-shutterstock_341458328.jpg',
                 'foods' => null,
                 'address' => 'Daintree Rainforest, QLD, Australia',
                 'latitude' => -16.1805,
@@ -1976,7 +1976,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 73,
                 'title' => 'Mossman Gorge',
-                'image' => 'https://www.example.com/images/mossman-gorge.jpg',
+                'image' => 'https://cdn.sightseeingtoursaustralia.com.au/wp-content/uploads/2022/04/Mossman-Gorge-18.jpg',
                 'foods' => null,
                 'address' => 'Mossman Gorge Rd, Mossman QLD 4873, Australia',
                 'latitude' => -16.3398,
@@ -1996,7 +1996,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 74,
                 'title' => 'Uluru',
-                'image' => 'https://www.example.com/images/uluru.jpg',
+                'image' => 'https://cdn.kimkim.com/files/a/images/3367c083fb3cf5cbef95d3d6919ac9150bdb0e04/big-ddd64aae2f06ff9db9a66c9dde95a46e.jpg',
                 'foods' => null,
                 'address' => 'Uluru-Kata Tjuta National Park, NT, Australia',
                 'latitude' => -25.3444,
@@ -2005,7 +2005,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 74,
                 'title' => 'Kata Tjuta',
-                'image' => 'https://www.example.com/images/kata-tjuta.jpg',
+                'image' => 'https://uluru-australia.com/wp-content/uploads/2022/01/Kata-Tjuta-1.jpg',
                 'foods' => null,
                 'address' => 'Kata Tjuta, NT, Australia',
                 'latitude' => -25.3574,
@@ -2025,7 +2025,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 75,
                 'title' => 'Melbourne Art Districts',
-                'image' => 'https://www.example.com/images/melbourne-arts.jpg',
+                'image' => 'https://media.timeout.com/images/105748996/image.jpg',
                 'foods' => null,
                 'address' => 'Fitzroy, Melbourne VIC 3065, Australia',
                 'latitude' => -37.8009,
@@ -2034,7 +2034,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 75,
                 'title' => 'Great Ocean Road',
-                'image' => 'https://www.example.com/images/great-ocean-road.jpg',
+                'image' => 'https://it.visitmelbourne.com/-/media/images/great-ocean-road/things-to-do/nature-and-wildlife/beaches-and-coastlines/twelve-apostles/12-apostles_gor_u_1224113_1150x863.jpg?ts=20150625371042',
                 'foods' => null,
                 'address' => 'Great Ocean Road, VIC, Australia',
                 'latitude' => -38.5827,
@@ -2054,7 +2054,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 76,
                 'title' => 'Tasmanian National Parks',
-                'image' => 'https://www.example.com/images/tasmania-parks.jpg',
+                'image' => 'https://www.travelmarvel.com.au/-/media/travelmarvel-responsive-website/australia/tasmania/hero-image-12-5/hc-t-au-tas-freycinet-national-park-wineglass-bay-13283524-d-web-12-5.jpg?useCustomFunctions=1&rw=2280&w=1900&h=950&cropX=190&cropY=0',
                 'foods' => null,
                 'address' => 'Tasmania, Australia',
                 'latitude' => -42.0408,
@@ -2063,7 +2063,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 76,
                 'title' => 'Freycinet National Park',
-                'image' => 'https://www.example.com/images/freycinet-park.jpg',
+                'image' => 'https://s3.tasmania.com/website/wp-content/uploads/2018/03/11234845/Wineglass-Bay-Cruises-Tourism-Tasmania-Supplied-Courtesy-of-Wineglass-Bay-Cruises-128210.jpg',
                 'foods' => null,
                 'address' => 'Freycinet National Park, TAS, Australia',
                 'latitude' => -42.1741,
@@ -2083,7 +2083,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 77,
                 'title' => 'Perth City',
-                'image' => 'https://www.example.com/images/perth-city.jpg',
+                'image' => 'https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/perthau/Elizabeth-Quay-Perth-Aerial-Day_20EBD597-5056-A36A-0C94E88061AF0DB8-20ebd4565056a36_20ebd5fa-5056-a36a-0cdcb26f03782625.jpg',
                 'foods' => null,
                 'address' => 'Perth, WA, Australia',
                 'latitude' => -31.9505,
@@ -2092,7 +2092,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 77,
                 'title' => 'Cottesloe Beach',
-                'image' => 'https://www.example.com/images/cottesloe-beach.jpg',
+                'image' => 'https://www.beachtomato.com/wp-content/uploads/2017/10/Featured_1280x720-4.jpg',
                 'foods' => null,
                 'address' => 'Cottesloe Beach, WA, Australia',
                 'latitude' => -31.9898,
@@ -2112,7 +2112,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 78,
                 'title' => 'Last Hours in Sydney',
-                'image' => 'https://www.example.com/images/sydney-last-hours.jpg',
+                'image' => 'https://a.cdn-hotels.com/gdcs/production5/d1996/54fdb73f-eee5-4612-a3e7-6fc7ed2f7bee.jpg',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
                 'latitude' => -33.8688,
@@ -2121,7 +2121,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 78,
                 'title' => 'Departure Preparations',
-                'image' => 'https://www.example.com/images/sydney-departure-prep.jpg',
+                'image' => 'https://a.cdn-hotels.com/gdcs/production5/d1996/54fdb73f-eee5-4612-a3e7-6fc7ed2f7bee.jpg',
                 'foods' => null,
                 'address' => 'Hotel Sydney, 123 George St, Sydney NSW 2000, Australia',
                 'latitude' => -33.8688,
@@ -2130,7 +2130,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 78,
                 'title' => 'Departure',
-                'image' => 'https://www.example.com/images/sydney-departure.jpg',
+                'image' => 'https://a.cdn-hotels.com/gdcs/production5/d1996/54fdb73f-eee5-4612-a3e7-6fc7ed2f7bee.jpg',
                 'foods' => null,
                 'address' => 'Sydney Airport, Mascot NSW 2020, Australia',
                 'latitude' => -33.9399,
@@ -2142,7 +2142,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 79,
                 'title' => 'Arrival in Delhi',
-                'image' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474772-Australia.jpg',
+                'image' => 'https://media.cntraveller.com/photos/611bed6df902cc2d167b42bc/16:9/w_2580,c_limit/gettyimages-962826702.jpg',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
                 'latitude' => 28.6139,
@@ -2153,7 +2153,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 80,
                 'title' => 'Qutub Minar',
-                'image' => 'https://www.example.com/images/qutub-minar.jpg',
+                'image' => 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/201704/647_042717101905.jpg',
                 'foods' => null,
                 'address' => 'Qutub Minar, Mehrauli, New Delhi, Delhi 110030, India',
                 'latitude' => 28.5244,
@@ -2162,7 +2162,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 80,
                 'title' => 'India Gate',
-                'image' => 'https://www.example.com/images/india-gate.jpg',
+                'image' => 'https://cdn.britannica.com/38/189838-050-83C7395E/India-War-Memorial-arch-New-Delhi-Sir.jpg',
                 'foods' => null,
                 'address' => 'Rajpath, India Gate, New Delhi, Delhi 110001, India',
                 'latitude' => 28.6139,
@@ -2182,7 +2182,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 81,
                 'title' => 'Taj Mahal',
-                'image' => 'https://www.example.com/images/taj-mahal.jpg',
+                'image' => 'https://www.travelandleisure.com/thmb/wdUcyBQyQ0wUVs4wLahp0iWgZhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taj-mahal-agra-india-TAJ0217-9eab8f20d11d4391901867ed1ce222b8.jpg',
                 'foods' => null,
                 'address' => 'Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India',
                 'latitude' => 27.1751,
@@ -2191,7 +2191,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 81,
                 'title' => 'Agra Fort',
-                'image' => 'https://www.example.com/images/agra-fort.jpg',
+                'image' => 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/75000/75496-Agra-Fort.jpg',
                 'foods' => null,
                 'address' => 'Agra Fort, Agra, Uttar Pradesh 282003, India',
                 'latitude' => 27.1767,
@@ -2211,7 +2211,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 82,
                 'title' => 'Hawa Mahal',
-                'image' => 'https://www.example.com/images/hawa-mahal.jpg',
+                'image' => 'https://cdn.britannica.com/25/242225-050-72142DF7/Front-facade-of-Palace-of-the-Winds-Hawa-Mahal-Jaipur-Rajasthan-India.jpg',
                 'foods' => null,
                 'address' => 'Hawa Mahal, Badi Choupad, Jaipur, Rajasthan 302002, India',
                 'latitude' => 26.2934,
@@ -2220,7 +2220,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 82,
                 'title' => 'Amber Fort',
-                'image' => 'https://www.example.com/images/amber-fort.jpg',
+                'image' => 'https://fourwheeldriveindia.com/public/storage/media/blog/48442.jpg',
                 'foods' => null,
                 'address' => 'Devisinghpura, Amer, Jaipur, Rajasthan 302001, India',
                 'latitude' => 26.9855,
@@ -2240,7 +2240,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 83,
                 'title' => 'Ranthambore National Park',
-                'image' => 'https://www.example.com/images/ranthambore-national-park.jpg',
+                'image' => 'https://ranthambhorenationalpark.in/images/Ranthambhore%20Tiger%20safari%20park.JPG',
                 'foods' => null,
                 'address' => 'Ranthambhore National Park, Sawai Madhopur, Rajasthan 322001, India',
                 'latitude' => 26.0156,
@@ -2249,7 +2249,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 83,
                 'title' => 'Safari in the Park',
-                'image' => 'https://www.example.com/images/ranthambore-safari.jpg',
+                'image' => 'https://www.savaari.com/blog/wp-content/uploads/2019/09/ranthambore-national-park.jpg',
                 'foods' => null,
                 'address' => 'Ranthambhore National Park, Sawai Madhopur, Rajasthan 322001, India',
                 'latitude' => 26.0156,
@@ -2269,7 +2269,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 84,
                 'title' => 'Mehrangarh Fort',
-                'image' => 'https://www.example.com/images/mehrangarh-fort.jpg',
+                'image' => 'https://img.veenaworld.com/wp-content/uploads/2021/10/Mehrangarh.jpg',
                 'foods' => null,
                 'address' => 'Mehrangarh Fort, Jodhpur, Rajasthan 342006, India',
                 'latitude' => 26.2956,
@@ -2278,7 +2278,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 84,
                 'title' => 'Jaswant Thada',
-                'image' => 'https://www.example.com/images/jaswant-thada.jpg',
+                'image' => 'https://jodhpurtourism.in/images/places-to-visit/headers/jaswant-thada-jodhpur-entry-fee-timings-holidays-reviews-header.jpg',
                 'foods' => null,
                 'address' => 'Jaswant Thada, Jodhpur, Rajasthan 342001, India',
                 'latitude' => 26.2858,
@@ -2298,7 +2298,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 85,
                 'title' => 'Lake Pichola',
-                'image' => 'https://www.example.com/images/lake-pichola.jpg',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/77/15/9a/photo0jpg.jpg?w=1200&h=1200&s=1',
                 'foods' => null,
                 'address' => 'Pichola Lake, Udaipur, Rajasthan 313001, India',
                 'latitude' => 24.5767,
@@ -2307,7 +2307,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 85,
                 'title' => 'City Palace',
-                'image' => 'https://www.example.com/images/city-palace-udaipur.jpg',
+                'image' => 'https://map.sahapedia.org/admin/assets/images/2021033013400727799_Banner.jpg?__imr__=bannerMuseum',
                 'foods' => null,
                 'address' => 'City Palace, Udaipur, Rajasthan 313001, India',
                 'latitude' => 24.5798,
@@ -2327,7 +2327,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 86,
                 'title' => 'Ganges Ghats',
-                'image' => 'https://www.example.com/images/varanasi-ghat.jpg',
+                'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Varanasi_Munshi_Ghat3.jpg/800px-Varanasi_Munshi_Ghat3.jpg',
                 'foods' => null,
                 'address' => 'Dashashwamedh Ghat, Varanasi, Uttar Pradesh 221001, India',
                 'latitude' => 25.2835,
@@ -2336,7 +2336,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 86,
                 'title' => 'Sarnath',
-                'image' => 'https://www.example.com/images/sarnath.jpg',
+                'image' => 'https://cdn.britannica.com/19/256719-050-E4CE0DBA/Sarnath-site-Dhamekh-Stupa-Varanasi-Uttar-Pradesh-India.jpg',
                 'foods' => null,
                 'address' => 'Sarnath, Varanasi, Uttar Pradesh 221007, India',
                 'latitude' => 25.3844,
@@ -2356,7 +2356,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 87,
                 'title' => 'Khajuraho Temples',
-                'image' => 'https://www.example.com/images/khajuraho-temples.jpg',
+                'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Khajuraho_-_Kandariya_Mahadeo_Temple.jpg/1280px-Khajuraho_-_Kandariya_Mahadeo_Temple.jpg',
                 'foods' => null,
                 'address' => 'Khajuraho, Madhya Pradesh 471606, India',
                 'latitude' => 24.8320,
@@ -2376,7 +2376,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 88,
                 'title' => 'Last Hours in Delhi',
-                'image' => 'https://www.example.com/images/delhi-last-hours.jpg',
+                'image' => 'https://media.cnn.com/api/v1/images/stellar/prod/181105110720-03-delhi-india-what-to-see-photos-swaminarayan-akshardham.jpg?q=w_1920,h_1080,x_0,y_0,c_fill',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
                 'latitude' => 28.6139,
@@ -2385,7 +2385,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 88,
                 'title' => 'Departure Preparations',
-                'image' => 'https://www.example.com/images/delhi-departure-prep.jpg',
+                'image' => 'https://media.cnn.com/api/v1/images/stellar/prod/181105110720-03-delhi-india-what-to-see-photos-swaminarayan-akshardham.jpg?q=w_1920,h_1080,x_0,y_0,c_fill',
                 'foods' => null,
                 'address' => 'Hotel Delhi, Connaught Place, New Delhi, Delhi 110001, India',
                 'latitude' => 28.6139,
@@ -2394,7 +2394,7 @@ class StopSeeder extends Seeder
             [
                 'day_id' => 88,
                 'title' => 'Departure',
-                'image' => 'https://www.example.com/images/delhi-departure.jpg',
+                'image' => 'https://media.cnn.com/api/v1/images/stellar/prod/181105110720-03-delhi-india-what-to-see-photos-swaminarayan-akshardham.jpg?q=w_1920,h_1080,x_0,y_0,c_fill',
                 'foods' => null,
                 'address' => 'Indira Gandhi International Airport, New Delhi, Delhi 110037, India',
                 'latitude' => 28.5562,
