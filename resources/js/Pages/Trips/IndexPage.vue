@@ -55,7 +55,7 @@ const formattedDate = (dateToFormatted) => {
             </div>
 
             <!-- Trips -->
-            <div class="container mx-auto">
+            <div class="container mx-auto my-24">
 
 
                 <div v-if="trips.length !== 0" class="my-8 grid grid-cols-3 gap-6">
@@ -63,7 +63,7 @@ const formattedDate = (dateToFormatted) => {
 
                     <Link v-for="(trip, i) in trips" type="button" :href="route('trips.show', trip.id)"
                         class="relative h-[300px]  text-center rounded-lg hover:text-slate-800 hover:scale-105 transition-all ease-in-out duration-100"
-                        :class="trip.image_url === null ? 'border-2 border-slate-400': ''">
+                        :class="trip.image_url === null ? 'border-2 border-slate-400' : ''">
                     <img :src="trip.image_url ? trip.image_url : 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg'"
                         alt="trip_img" class="rounded-lg w-full h-full object-cover object-center ">
                     <div class="absolute shadowed-text top-0 left-0 right-0 bottom-0 text-white text-lg font-bold">
@@ -94,8 +94,8 @@ const formattedDate = (dateToFormatted) => {
 </template>
 
 <style scoped>
-
-.shadowed-text h3, .shadowed-text p {
+.shadowed-text h3,
+.shadowed-text p {
     text-shadow: 1px 1px 8px black;
 }
 </style>

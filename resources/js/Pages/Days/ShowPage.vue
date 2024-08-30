@@ -200,7 +200,7 @@ const openMap = (id) => {
 
     <GeneralLayout :isLogged="true">
 
-        <section id="show-day" class="container mx-auto">
+        <section id="show-day" class="container mx-auto my-24">
 
             <!-- Title -->
             <h1 class="text-5xl text-center my-6">{{ day.title }}</h1>
@@ -250,16 +250,20 @@ const openMap = (id) => {
                 <div v-for="stop in stops" :key="stop.id" class="p-4 w-1/3">
 
                     <!-- Card -->
-                    <div :id="stop.slug" :class="{ 'h-[368px] scale-105': showMap && showId === stop.id }"
-                        class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-32 transition-all duration-1000 ease-in-out">
+                    <div :id="stop.slug" :class="{ 'h-[650px] scale-105': showMap && showId === stop.id }"
+                        class="p-4 flex flex-col scale-100 min-w-0 bg-slate-600 rounded-lg text-center h-[450px] transition-all duration-1000 ease-in-out">
 
                         <!-- Titolo -->
                         <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
 
+                        <figure class="h-[300px] rounded-lg my-4">
+                            <img :src="stop.image" :alt="stop.title" class="h-full w-full rounded-lg">
+                        </figure>
+
                         <!-- Bottone apertura mappa -->
                         <div class="flex justify-center my-4">
                             <button @click="openMap(stop.id)" class="flex items-center gap-1">
-                                Map <font-awesome-icon icon="fa-solid fa-angle-down" />
+                                Info <font-awesome-icon icon="fa-solid fa-angle-down" />
                             </button>
                         </div>
 
