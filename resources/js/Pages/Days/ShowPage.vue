@@ -241,7 +241,7 @@ const openMap = (id) => {
             </Link>
 
             <!-- Mappa -->
-            <div id="map" ref="mapRef" style="height: 500px; width: 100%;"></div>
+            <div id="map" class="rounded-md" ref="mapRef" style="height: 500px; width: 100%;"></div>
 
             <!-- Tappe (Row) -->
             <div class="flex flex-wrap my-8 -mx-4">
