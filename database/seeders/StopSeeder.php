@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Day;
 use App\Models\Stop;
+use Faker\Generator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,7 +13,7 @@ class StopSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Generator $faker): void
     {
 
         $stops = [
@@ -2424,6 +2425,7 @@ class StopSeeder extends Seeder
         foreach ($stops as $stop) {
 
             $new_stop = new Stop();
+            $new_stop->rating = $faker->numberBetween(0, 5);
             $new_stop->fill($stop);
             $new_stop->save();
         }
