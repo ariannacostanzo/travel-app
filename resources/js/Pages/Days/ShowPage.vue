@@ -286,7 +286,7 @@ const openMap = (id) => {
 
                             <!-- Foods -->
                             <p v-if="stop.foods" class="mt-4">
-                                <strong>Foods: </strong>{{ stop.foods }}
+                                <strong>Food: </strong>{{ stop.foods }}
                             </p>
 
                             <!-- Rating -->

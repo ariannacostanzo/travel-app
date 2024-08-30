@@ -34,12 +34,18 @@ const props = defineProps({
     stops: Array,
 });
 
+const editedDay = ref(null);
+
+
 const mapRef = ref(null);
 const map = ref(null);
 
-const changeDayTitle = (e) => {
-    e.stopPropagation();
-    console.log('cambio titolo');
+const changeDayTitle = (id) => {
+    if (editedDay.value === id) {
+        editedDay.value = null;
+    } else {
+        editedDay.value = id;
+    }
     
 }
 
@@ -172,7 +178,7 @@ onMounted(() => {
 
             <!-- card del giorno  -->
             <div v-for="day in days" :key="day.id"
-                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
+                class="day-card flex relative justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
                 <div class="custom-basis">
                     <Link :href="route('days.show', day.id)">
                     <div class="flex items-center gap-96 justify-between">
@@ -181,7 +187,7 @@ onMounted(() => {
                             <p class="text-2xl">Day</p>
                             <p class="text-3xl font-bold text-center">{{ day.number }}</p>
                         </div>
-                        <div class="basis-3/5">
+                        <div class="basis-3/5" v-if="editedDay !== day.id">
                             <div class="flex gap-3 items-center">
                                 <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
                             </div>
@@ -192,12 +198,34 @@ onMounted(() => {
                     </div>
                     </Link>
                 </div>
+                <!-- input di cambio titolo e descrizione  -->
+                <div v-if="editedDay === day.id">
+                    <div class="absolute-title flex gap-4">
+
+                        <input type="text" :value="day.title"
+                            class="input-title h-[32px] w-[300px]  border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
+
+                    </div>
+                    <div class=" absolute-description flex gap-4">
+                        <input type="text" :value="day.description"
+                            class="input-description w-[400px] h-[32px] border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
+
+                    </div>
+                    <button
+                        class="absolute-button border border-[#f3a737] py-1 px-2 text-[#f3a737] rounded-full group hover:bg-[#f3a737] hover:text-white ">
+                        <font-awesome-icon icon=" fas fa-pencil" class="fa-lg  group hover:text-white" />
+                        <div
+                            class="absolute text-center bottom-8 right-4 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
+                            Save
+                        </div>
+                    </button>
+                </div>
                 <!-- button per modificare il titolo -->
-                <button @click="changeDayTitle($event)"
-                    class="border border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
+                <button @click="changeDayTitle(day.id)"
+                    class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
                     <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
                     <div
-                        class="absolute text-center top-0 right-0 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                        class="absolute text-center bottom-8 right-4 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
                         Modify
                     </div>
                 </button>
@@ -244,6 +272,22 @@ onMounted(() => {
     flex-basis: 98%;
 }
 
+.absolute-title {
+    position: absolute;
+    left: 38%;
+    top: 10px;
+}
+.absolute-description {
+    position: absolute;
+    left: 38%;
+    bottom: 10px;
+}
+
+.absolute-button {
+    position: absolute;
+    left: 65%;
+    bottom: 40px;
+}
 
 
 </style>
