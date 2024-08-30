@@ -4,7 +4,9 @@ import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 
 import mapImage from '../../../../public/storage/show_images/map.jpg';
 import PersonalizedButton from '@/Components/PersonalizedButton.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, reactive } from 'vue';
+import { useForm } from 'laravel-precognition-vue-inertia';
+
 
 const loadGoogleMapsScript = () => {
     return new Promise((resolve, reject) => {
@@ -34,20 +36,59 @@ const props = defineProps({
     stops: Array,
 });
 
-const editedDay = ref(null);
+// elementi per modificare titolo e descrizione
+const editedDay = ref(-1);
 
-
-const mapRef = ref(null);
-const map = ref(null);
-
+//aprire gli input del giorno
 const changeDayTitle = (id) => {
     if (editedDay.value === id) {
-        editedDay.value = null;
+        editedDay.value = -1;
+        form.title = day.title; 
+        form.description = day.description;
     } else {
         editedDay.value = id;
     }
     
 }
+
+// const modifyDay = (day) => {
+    
+// }
+
+// form di invio 
+// prima 
+// const form = useForm('patch', route('days.modify', editedDay.value), {
+//     title: '',
+//     description: ''
+// })
+
+
+// const submit = () => form.submit({
+//     preserveScroll: true,
+//     onSuccess: () => form.reset(),
+// });
+
+// dopo
+
+const form = useForm('patch', route('days.modify', editedDay), {
+    title: '',
+    description: ''
+});
+const submit = (day) => {
+    form.patch(route('days.modify', day.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset();
+            editedDay.value = -1; 
+        }
+    });
+};
+
+
+
+
+const mapRef = ref(null);
+const map = ref(null);
 
 const initializeMap = () => {
     if (mapRef.value) {
@@ -199,15 +240,15 @@ onMounted(() => {
                     </Link>
                 </div>
                 <!-- input di cambio titolo e descrizione  -->
-                <div v-if="editedDay === day.id">
+                <form v-if="editedDay === day.id" @submit.prevent="submit(day)">
                     <div class="absolute-title flex gap-4">
 
-                        <input type="text" :value="day.title"
+                        <input type="text" v-model="form.title"
                             class="input-title h-[32px] w-[300px]  border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
 
                     </div>
                     <div class=" absolute-description flex gap-4">
-                        <input type="text" :value="day.description"
+                        <input type="text" v-model="form.description"
                             class="input-description w-[400px] h-[32px] border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
 
                     </div>
@@ -219,7 +260,7 @@ onMounted(() => {
                             Save
                         </div>
                     </button>
-                </div>
+                </form>
                 <!-- button per modificare il titolo -->
                 <button @click="changeDayTitle(day.id)"
                     class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">

@@ -64,4 +64,10 @@ class DayController extends Controller
     {
         //
     }
+
+    public function modify(Request $request, Day $day)
+    {
+        dd($request->all());
+        $data = $request->all();
+    }
 }
