@@ -362,6 +362,7 @@ const changeRating = () => {
                             :class="{ 'h-60 opacity-100': showInfo && showId === stop.id }"
                             class="rounded-lg opacity-0">
 
+
                             <!-- Row -->
                             <div class="flex flex-wrap my-4">
 
@@ -386,7 +387,6 @@ const changeRating = () => {
                                     </p>
 
                                 </div>
-
                                 <!-- Col-4 -->
                                 <div class="w-1/3 flex flex-col items-center justify-center">
 

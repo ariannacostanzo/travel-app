@@ -4,7 +4,9 @@ import GeneralLayout from '@/Layouts/GeneralLayout.vue';
 
 import mapImage from '../../../../public/storage/show_images/map.jpg';
 import PersonalizedButton from '@/Components/PersonalizedButton.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, reactive } from 'vue';
+import { useForm } from 'laravel-precognition-vue-inertia';
+
 
 const loadGoogleMapsScript = () => {
     return new Promise((resolve, reject) => {
@@ -34,14 +36,43 @@ const props = defineProps({
     stops: Array,
 });
 
+// elementi per modificare titolo e descrizione
+const editedDay = ref(null);
+
+// Crea il form all'esterno della funzione
+const form = useForm('patch', '', {
+    title: '',
+    description: ''
+});
+
+const modifyDay = (day) => {
+
+    if (editedDay.value === day.id) {   // Se gli passo il day già selezionato in precedenza
+        editedDay.value = null;         // Lo inizializza a null per chiudere il form
+    } else {
+        editedDay.value = day.id;       // Altrimenti gli assegno l'id del nuovo day e apro il corrispettivo form
+
+        // Aggiorna i campi del form con i dati del giorno selezionato
+        form.title = day.title;
+        form.description = day.description;
+
+        // Imposta l'URL corretto per la patch con il parametro `day.id`
+        form.action = route('days.modify', { day: day.id });
+    }
+};
+
+const submit = () => {
+    form.patch(form.action, {
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset();
+            editedDay.value = null;
+        }
+    });
+};
+
 const mapRef = ref(null);
 const map = ref(null);
-
-const changeDayTitle = (e) => {
-    e.stopPropagation();
-    console.log('cambio titolo');
-    
-}
 
 const initializeMap = () => {
     if (mapRef.value) {
@@ -172,35 +203,69 @@ onMounted(() => {
 
             <!-- card del giorno  -->
             <div v-for="day in days" :key="day.id"
-                class="day-card flex justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
-                <div class="custom-basis">
-                    <Link :href="route('days.show', day.id)">
-                    <div class="flex items-center gap-96 justify-between">
-
-                        <div class="border-r px-4 border-gray-500 ">
+                class="day-card flex relative justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
+                <div class="custom-basis" :class="{ grow: editedDay !== day.id }">
+                    <div class="flex items-center ">
+                        <div class="border-r px-4 border-gray-500 shrink-0">
                             <p class="text-2xl">Day</p>
                             <p class="text-3xl font-bold text-center">{{ day.number }}</p>
                         </div>
-                        <div class="basis-3/5">
-                            <div class="flex gap-3 items-center">
-                                <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
-                            </div>
-                            <div>
-                                <p>{{ day.description }}</p>
-                            </div>
+                        <Link :href="route('days.show', day.id)" class="grow text-center">
+
+                        <div v-if="editedDay !== day.id">
+                            <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
+                            <p>{{ day.description }}</p>
                         </div>
+                        </Link>
                     </div>
-                    </Link>
                 </div>
-                <!-- button per modificare il titolo -->
-                <button @click="changeDayTitle($event)"
-                    class="border border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
+                <!-- Form di cambio titolo e descrizione  -->
+                <form v-if="editedDay == day.id" @submit.prevent="submit" class="grow flex">
+
+                    <div class="flex flex-col  grow items-center">
+                        <!-- Input Titolo -->
+                        <input type="text" v-model="form.title"
+                            class="input-title h-[32px] w-[400px]  border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
+
+                        <!-- Input Descrizione -->
+
+                        <input type="text" v-model="form.description"
+                            class="input-description w-[400px] h-[32px] border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
+                    </div>
+
+                    <div class="flex gap-2 items-center">
+
+                        <!-- Bottone per confermare la modifica del day -->
+                        <button
+                            class=" border relative border-[#f3a737] py-1 px-2 text-[#f3a737] rounded-full group hover:bg-[#f3a737] hover:text-white ">
+                            <font-awesome-icon icon=" fas fa-floppy-disk" class="fa-lg  group hover:text-white" />
+                            <div
+                                class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
+                                Save
+                            </div>
+                        </button>
+
+                        <!-- Bottone per chiudere il form -->
+                        <button v-if="editedDay == day.id" @click="modifyDay(day)"
+                            class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
+                            <font-awesome-icon icon="fas fa-xmark" class="fa-lg" />
+                            <div
+                                class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                                Undo
+                            </div>
+                        </button>
+                    </div>
+                </form>
+                <!-- Bottone per modificare il titolo -->
+                <button v-if="editedDay !== day.id" @click="modifyDay(day)"
+                    class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
                     <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
                     <div
-                        class="absolute text-center top-0 right-0 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                        class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
                         Modify
                     </div>
                 </button>
+
             </div>
 
 
@@ -240,10 +305,27 @@ onMounted(() => {
     transform: translate(-50%, -50%);
 }
 
+/**
 .custom-basis {
     flex-basis: 98%;
 }
+*/
 
+.absolute-title {
+    position: absolute;
+    left: 38%;
+    top: 10px;
+}
 
+.absolute-description {
+    position: absolute;
+    left: 38%;
+    bottom: 10px;
+}
 
+.absolute-button {
+    position: absolute;
+    left: 65%;
+    bottom: 40px;
+}
 </style>

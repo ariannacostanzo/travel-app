@@ -47,11 +47,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('trips', TripController::class)->except('store', 'update');
     Route::post('/trips', [TripController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('trips.store');
     Route::put('/trips/{trip}', [TripController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('trips.update');
+
+    //Rotte dei Days
+    Route::patch('/days/{day}', [DayController::class, 'modify'])->name('days.modify');
 });
 
 
 //Rotte dei Days
-Route::resource('days', DayController::class);
+Route::resource('days', DayController::class)->except('update');
+
 
 //Rotte delle Stops
 Route::resource('stops', StopController::class)->except('store', 'update');
