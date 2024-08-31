@@ -45,8 +45,6 @@ const initialStars = ref(5);
 const initialStarsRating = ref(0);
 
 const typeForm = ref(null);
-const stopToUpdate = ref(null);
-
 
 const initializeAutocomplete = () => {
     if (addressInputRef.value && addressInputRef.value instanceof HTMLInputElement) {
@@ -63,6 +61,10 @@ const initializeAutocomplete = () => {
                 form.address = place.formatted_address;
                 form.latitude = place.geometry.location.lat();
                 form.longitude = place.geometry.location.lng();
+
+                updateForm.value.address = place.formatted_address;
+                updateForm.value.latitude = place.geometry.location.lat();
+                updateForm.value.longitude = place.geometry.location.lng();
             } else {
                 console.error('No details available for input: ' + place.name);
             }
@@ -193,21 +195,13 @@ const submit = () => form.submit({
 //  -----------------------------------------
 
 // -------------- Form di modifica stop ----------
-const updateForm = useForm('post', route('stops.update', stopToUpdate.id), {
-    day_id: props.day.id,
-    title: stopToUpdate.title,
-    image: stopToUpdate.image,
-    foods: stopToUpdate.foods,
-    address: stopToUpdate.address,
-    latitude: stopToUpdate.latitude,
-    longitude: stopToUpdate.longitude,
-})
+const updateForm = ref(null);
 
-const submitUpdateForm = () => updateForm.submit({
+const submitUpdateForm = () => updateForm.value.submit({
     preserveScroll: true,
     onSuccess: () => {
         closeModal();
-        initializeMap()
+        initializeMap();
     },
 });
 //  -----------------------------------------
@@ -237,9 +231,25 @@ const toggleStatus = (stopId) => {
 //  ---------------------------------------------------------
 
 const openModal = (type, stop) => {
+
     confirmingUserDeletion.value = true;
+
+    // Passo il tipo di form (create o update)
     typeForm.value = type;
-    if (stop) stopToUpdate.value = stop;
+
+    if (stop) {
+        updateForm.value = useForm('put', route('stops.update', stop.id), {
+            day_id: props.day.id,
+            title: stop.title,
+            image: stop.image,
+            foods: stop.foods,
+            address: stop.address,
+            rating: stop.rating,
+            latitude: stop.latitude,
+            longitude: stop.longitude,
+        })
+    }
+
 };
 
 const closeModal = () => {
@@ -457,25 +467,26 @@ const changeRating = () => {
                 <!-- title  -->
                 <div class="my-2">
                     <label for="title" class="text-2xl text-[#684e52] font-bold">Title</label>
-                    <input id="title" v-model="form.title" @change="form.validate('title')"
+                    <input id="title" v-model="updateForm.title" @change="updateForm.validate('title')"
                         class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
-                    <div v-if="form.invalid('title')">{{ form.errors.title }}</div>
+                    <div v-if="updateForm.invalid('title')">{{ updateForm.errors.title }}</div>
                 </div>
 
                 <!-- image  -->
                 <div class="my-2">
                     <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
-                    <input id="image" v-model="form.image" @change="form.validate('image')"
+                    <input id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
                         class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
-                    <div v-if="form.invalid('image')">{{ form.errors.image }}</div>
+                    <div v-if="updateForm.invalid('image')">{{ updateForm.errors.image }}</div>
                 </div>
 
                 <!-- food  -->
                 <div class="my-2">
                     <label for="foods" class="text-2xl text-[#684e52] font-bold">Foods</label>
-                    <textarea cols="30" rows="10" id="foods" v-model="form.foods" @change="form.validate('foods')"
+                    <textarea cols="30" rows="10" id="foods" v-model="updateForm.foods"
+                        @change="updateForm.validate('foods')"
                         class="w-full border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm"></textarea>
-                    <div v-if="form.invalid('foods')">{{ form.errors.foods }}</div>
+                    <div v-if="updateForm.invalid('foods')">{{ updateForm.errors.foods }}</div>
                 </div>
 
                 <!-- Rating -->
@@ -486,9 +497,9 @@ const changeRating = () => {
 
                         <label for="address-input" class="text-2xl text-[#684e52] font-bold">Rating</label>
                         <input id="address-input" type="number" min="0" max="5" @change="changeRating"
-                            v-model="initialStarsRating"
+                            v-model="updateForm.rating"
                             class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
-                        <div v-if="form.invalid('address')">{{ form.errors.address }}</div>
+                        <div v-if="updateForm.invalid('rating')">{{ updateForm.errors.address }}</div>
 
                     </div>
 
@@ -497,7 +508,7 @@ const changeRating = () => {
 
                         <font-awesome-icon v-for="(star, i) in initialStars" icon="fas fa-star"
                             class="fa-2x mb-2 text-gray-300"
-                            :class="{ 'text-yellow-600': i + 1 <= initialStarsRating }" />
+                            :class="{ 'text-yellow-600': i + 1 <= updateForm.rating }" />
 
                     </div>
 
@@ -506,27 +517,32 @@ const changeRating = () => {
                 <!-- address  -->
                 <div class="my-2">
                     <label for="address-input" class="text-2xl text-[#684e52] font-bold">Address</label>
-                    <input id="address-input" ref="addressInputRef" v-model="form.address"
-                        @change="form.validate('address')"
+                    <input id="address-input" ref="addressInputRef" v-model="updateForm.address"
+                        @change="updateForm.validate('address')"
                         class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
-                    <div v-if="form.invalid('address')">{{ form.errors.address }}</div>
+                    <div v-if="updateForm.invalid('address')">{{ updateForm.errors.address }}</div>
                 </div>
 
-                <input id="latitude" v-model="form.latitude" type="hidden" />
-                <input id="longitude" v-model="form.longitude" type="hidden" />
+                <input id="latitude" v-model="updateForm.latitude" type="hidden" />
+                <input id="longitude" v-model="updateForm.longitude" type="hidden" />
 
 
                 <div class="flex justify-center">
+
+                    <!-- Create -->
                     <button v-if="typeForm === 'create'"
                         class=" inline-flex items-center mt-8 px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white  uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150 hover:bg-[#443c3d] bg-[#684e52]"
                         :disabled="form.processing">
                         Create Stop
                     </button>
+
+                    <!-- Update -->
                     <button v-if="typeForm === 'update'"
                         class=" inline-flex items-center mt-8 px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white  uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150 hover:bg-[#443c3d] bg-[#684e52]"
-                        :disabled="form.processing">
+                        :disabled="updateForm.processing">
                         Update Stop
                     </button>
+
                 </div>
 
             </form>
