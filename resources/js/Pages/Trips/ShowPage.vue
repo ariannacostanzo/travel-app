@@ -204,56 +204,68 @@ onMounted(() => {
             <!-- card del giorno  -->
             <div v-for="day in days" :key="day.id"
                 class="day-card flex relative justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
-                <div class="custom-basis">
-                    <Link :href="route('days.show', day.id)">
-                    <div class="flex items-center gap-96 justify-between">
-
-                        <div class="border-r px-4 border-gray-500 ">
+                <div class="custom-basis" :class="{ grow: editedDay !== day.id }">
+                    <div class="flex items-center ">
+                        <div class="border-r px-4 border-gray-500 shrink-0">
                             <p class="text-2xl">Day</p>
                             <p class="text-3xl font-bold text-center">{{ day.number }}</p>
                         </div>
-                        <div class="basis-3/5" v-if="editedDay !== day.id">
-                            <div class="flex gap-3 items-center">
-                                <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
-                            </div>
-                            <div>
-                                <p>{{ day.description }}</p>
-                            </div>
+                        <Link :href="route('days.show', day.id)" class="grow text-center">
+
+                        <div v-if="editedDay !== day.id">
+                            <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
+                            <p>{{ day.description }}</p>
                         </div>
+                        </Link>
                     </div>
-                    </Link>
                 </div>
-                <!-- input di cambio titolo e descrizione  -->
-                <form v-if="editedDay == day.id" @submit.prevent="submit">
-                    <div class="absolute-title flex gap-4">
+                <!-- Form di cambio titolo e descrizione  -->
+                <form v-if="editedDay == day.id" @submit.prevent="submit" class="grow flex">
 
+                    <div class="flex flex-col  grow items-center">
+                        <!-- Input Titolo -->
                         <input type="text" v-model="form.title"
-                            class="input-title h-[32px] w-[300px]  border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
+                            class="input-title h-[32px] w-[400px]  border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
 
-                    </div>
-                    <div class=" absolute-description flex gap-4">
+                        <!-- Input Descrizione -->
+
                         <input type="text" v-model="form.description"
                             class="input-description w-[400px] h-[32px] border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm">
-
                     </div>
-                    <button
-                        class="absolute-button border border-[#f3a737] py-1 px-2 text-[#f3a737] rounded-full group hover:bg-[#f3a737] hover:text-white ">
-                        <font-awesome-icon icon=" fas fa-pencil" class="fa-lg  group hover:text-white" />
-                        <div
-                            class="absolute text-center bottom-8 right-4 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
-                            Save
-                        </div>
-                    </button>
+
+                    <div class="flex gap-2 items-center">
+
+                        <!-- Bottone per confermare la modifica del day -->
+                        <button
+                            class=" border relative border-[#f3a737] py-1 px-2 text-[#f3a737] rounded-full group hover:bg-[#f3a737] hover:text-white ">
+                            <font-awesome-icon icon=" fas fa-floppy-disk" class="fa-lg  group hover:text-white" />
+                            <div
+                                class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
+                                Save
+                            </div>
+                        </button>
+
+                        <!-- Bottone per chiudere il form -->
+                        <button v-if="editedDay == day.id" @click="modifyDay(day)"
+                            class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
+                            <font-awesome-icon icon="fas fa-xmark" class="fa-lg" />
+                            <div
+                                class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                                Undo
+                            </div>
+                        </button>
+                    </div>
                 </form>
-                <!-- button per modificare il titolo -->
-                <button @click="modifyDay(day)"
+                <!-- Bottone per modificare il titolo -->
+                <button v-if="editedDay !== day.id" @click="modifyDay(day)"
                     class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
                     <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
                     <div
-                        class="absolute text-center bottom-8 right-4 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
+                        class="absolute text-center bottom-9 right-1/2 translate-x-1 w-20 bg-[#91635C] rounded-full hidden group-hover:block z-50">
                         Modify
                     </div>
                 </button>
+
             </div>
 
 
@@ -293,9 +305,11 @@ onMounted(() => {
     transform: translate(-50%, -50%);
 }
 
+/**
 .custom-basis {
     flex-basis: 98%;
 }
+*/
 
 .absolute-title {
     position: absolute;
