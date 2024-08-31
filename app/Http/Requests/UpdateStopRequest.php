@@ -31,6 +31,7 @@ class UpdateStopRequest extends FormRequest
             'address' => 'required|string',
             'latitude' => 'required',
             'longitude' => 'required',
+            'rating' => 'nullable'
         ];
     }
 }
