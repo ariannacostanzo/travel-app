@@ -499,7 +499,7 @@ const changeRating = () => {
                         <input id="address-input" type="number" min="0" max="5" @change="changeRating"
                             v-model="updateForm.rating"
                             class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
-                        <div v-if="updateForm.invalid('rating')">{{ updateForm.errors.address }}</div>
+                        <div v-if="updateForm.invalid('rating')">{{ updateForm.errors.rating }}</div>
 
                     </div>
 
