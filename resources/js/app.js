@@ -10,12 +10,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Importa le icone che vuoi usare
-import { faHome, faUser, faXmark, faPlus, faTrashCan, faPencil, faAngleDown, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUser, faXmark, faPlus, faTrashCan, faPencil, faAngleDown, faArrowLeft, faCheck, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faTwitter, faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 // Aggiungi le icone alla libreria
-library.add(faHome, faUser, faXmark, faPlus, faTrashCan, faPencil, faAngleDown, faArrowLeft, faCheck)
+library.add(faHome, faUser, faXmark, faPlus, faTrashCan, faPencil, faAngleDown, faArrowLeft, faCheck, faStar)
 library.add(faCalendar)
 library.add(faTwitter, faFacebook, faInstagram, faYoutube)
 
