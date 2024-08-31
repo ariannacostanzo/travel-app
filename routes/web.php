@@ -54,8 +54,9 @@ Route::middleware('auth')->group(function () {
 Route::resource('days', DayController::class);
 
 //Rotte delle Stops
-Route::resource('stops', StopController::class)->except('store');
+Route::resource('stops', StopController::class)->except('store', 'update');
 Route::post('/stops', [StopController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('stops.store');
+Route::put('/stops/{stop}', [StopController::class, 'update'])->middleware([HandlePrecognitiveRequests::class])->name('stops.update');
 Route::patch('/stops/{stop}', [StopController::class, 'toggleStatus'])->middleware([HandlePrecognitiveRequests::class])->name('stops.toggleStatus');
 
 
