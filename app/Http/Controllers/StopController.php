@@ -82,8 +82,9 @@ class StopController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Stop $stop)
     {
-        //
+        $stop->delete();
+        return back();
     }
 }
