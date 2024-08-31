@@ -56,6 +56,8 @@ Route::resource('days', DayController::class);
 //Rotte delle Stops
 Route::resource('stops', StopController::class)->except('store');
 Route::post('/stops', [StopController::class, 'store'])->middleware([HandlePrecognitiveRequests::class])->name('stops.store');
+Route::patch('/stops/{stop}', [StopController::class, 'toggleStatus'])->middleware([HandlePrecognitiveRequests::class])->name('stops.toggleStatus');
+
 
 
 
