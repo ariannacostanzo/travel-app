@@ -23,7 +23,7 @@ class StoreStopRequest extends FormRequest
     {
         return [
             'day_id' => 'required',
-            'title' => 'required|string|unique:stops',
+            'title' => 'required|string',
             'image' => 'nullable|string',
             'foods' => 'nullable|string',
             'is_completed' => 'boolean',
