@@ -81,14 +81,26 @@ const initializeMap = () => {
             if (stop.latitude && stop.longitude) {
                 const position = { lat: parseFloat(stop.latitude), lng: parseFloat(stop.longitude) };
 
-                // Crea un div per contenere l'etichetta personalizzata
+                // Crea un tag a per contenere l'etichetta personalizzata
                 const markerLabel = document.createElement('a');
                 markerLabel.className = 'custom-marker';
                 markerLabel.href = "#" + stop.slug;
                 markerLabel.addEventListener('click', () => {
                     openMap(stop.id);
                 });
+
                 markerLabel.innerHTML = stop.title;
+                const statusElement = document.createElement('span');
+                statusElement.classList.add('ml-1')
+                if (stop.is_completed) {
+                    statusElement.innerHTML = '<i class="fas fa-check"></i>';
+                    statusElement.classList.add('text-green-500')
+                } else {
+                    statusElement.innerHTML = '<i class="fas fa-xmark"></i>';
+                    statusElement.classList.add('text-red-500')
+
+                }
+                markerLabel.appendChild(statusElement);
 
                 // Crea un OverlayView personalizzato
                 const customMarker = new google.maps.OverlayView();
@@ -151,6 +163,7 @@ onMounted(() => {
     });
 });
 
+// -------  Form creazione stop -----------
 const form = useForm('post', '/stops', {
     day_id: props.day.id,
     title: '',
@@ -165,6 +178,32 @@ const submit = () => form.submit({
     preserveScroll: true,
     onSuccess: () => closeModal(),
 });
+//  -----------------------------------------
+
+
+//  ------------     Form per togglare lo status della stop -----------------
+// Funzione per inviare la richiesta di aggiornamento dello stato
+const toggleStatus = (stopId) => {
+    // Inizializza il form con l'ID dello stop
+    const toggleForm = useForm('patch', route('stops.toggleStatus', stopId), {
+
+    });
+
+    // Invia la richiesta di aggiornamento
+    toggleForm.submit({
+        preserveScroll: true,
+        onSuccess: () => {
+            // Opzionale: esegui eventuali azioni dopo un successo, come aggiornare lo stato localmente
+            console.log('Status toggled successfully.');
+            initializeMap();
+        },
+        onError: () => {
+            console.error('Failed to toggle status.');
+        },
+    });
+};
+
+//  ---------------------------------------------------------
 
 const openModal = () => {
     confirmingUserDeletion.value = true;
@@ -201,7 +240,6 @@ const openMap = (id) => {
     <GeneralLayout :isLogged="true">
 
         <section id="show-day" class="container mx-auto my-24">
-
             <!-- Title -->
             <h1 class="text-5xl text-center my-6">{{ day.title }}</h1>
 
@@ -260,11 +298,23 @@ const openMap = (id) => {
                             <img :src="stop.image" :alt="stop.title" class="h-full w-full rounded-lg">
                         </figure>
 
-                        <!-- Bottone apertura mappa -->
-                        <div class="flex justify-center my-4">
+                        <div class="w-full flex justify-between my-4">
+                            <!-- Bottone apertura mappa -->
                             <button @click="openMap(stop.id)" class="flex items-center gap-1">
                                 Info <font-awesome-icon icon="fa-solid fa-angle-down" />
                             </button>
+
+                            <!-- Bottone per toggolare lo status -->
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input class="sr-only peer" @change="toggleStatus(stop.id)" :checked="stop.is_completed"
+                                    type="checkbox" role="switch" :id="'status-' + stop.id">
+                                <div
+                                    class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                </div>
+                                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle
+                                    status</span>
+                            </label>
+
                         </div>
 
                         <!-- Mappa -->
@@ -346,4 +396,18 @@ const openMap = (id) => {
     border: 2px solid red;
 
 }
+
+/**
+.custom-marker.completed::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: green;
+}
+*/
 </style>

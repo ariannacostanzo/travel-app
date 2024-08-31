@@ -57,9 +57,11 @@ class StopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function toggleStatus(Stop $stop)
     {
-        //
+        $stop->is_completed = !$stop->is_completed;
+        $stop->save();
+        return back();
     }
 
     /**
