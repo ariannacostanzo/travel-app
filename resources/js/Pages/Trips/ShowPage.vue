@@ -37,55 +37,39 @@ const props = defineProps({
 });
 
 // elementi per modificare titolo e descrizione
-const editedDay = ref(-1);
+const editedDay = ref(null);
 
-//aprire gli input del giorno
-const changeDayTitle = (id) => {
-    if (editedDay.value === id) {
-        editedDay.value = -1;
-        form.title = day.title; 
-        form.description = day.description;
-    } else {
-        editedDay.value = id;
-    }
-    
-}
-
-// const modifyDay = (day) => {
-    
-// }
-
-// form di invio 
-// prima 
-// const form = useForm('patch', route('days.modify', editedDay.value), {
-//     title: '',
-//     description: ''
-// })
-
-
-// const submit = () => form.submit({
-//     preserveScroll: true,
-//     onSuccess: () => form.reset(),
-// });
-
-// dopo
-
-const form = useForm('patch', route('days.modify', editedDay), {
+// Crea il form all'esterno della funzione
+const form = useForm('patch', '', {
     title: '',
     description: ''
 });
-const submit = (day) => {
-    form.patch(route('days.modify', day.id), {
+
+const modifyDay = (day) => {
+
+    if (editedDay.value === day.id) {   // Se gli passo il day già selezionato in precedenza
+        editedDay.value = null;         // Lo inizializza a null per chiudere il form
+    } else {
+        editedDay.value = day.id;       // Altrimenti gli assegno l'id del nuovo day e apro il corrispettivo form
+
+        // Aggiorna i campi del form con i dati del giorno selezionato
+        form.title = day.title;
+        form.description = day.description;
+
+        // Imposta l'URL corretto per la patch con il parametro `day.id`
+        form.action = route('days.modify', { day: day.id });
+    }
+};
+
+const submit = () => {
+    form.patch(form.action, {
         preserveScroll: true,
         onSuccess: () => {
             form.reset();
-            editedDay.value = -1; 
+            editedDay.value = null;
         }
     });
 };
-
-
-
 
 const mapRef = ref(null);
 const map = ref(null);
@@ -240,7 +224,7 @@ onMounted(() => {
                     </Link>
                 </div>
                 <!-- input di cambio titolo e descrizione  -->
-                <form v-if="editedDay === day.id" @submit.prevent="submit(day)">
+                <form v-if="editedDay == day.id" @submit.prevent="submit">
                     <div class="absolute-title flex gap-4">
 
                         <input type="text" v-model="form.title"
@@ -262,7 +246,7 @@ onMounted(() => {
                     </button>
                 </form>
                 <!-- button per modificare il titolo -->
-                <button @click="changeDayTitle(day.id)"
+                <button @click="modifyDay(day)"
                     class="border relative border-black py-1 px-2 rounded-full group hover:bg-[#91635C] hover:text-white hover:border-[#91635C]">
                     <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
                     <div
@@ -318,6 +302,7 @@ onMounted(() => {
     left: 38%;
     top: 10px;
 }
+
 .absolute-description {
     position: absolute;
     left: 38%;
@@ -329,6 +314,4 @@ onMounted(() => {
     left: 65%;
     bottom: 40px;
 }
-
-
 </style>

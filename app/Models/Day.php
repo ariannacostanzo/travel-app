@@ -14,6 +14,8 @@ class Day extends Model
     protected $fillable = [
         'trip_id',
         'number',
+        'title',
+        'description',
         'date',
     ];
 

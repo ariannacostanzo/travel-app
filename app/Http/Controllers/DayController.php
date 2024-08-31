@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateDayRequest;
 use App\Models\Day;
 use Illuminate\Http\Request;
 
@@ -52,7 +53,7 @@ class DayController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateDayRequest $request, string $id)
     {
         //
     }
@@ -65,9 +66,11 @@ class DayController extends Controller
         //
     }
 
-    public function modify(Request $request, Day $day)
+    public function modify(UpdateDayRequest $request, Day $day)
     {
-        dd($request->all());
-        $data = $request->all();
+        $data = $request->validated();
+        $day->fill($data);
+        $day->save();
+        return back();
     }
 }
