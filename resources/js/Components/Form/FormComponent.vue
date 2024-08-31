@@ -16,15 +16,15 @@ export default {
         editForm: Object
     },
     components: { InputError, InputLabel, TextInput, PersonalizedButton },
-    
-    
+
+
 }
 </script>
 
 <template>
 
     <form @submit.prevent="$emit('submit', option)">
-
+        <!--? Trip -->
         <!-- Register -->
         <div class="form-container flex flex-col gap-6" v-if="option === 'Register'">
 
@@ -146,7 +146,7 @@ export default {
                 <InputLabel class="text-2xl text-[#684e52] font-bold" for="image_url" value="Image link" />
 
                 <TextInput id="image_url" type="text" class="mt-1 text-lg block h-12 rounded-2xl w-full"
-                    v-model="create.image_url"  />
+                    v-model="create.image_url" />
 
                 <InputError class="mt-2" :message="create.errors.image_url" />
             </div>
@@ -196,7 +196,7 @@ export default {
                 <InputLabel class="text-2xl text-[#684e52] font-bold" for="image_url" value="Image link" />
 
                 <TextInput id="image_url" type="text" class="mt-1 text-lg block h-12 rounded-2xl w-full"
-                    v-model="edit.image_url"  />
+                    v-model="edit.image_url" />
 
                 <InputError class="mt-2" :message="edit.errors.image_url" />
             </div>
@@ -206,28 +206,33 @@ export default {
         <!-- Bottoni -->
         <div class="flex justify-center items-center" v-if="option">
 
+            <!--? Trip -->
+            <!-- Register -->
             <div v-if="option === 'Register'">
                 <PersonalizedButton colorMode="primary" label="Register">
                 </PersonalizedButton>
             </div>
+
+            <!-- Login -->
             <div v-else-if="option === 'Login'">
                 <PersonalizedButton colorMode="primary" label="Login">
                 </PersonalizedButton>
             </div>
+
+            <!-- Create -->
             <div v-else-if="option === 'Create'">
                 <PersonalizedButton colorMode="primary" label="Create">
                 </PersonalizedButton>
             </div>
+
+            <!-- Edit -->
             <div v-else-if="option === 'Edit'">
                 <PersonalizedButton colorMode="primary" label="Edit">
                 </PersonalizedButton>
             </div>
-
-
 
         </div>
 
     </form>
 
 </template>
-

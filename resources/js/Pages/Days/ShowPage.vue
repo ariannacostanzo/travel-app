@@ -41,6 +41,10 @@ const showId = ref(null);
 
 const activeMarkerId = ref(null);
 
+const initialStars = ref(5);
+const initialStarsRating = ref(0);
+
+const typeForm = ref(null);
 
 const initializeAutocomplete = () => {
     if (addressInputRef.value && addressInputRef.value instanceof HTMLInputElement) {
@@ -57,6 +61,10 @@ const initializeAutocomplete = () => {
                 form.address = place.formatted_address;
                 form.latitude = place.geometry.location.lat();
                 form.longitude = place.geometry.location.lng();
+
+                updateForm.value.address = place.formatted_address;
+                updateForm.value.latitude = place.geometry.location.lat();
+                updateForm.value.longitude = place.geometry.location.lng();
             } else {
                 console.error('No details available for input: ' + place.name);
             }
@@ -180,12 +188,23 @@ const form = useForm('post', '/stops', {
 const submit = () => form.submit({
     preserveScroll: true,
     onSuccess: () => {
-        closeModal(); 
+        closeModal();
         initializeMap()
     },
 });
 //  -----------------------------------------
 
+// -------------- Form di modifica stop ----------
+const updateForm = ref(null);
+
+const submitUpdateForm = () => updateForm.value.submit({
+    preserveScroll: true,
+    onSuccess: () => {
+        closeModal();
+        initializeMap();
+    },
+});
+//  -----------------------------------------
 
 //  ------------     Form per togglare lo status della stop -----------------
 // Funzione per inviare la richiesta di aggiornamento dello stato
@@ -211,8 +230,26 @@ const toggleStatus = (stopId) => {
 
 //  ---------------------------------------------------------
 
-const openModal = () => {
+const openModal = (type, stop) => {
+
     confirmingUserDeletion.value = true;
+
+    // Passo il tipo di form (create o update)
+    typeForm.value = type;
+
+    if (stop) {
+        updateForm.value = useForm('put', route('stops.update', stop.id), {
+            day_id: props.day.id,
+            title: stop.title,
+            image: stop.image,
+            foods: stop.foods,
+            address: stop.address,
+            rating: stop.rating,
+            latitude: stop.latitude,
+            longitude: stop.longitude,
+        })
+    }
+
 };
 
 const closeModal = () => {
@@ -236,6 +273,9 @@ const openMap = (id) => {
     }
 }
 
+const changeRating = () => {
+    // initialStars.value = 5 - initialStarsRating.value;
+}
 </script>
 
 
@@ -246,11 +286,12 @@ const openMap = (id) => {
     <GeneralLayout :isLogged="true">
 
         <section id="show-day" class="container mx-auto my-24">
+
             <!-- Title -->
             <h1 class="text-5xl text-center my-6">{{ day.title }}</h1>
 
             <!-- Button Add Stop -->
-            <button @click="openModal"
+            <button @click="openModal('create')"
                 class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[120px] right-5 group">
 
                 <div class="absolute bottom-14 right-0 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">Add
@@ -260,19 +301,6 @@ const openMap = (id) => {
                 <font-awesome-icon icon="fas fa-plus" class="fa-lg" />
 
             </button>
-
-            <!-- Button Modify -->
-            <!-- <Link @click="openModal" :href="route('days.edit', day.id)" type="button" as="button"
-                class="h-12 z-40 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[120px] right-5 group flex items-center justify-center">
-
-            <div
-                class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
-                Modify
-            </div>
-
-            <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
-
-            </Link> -->
 
             <!-- Button Go back -->
             <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
@@ -334,19 +362,44 @@ const openMap = (id) => {
                             :class="{ 'h-60 opacity-100': showInfo && showId === stop.id }"
                             class="rounded-lg opacity-0">
 
-                            <!-- Foods -->
-                            <p v-if="stop.foods" class="mt-4">
-                                <strong>Foods: </strong>{{ stop.foods }}
-                            </p>
+                            <!-- Row -->
+                            <div class="flex flex-wrap my-4">
 
-                            <!-- Rating -->
-                            <p v-if="stop.rating !== 0">
-                                <strong>Rating: </strong>
-                                <font-awesome-icon v-for="(rating, i) in stop.rating" :key="i" icon="fa-solid fa-star"
-                                    class="text-yellow-600 mt-4 mr-1" />
-                            </p>
+                                <!-- Col-8 -->
+                                <div class="w-2/3 flex flex-col items-center justify-center">
 
+                                    <!-- Foods -->
+                                    <p v-if="stop.foods" class="mt-2">
+                                        <strong>Foods: </strong>{{ stop.foods }}
+                                    </p>
+
+                                    <!-- Rating -->
+                                    <p v-if="stop.rating !== 0">
+                                        <strong>Rating: </strong>
+                                        <font-awesome-icon v-for="(rating, i) in stop.rating" :key="i"
+                                            icon="fa-solid fa-star" class="text-yellow-600 mt-2 mr-1" />
+                                    </p>
+
+                                    <!-- Se non ci sono info -->
+                                    <p v-if="!stop.foods && !stop.rating" class="text-xl font-bold mt-4">
+                                        There is no information
+                                    </p>
+
+                                </div>
+
+                                <!-- Col-4 -->
+                                <div class="w-1/3 flex flex-col items-center justify-center">
+
+                                    <button @click="openModal('update', stop)"
+                                        class="px-4 py-2 rounded-lg text-white bg-[#f3a737] mt-2">
+                                        Modify
+                                    </button>
+
+                                </div>
+
+                            </div>
                         </div>
+
 
                     </div>
 
@@ -360,7 +413,7 @@ const openMap = (id) => {
 
         <Modal :show="confirmingUserDeletion" @close="closeModal">
 
-            <form @submit.prevent="submit" class="p-6">
+            <form v-if="typeForm === 'create'" @submit.prevent="submit" class="p-6">
 
                 <!-- title  -->
                 <div class="my-2">
@@ -371,7 +424,6 @@ const openMap = (id) => {
                 </div>
 
                 <!-- image  -->
-
                 <div class="my-2">
                     <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
                     <input id="image" v-model="form.image" @change="form.validate('image')"
@@ -406,6 +458,91 @@ const openMap = (id) => {
                         :disabled="form.processing">
                         Create Stop
                     </button>
+                </div>
+
+            </form>
+
+            <form v-if="typeForm === 'update'" @submit.prevent="submitUpdateForm" class="p-6">
+
+                <!-- title  -->
+                <div class="my-2">
+                    <label for="title" class="text-2xl text-[#684e52] font-bold">Title</label>
+                    <input id="title" v-model="updateForm.title" @change="updateForm.validate('title')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
+                    <div v-if="updateForm.invalid('title')">{{ updateForm.errors.title }}</div>
+                </div>
+
+                <!-- image  -->
+                <div class="my-2">
+                    <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
+                    <input id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
+                    <div v-if="updateForm.invalid('image')">{{ updateForm.errors.image }}</div>
+                </div>
+
+                <!-- food  -->
+                <div class="my-2">
+                    <label for="foods" class="text-2xl text-[#684e52] font-bold">Foods</label>
+                    <textarea cols="30" rows="10" id="foods" v-model="updateForm.foods"
+                        @change="updateForm.validate('foods')"
+                        class="w-full border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm"></textarea>
+                    <div v-if="updateForm.invalid('foods')">{{ updateForm.errors.foods }}</div>
+                </div>
+
+                <!-- Rating -->
+                <div class="my-2 flex flex-wrap">
+
+                    <!-- Col-6 -->
+                    <div class="w-1/2">
+
+                        <label for="address-input" class="text-2xl text-[#684e52] font-bold">Rating</label>
+                        <input id="address-input" type="number" min="0" max="5" @change="changeRating"
+                            v-model="updateForm.rating"
+                            class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
+                        <div v-if="updateForm.invalid('rating')">{{ updateForm.errors.address }}</div>
+
+                    </div>
+
+                    <!-- Col-6 -->
+                    <div class="w-1/2 flex justify-center items-end">
+
+                        <font-awesome-icon v-for="(star, i) in initialStars" icon="fas fa-star"
+                            class="fa-2x mb-2 text-gray-300"
+                            :class="{ 'text-yellow-600': i + 1 <= updateForm.rating }" />
+
+                    </div>
+
+                </div>
+
+                <!-- address  -->
+                <div class="my-2">
+                    <label for="address-input" class="text-2xl text-[#684e52] font-bold">Address</label>
+                    <input id="address-input" ref="addressInputRef" v-model="updateForm.address"
+                        @change="updateForm.validate('address')"
+                        class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
+                    <div v-if="updateForm.invalid('address')">{{ updateForm.errors.address }}</div>
+                </div>
+
+                <input id="latitude" v-model="updateForm.latitude" type="hidden" />
+                <input id="longitude" v-model="updateForm.longitude" type="hidden" />
+
+
+                <div class="flex justify-center">
+
+                    <!-- Create -->
+                    <button v-if="typeForm === 'create'"
+                        class=" inline-flex items-center mt-8 px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white  uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150 hover:bg-[#443c3d] bg-[#684e52]"
+                        :disabled="form.processing">
+                        Create Stop
+                    </button>
+
+                    <!-- Update -->
+                    <button v-if="typeForm === 'update'"
+                        class=" inline-flex items-center mt-8 px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white  uppercase tracking-widest hover:shadow-xl transition ease-in-out duration-150 hover:bg-[#443c3d] bg-[#684e52]"
+                        :disabled="updateForm.processing">
+                        Update Stop
+                    </button>
+
                 </div>
 
             </form>

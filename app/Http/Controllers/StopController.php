@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStopRequest;
+use App\Http\Requests\UpdateStopRequest;
 use App\Models\Day;
 use App\Models\Stop;
 use Illuminate\Http\Request;
@@ -62,6 +63,20 @@ class StopController extends Controller
         $stop->is_completed = !$stop->is_completed;
         $stop->save();
         return back();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateStopRequest $request, Stop $stop)
+    {
+        $data = $request->validated();
+
+        $stop->update($data);
+
+        $day = $stop->day;
+
+        return to_route('days.show', $day);
     }
 
     /**

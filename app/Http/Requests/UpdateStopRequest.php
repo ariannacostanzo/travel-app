@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreStopRequest extends FormRequest
+class UpdateStopRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +22,8 @@ class StoreStopRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            'day_id' => 'required',
             'title' => 'required|string',
             'image' => 'nullable|string',
             'foods' => 'nullable|string',
@@ -30,6 +31,7 @@ class StoreStopRequest extends FormRequest
             'address' => 'required|string',
             'latitude' => 'required',
             'longitude' => 'required',
+            'rating' => 'nullable'
         ];
     }
 }
