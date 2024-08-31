@@ -304,28 +304,4 @@ onMounted(() => {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-/**
-.custom-basis {
-    flex-basis: 98%;
-}
-*/
-
-.absolute-title {
-    position: absolute;
-    left: 38%;
-    top: 10px;
-}
-
-.absolute-description {
-    position: absolute;
-    left: 38%;
-    bottom: 10px;
-}
-
-.absolute-button {
-    position: absolute;
-    left: 65%;
-    bottom: 40px;
-}
 </style>
