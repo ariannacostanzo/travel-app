@@ -290,30 +290,24 @@ const changeRating = () => {
             <!-- Title -->
             <h1 class="text-5xl text-center my-6">{{ day.title }}</h1>
 
-            <!-- Button Add Stop -->
-            <button @click="openModal('create')"
-                class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full fixed bottom-[120px] right-5 group">
-
-                <div class="absolute bottom-14 right-0 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">Add
-                    stop
-                </div>
-
-                <font-awesome-icon icon="fas fa-plus" class="fa-lg" />
-
-            </button>
-
-            <!-- Button Go back -->
-            <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
-                class="h-12 z-40 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
-
-            <div
-                class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
-                Go back
-            </div>
-
-            <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
-
-            </Link>
+            <!-- Button Add Stop & Button Go back  -->
+            <div class="fixed bottom-5 right-5">
+                <button @click="openModal('create')"
+                class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full relative group mb-2">
+                    <div class="absolute bottom-12 right-6 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">
+                        Add stop
+                    </div>
+                    <font-awesome-icon icon="fas fa-plus" class="fa-lg" />
+                </button>
+                <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
+                    class="h-12 z-40 w-12 text-white bg-[#999999] rounded-full relative group flex items-center justify-center">
+                    <div
+                        class="absolute text-center bottom-12 right-6 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
+                        Go back
+                    </div>
+                    <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+                </Link>
+            </div>          
 
             <!-- Mappa -->
             <div id="map" class="rounded-md" ref="mapRef" style="height: 500px; width: 100%;"></div>
@@ -326,16 +320,17 @@ const changeRating = () => {
 
                     <!-- Card -->
                     <div :id="stop.slug" :class="{ 'h-[550px] scale-105': showInfo && showId === stop.id }"
-                        class="p-4 flex flex-col scale-100 min-w-0 overflow-hidden bg-[#FCFCFB] shadow-lg rounded-lg text-center h-[450px] transition-all duration-1000 ease-in-out">
+                        class="p-4 flex flex-col scale-100 min-w-0 overflow-y-auto overflow-x-hidden no-scrollbar bg-[#FCFCFB] shadow-lg rounded-lg text-center h-[450px] transition-all duration-1000 ease-in-out relative ">
 
                         <!-- Titolo -->
                         <h2 class="text-3xl font-bold">{{ stop.title }}</h2>
 
+                        <!-- Immagine stop -->
                         <figure class="h-[300px] rounded-lg my-4">
                             <img :src="stop.image" :alt="stop.title" class="h-full w-full rounded-lg">
                         </figure>
 
-
+                        <!-- Pulsante info e selezione marker sulla mappa -->
                         <div class="w-full flex justify-between my-4">
                             <button @click="openMap(stop.id)" class="flex items-center gap-1">
                                 Info
@@ -354,53 +349,46 @@ const changeRating = () => {
                                 <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle
                                     status</span>
                             </label>
-
                         </div>
 
-                        <!-- Info -->
+                        <!-- Descrizione -->
                         <div v-if="showInfo && showId === stop.id"
                             :class="{ 'h-60 opacity-100': showInfo && showId === stop.id }"
                             class="rounded-lg opacity-0">
-
-
                             <!-- Row -->
                             <div class="flex flex-wrap my-4">
-
-                                <!-- Col-8 -->
+                                <!-- Col-8 (Informazioni) -->
                                 <div class="w-2/3 flex flex-col items-center justify-center">
-
                                     <!-- Foods -->
                                     <p v-if="stop.foods" class="mt-2">
                                         <strong>Foods: </strong>{{ stop.foods }}
                                     </p>
-
                                     <!-- Rating -->
                                     <p v-if="stop.rating !== 0">
                                         <strong>Rating: </strong>
                                         <font-awesome-icon v-for="(rating, i) in stop.rating" :key="i"
                                             icon="fa-solid fa-star" class="text-yellow-600 mt-2 mr-1" />
                                     </p>
-
                                     <!-- Se non ci sono info -->
                                     <p v-if="!stop.foods && !stop.rating" class="text-xl font-bold mt-4">
                                         There is no information
                                     </p>
-
                                 </div>
-                                <!-- Col-4 -->
+                                <!-- Col-4 (Tasto Modifica)-->
                                 <div class="w-1/3 flex flex-col items-center justify-center">
-
                                     <button @click="openModal('update', stop)"
                                         class="px-4 py-2 rounded-lg text-white bg-[#f3a737] mt-2">
                                         Modify
                                     </button>
-
                                 </div>
-
                             </div>
                         </div>
 
-
+                        <!-- Button Delete -->
+                        <Link :href="route('stops.destroy', stop.id)" method="DELETE" type="button" as="button"
+                            class="h-12 w-12 text-white bg-[#00000066] rounded-bl-lg absolute top-0 right-0 hover:bg-red-600 transition-all duration-1000 ease-in-out">
+                            <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
+                        </Link>
                     </div>
 
                 </div>
