@@ -108,10 +108,11 @@ const initializeMap = () => {
                 statusElement.classList.add('ml-1')
                 if (stop.is_completed) {
                     statusElement.innerHTML = '<i class="fas fa-check"></i>';
-                    statusElement.classList.add('text-green-500')
+                    statusElement.classList.add('text-[#227725]');
+                    markerLabel.classList.add('is-completed')
                 } else {
                     statusElement.innerHTML = '<i class="fas fa-xmark"></i>';
-                    statusElement.classList.add('text-red-500')
+                    statusElement.classList.add('text-[#1E40AF]')
 
                 }
                 markerLabel.appendChild(statusElement);
@@ -372,7 +373,7 @@ const changeRating = () => {
                                     class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                                 </div>
                                 <span class="ms-3 text-sm font-medium text-gray-700">{{ stop.is_completed ? 'Done' :
-                                    'Todo '}}</span>
+                                    'Todo ' }}</span>
                             </label>
                         </div>
 
@@ -425,7 +426,7 @@ const changeRating = () => {
             <div class="p-4 text-center">
                 <h1 class="text-xl">Do you want to delete this stop: <span class="font-bold">{{ deleteForm.title
                         }}</span>?</h1>
-                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="YES" class="me-3" />
+                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="SI" class="me-3" />
                 <DangerButton @click="closeDeleteModal">NO</DangerButton>
             </div>
         </Modal>
@@ -491,7 +492,7 @@ const changeRating = () => {
                 <!-- image  -->
                 <div class="my-2">
                     <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
-                    <input placeholder="https:// ..." id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
+                    <input id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
                         class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
                     <div v-if="updateForm.invalid('image')">{{ updateForm.errors.image }}</div>
                 </div>
@@ -561,20 +562,35 @@ const changeRating = () => {
 
 <style>
 .custom-marker {
-    background-color: white;
-    border: 2px solid black;
+    text-transform: capitalize;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    border: 1px solid #1E40AF;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
     white-space: nowrap;
     transform: translate(-50%, -100%);
     position: absolute;
+
+    &.active {
+        padding: 7px;
+        font-size: 14px;
+        border-width: 3px;
+    }
 }
 
-.custom-marker.active {
-    border: 2px solid red;
+.custom-marker.is-completed {
+    background-color: #d7ffd8;
+    color: #227725;
+    border: 1px solid #227725;
 
+    &.active {
+        padding: 7px;
+        font-size: 14px;
+        border-width: 3px;
+    }
 }
 </style>
