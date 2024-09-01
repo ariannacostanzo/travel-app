@@ -12,7 +12,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,7 +23,6 @@ main {
     background: rgba(42, 41, 41, 0.383);
 }
 
-.no-scrollbar{
+.no-scrollbar {
     scrollbar-width: none;
 }
-
