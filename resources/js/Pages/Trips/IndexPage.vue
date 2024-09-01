@@ -43,7 +43,7 @@ const formattedDate = (dateToFormatted) => {
                 <!-- Testo -->
                 <div class="absolute text-center">
 
-                    <h1 class="text-5xl text-white">Welcome {{ user.name }} {{ user.last_name }}</h1>
+                    <h1 class="text-5xl text-white shadowed-text">Welcome {{ user.name }} {{ user.last_name }}</h1>
 
                     <Link :href="route('trips.create')">
                     <PersonalizedButton label="New trip" colorMode="Primary"></PersonalizedButton>
@@ -73,12 +73,13 @@ const formattedDate = (dateToFormatted) => {
 
                     <div class="absolute shadowed-text top-0 left-0 right-0 bottom-0 text-white text-lg font-bold">
                         <div>
-                            <h3 class="absolute top-2 left-2 text-3xl">{{ trip.title }}</h3>
+                            <h3 class="absolute top-2 left-2 text-3xl shadowed-text">{{ trip.title }}</h3>
                             <div class="absolute bottom-2 left-2 text-md">
-                                <p> {{ formattedDate(trip.departure_date) }} - {{ formattedDate(trip.return_date) }}</p>
+                                <p class="shadowed-text"> {{ formattedDate(trip.departure_date) }} - {{
+                                    formattedDate(trip.return_date) }}</p>
                             </div>
                         </div>
-                        <p class="absolute bottom-2 right-2">
+                        <p class="absolute bottom-2 right-2 shadowed-text">
                             <font-awesome-icon icon="far fa-calendar" class="mr-2" />{{ days[i] }} days
                         </p>
                     </div>
@@ -99,8 +100,8 @@ const formattedDate = (dateToFormatted) => {
 </template>
 
 <style scoped>
-.shadowed-text h3,
-.shadowed-text p {
+.shadowed-text,
+.shadowed-text{
     text-shadow: 1px 1px 8px black;
 }
 </style>

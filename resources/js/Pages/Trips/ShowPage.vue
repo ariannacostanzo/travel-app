@@ -145,7 +145,7 @@ onMounted(() => {
     <GeneralLayout :isLogged="true">
 
         <figure v-if="trip.image_url" class="relative overflow-hidden mx-auto h-[700px] jumbotron">
-            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6">{{ trip.title }}</h1>
+            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6 uppercase">{{ trip.title }}</h1>
             <img :src="trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
         </figure>
 

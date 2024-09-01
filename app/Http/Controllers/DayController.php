@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UpdateDayRequest;
 use App\Models\Day;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DayController extends Controller
 {
@@ -37,6 +38,10 @@ class DayController extends Controller
      */
     public function show(Day $day)
     {
+
+        if ($day->trip->user_id !== Auth::id()) {
+            abort(404);
+        }
         $stops = $day->stops;
         return inertia('Days/ShowPage', compact('day', 'stops'));
     }
@@ -47,6 +52,9 @@ class DayController extends Controller
     public function edit(Day $day)
     {
         // $stops = $day->stops;
+        if ($day->trip->user_id !== Auth::id()) {
+            abort(404);
+        }
         return inertia('Days/EditPage', compact('day'));
     }
 
@@ -68,6 +76,10 @@ class DayController extends Controller
 
     public function modify(UpdateDayRequest $request, Day $day)
     {
+
+        if ($day->trip->user_id !== Auth::id()) {
+            abort(404);
+        }
         $data = $request->validated();
         $day->fill($data);
         $day->save();

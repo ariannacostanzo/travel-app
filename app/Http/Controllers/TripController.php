@@ -18,8 +18,11 @@ class TripController extends Controller
      */
     public function index()
     {
+
+        
         // Recupero l'utente loggato
         $user = Auth::user();
+
 
         // Recupero i Trips dell'utente loggato
         $trips = Trip::whereUserId($user->id)->get();
@@ -70,6 +73,10 @@ class TripController extends Controller
     public function show(Trip $trip)
     {
 
+        if ($trip->user_id !== Auth::id()) {
+            abort(404);
+        }
+
         $days = Day::whereTripId($trip->id)->orderBy('date')->get();
         $stops = $trip->stops;
 
@@ -81,6 +88,9 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
+        if ($trip->user_id !== Auth::id()) {
+            abort(404);
+        }
         return inertia('Trips/EditPage', compact('trip'));
     }
 

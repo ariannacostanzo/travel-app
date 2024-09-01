@@ -310,7 +310,7 @@ const changeRating = () => {
         <section id="show-day" class="container mx-auto my-24">
 
             <!-- Title -->
-            <h1 class="text-5xl text-center my-6">{{ day.title }}</h1>
+            <h1 class="text-5xl text-center my-6 font-bold">{{ day.title }}</h1>
 
             <!-- Button Add Stop & Button Go back  -->
             <div class="fixed bottom-5 right-5">
