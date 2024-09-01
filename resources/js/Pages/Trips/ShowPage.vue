@@ -94,6 +94,19 @@ const initializeMap = () => {
                 markerLabel.className = 'custom-marker';
                 markerLabel.innerHTML = stop.title;
 
+                // Mostra lo status della stop su mappa
+                const statusElement = document.createElement('span');
+                statusElement.classList.add('ml-1')
+                if (stop.is_completed) {
+                    statusElement.innerHTML = '<i class="fas fa-check"></i>';
+                    statusElement.classList.add('text-green-500')
+                } else {
+                    statusElement.innerHTML = '<i class="fas fa-xmark"></i>';
+                    statusElement.classList.add('text-red-500')
+
+                }
+                markerLabel.appendChild(statusElement);
+
                 // Crea un OverlayView personalizzato
                 const customMarker = new google.maps.OverlayView();
                 customMarker.onAdd = function () {
@@ -141,6 +154,7 @@ onMounted(() => {
 </script>
 
 <template>
+
     <Head title="Show Trip" />
     <GeneralLayout :isLogged="true">
 
@@ -156,36 +170,39 @@ onMounted(() => {
             <!-- Button Modify -->
             <Link :href="route('trips.edit', trip.id)" type="button" as="button"
                 class="h-12 w-12 text-white bg-[#f3a737] rounded-full fixed bottom-[220px] right-5 group flex items-center justify-center">
-                <div
-                    class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
-                    Modify
-                </div>
-                <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#f3a737] rounded-full hidden group-hover:block z-50">
+                Modify
+            </div>
+            <font-awesome-icon icon="fas fa-pencil" class="fa-lg" />
             </Link>
 
             <!-- Button Delete -->
             <Link :href="route('trips.destroy', trip.id)" method="DELETE" type="button" as="button"
                 class="h-12 w-12 text-white bg-[#f44336] rounded-full fixed bottom-[120px] right-5 flex items-center justify-center group">
-                <div class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block z-50">
-                    Delete
-                </div>
-                <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#f44336] rounded-full hidden group-hover:block z-50">
+                Delete
+            </div>
+            <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
             </Link>
 
             <!-- Button Go back -->
             <Link :href="route('trips.index')" type="button" as="button"
                 class="h-12 z-10 w-12 text-white bg-[#999999] rounded-full fixed bottom-5 right-5 group flex items-center justify-center">
-                <div class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
-                    Go back
-                </div>
-                <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+            <div
+                class="absolute text-center bottom-14 right-0 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
+                Go back
+            </div>
+            <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
             </Link>
 
             <!-- Mappa dinamica -->
-            <div id="map" ref="mapRef" style="height: 600px; width: 100%;" class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
+            <div id="map" ref="mapRef" style="height: 600px; width: 100%;"
+                class="rounded-md mb-7 shadow-lg shadow-stone-400"></div>
 
             <!-- card del giorno  -->
-            <div v-for="day in days" :key="day.id" 
+            <div v-for="day in days" :key="day.id"
                 class="day-card flex relative justify-between bg-slate-100 p-4 gap-8 items-center rounded-md shadow-lg shadow-stone-400 mb-2 transition-all ease-in-out duration-100">
                 <div class="custom-basis" :class="{ grow: editedDay !== day.id }">
                     <div class="flex items-center ">
@@ -194,10 +211,10 @@ onMounted(() => {
                             <p class="text-3xl font-bold text-center">{{ day.number }}</p>
                         </div>
                         <Link :href="route('days.show', day.id)" class="grow text-center">
-                            <div v-if="editedDay !== day.id">
-                                <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
-                                <p>{{ day.description }}</p>
-                            </div>
+                        <div v-if="editedDay !== day.id">
+                            <h4 class="text-3xl font-bold ">{{ day.title }}</h4>
+                            <p>{{ day.description }}</p>
+                        </div>
                         </Link>
                     </div>
                 </div>

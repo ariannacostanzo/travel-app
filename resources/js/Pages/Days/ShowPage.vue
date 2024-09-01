@@ -57,12 +57,12 @@ const initializeAutocomplete = () => {
             const place = autocomplete.getPlace();
             if (place.geometry) {
                 // Aggiorna il campo dell'indirizzo e le coordinate
-                if(!updateForm.value){
+                if (!updateForm.value) {
                     form.address = place.formatted_address;
                     form.latitude = place.geometry.location.lat();
                     form.longitude = place.geometry.location.lng();
-                }else{
-                    
+                } else {
+
                     updateForm.value.address = place.formatted_address;
                     updateForm.value.latitude = place.geometry.location.lat();
                     updateForm.value.longitude = place.geometry.location.lng();
@@ -102,6 +102,7 @@ const initializeMap = () => {
                     openMap(stop.id);
                 });
 
+                // Mostra lo status della stop su mappa
                 markerLabel.innerHTML = stop.title;
                 const statusElement = document.createElement('span');
                 statusElement.classList.add('ml-1')
@@ -269,7 +270,7 @@ const submitDeleteForm = () => deleteForm.value.submit({
 });
 
 const openDeleteModal = (stop) => {
-    deleteForm.value = useForm('delete', route('stops.destroy', stop.id),{
+    deleteForm.value = useForm('delete', route('stops.destroy', stop.id), {
         title: stop.title
     });
     confirmingStopDeletion.value = true;
@@ -315,21 +316,22 @@ const changeRating = () => {
             <!-- Button Add Stop & Button Go back  -->
             <div class="fixed bottom-5 right-5">
                 <button @click="openModal('create')"
-                class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full relative group mb-2">
-                    <div class="absolute bottom-12 right-6 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">
+                    class="h-12 z-40 w-12 text-white bg-[#75b76f] rounded-full relative group mb-2">
+                    <div
+                        class="absolute bottom-12 right-6 w-20 bg-[#75b76f] rounded-full hidden group-hover:block z-50">
                         Add stop
                     </div>
                     <font-awesome-icon icon="fas fa-plus" class="fa-lg" />
                 </button>
                 <Link :href="route('trips.show', day.trip_id)" type="button" as="button"
                     class="h-12 z-40 w-12 text-white bg-[#999999] rounded-full relative group flex items-center justify-center">
-                    <div
-                        class="absolute text-center bottom-12 right-6 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
-                        Go back
-                    </div>
-                    <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
+                <div
+                    class="absolute text-center bottom-12 right-6 w-20 bg-[#999999] rounded-full hidden group-hover:block z-50">
+                    Go back
+                </div>
+                <font-awesome-icon icon="fas fa-arrow-left" class="fa-lg" />
                 </Link>
-            </div>          
+            </div>
 
             <!-- Mappa -->
             <div id="map" class="rounded-md" ref="mapRef" style="height: 500px; width: 100%;"></div>
@@ -349,7 +351,8 @@ const changeRating = () => {
 
                         <!-- Immagine stop -->
                         <figure class="h-[300px] rounded-lg my-4">
-                            <img :src="stop.image ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg'" :alt="stop.title" class="h-full w-full rounded-lg">
+                            <img :src="stop.image ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg'"
+                                :alt="stop.title" class="h-full w-full rounded-lg">
                         </figure>
 
                         <!-- Pulsante info e selezione marker sulla mappa -->
@@ -368,7 +371,8 @@ const changeRating = () => {
                                 <div
                                     class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                                 </div>
-                                <span class="ms-3 text-sm font-medium text-gray-700">{{stop.is_completed ? 'Done' : 'To do'}}</span>
+                                <span class="ms-3 text-sm font-medium text-gray-700">{{ stop.is_completed ? 'Done' :
+                                    'Todo '}}</span>
                             </label>
                         </div>
 
@@ -406,7 +410,9 @@ const changeRating = () => {
                         </div>
 
                         <!-- Bottone per aprire la modale per la cancellazione -->
-                        <button class="h-12 w-12 text-white bg-[#00000066] rounded-bl-lg absolute top-0 right-0 hover:bg-red-600 transition-all duration-1000 ease-in-out" @click="openDeleteModal(stop)">
+                        <button
+                            class="h-12 w-12 text-white bg-[#00000066] rounded-bl-lg absolute top-0 right-0 hover:bg-red-600 transition-all duration-1000 ease-in-out"
+                            @click="openDeleteModal(stop)">
                             <font-awesome-icon icon="fas fa-trash-can" class="fa-lg" />
                         </button>
                     </div>
@@ -417,9 +423,10 @@ const changeRating = () => {
         <!-- Modale per conferma eliminazione tappa -->
         <Modal :show="confirmingStopDeletion" @close="closeDeleteModal">
             <div class="p-4 text-center">
-                <h1 class="text-xl">Do you want to delete this stop: <span class="font-bold">{{deleteForm.title}}</span>?</h1>
-                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="SI" class="me-3"/>
-                <DangerButton @click="closeDeleteModal">NO</DangerButton>                
+                <h1 class="text-xl">Do you want to delete this stop: <span class="font-bold">{{ deleteForm.title
+                        }}</span>?</h1>
+                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="SI" class="me-3" />
+                <DangerButton @click="closeDeleteModal">NO</DangerButton>
             </div>
         </Modal>
 
