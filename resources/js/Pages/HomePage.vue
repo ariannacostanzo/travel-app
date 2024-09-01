@@ -81,7 +81,8 @@ export default {
                 <!-- Testo con i due buttoni (apre l'offcanvas della Register) -->
                 <div class="absolute text-center">
 
-                    <h1 class="text-5xl text-white">gioacchino shit</h1>
+                    <h1 class="text-6xl text-white shadowed-text mb-4">Travel App</h1>
+                    <h2 class="text-2xl text-white shadowed-text uppercase">Your Trip, simplified</h2>
 
 
                     <div class="flex justify-center gap-5">
@@ -127,4 +128,9 @@ export default {
 
 </template>
 
-<style></style>
+<style scoped>
+
+.shadowed-text {
+    text-shadow: 1px 1px 8px black;
+}
+</style>
