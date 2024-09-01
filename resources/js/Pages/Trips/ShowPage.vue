@@ -99,10 +99,11 @@ const initializeMap = () => {
                 statusElement.classList.add('ml-1')
                 if (stop.is_completed) {
                     statusElement.innerHTML = '<i class="fas fa-check"></i>';
-                    statusElement.classList.add('text-green-500')
+                    statusElement.classList.add('text-[#227725]');
+                    markerLabel.classList.add('is-completed')
                 } else {
                     statusElement.innerHTML = '<i class="fas fa-xmark"></i>';
-                    statusElement.classList.add('text-red-500')
+                    statusElement.classList.add('text-[#1E40AF]')
 
                 }
                 markerLabel.appendChild(statusElement);
@@ -159,7 +160,8 @@ onMounted(() => {
     <GeneralLayout :isLogged="true">
 
         <figure v-if="trip.image_url" class="relative overflow-hidden mx-auto h-[700px] jumbotron">
-            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6 uppercase">{{ trip.title }}</h1>
+            <h1 class=" shadowed-text font-bold text-white text-6xl py-5 text-center my-6 uppercase">{{ trip.title }}
+            </h1>
             <img :src="trip.image_url" alt="" class="w-full h-full object-cover object-center opacity-90">
         </figure>
 
@@ -283,6 +285,18 @@ onMounted(() => {
     white-space: nowrap;
     transform: translate(-50%, -100%);
     position: absolute;
+}
+
+.custom-marker.is-completed {
+    background-color: #d7ffd8;
+    color: #227725;
+    border: 1px solid #227725;
+
+    &.active {
+        padding: 7px;
+        font-size: 14px;
+        border-width: 3px;
+    }
 }
 
 .shadowed-text {
