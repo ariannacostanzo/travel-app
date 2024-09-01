@@ -425,7 +425,7 @@ const changeRating = () => {
             <div class="p-4 text-center">
                 <h1 class="text-xl">Do you want to delete this stop: <span class="font-bold">{{ deleteForm.title
                         }}</span>?</h1>
-                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="SI" class="me-3" />
+                <PersonalizedButton @click="submitDeleteForm" colorMode="secondary" label="YES" class="me-3" />
                 <DangerButton @click="closeDeleteModal">NO</DangerButton>
             </div>
         </Modal>
@@ -491,7 +491,7 @@ const changeRating = () => {
                 <!-- image  -->
                 <div class="my-2">
                     <label for="image" class="text-2xl text-[#684e52] font-bold">Image</label>
-                    <input id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
+                    <input placeholder="https:// ..." id="image" v-model="updateForm.image" @change="updateForm.validate('image')"
                         class="mt-1 text-lg block h-12 border-gray-300 focus:border-[#684e52] focus:ring-[#684e52] rounded-md shadow-sm w-full" />
                     <div v-if="updateForm.invalid('image')">{{ updateForm.errors.image }}</div>
                 </div>
